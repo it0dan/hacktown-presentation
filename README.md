@@ -71,7 +71,6 @@ Ao abrir [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/h
 ```text
 .
 ├── presentation.html         # Apresentação oficial em slides HTML/CSS/JS (Blocos 1 e 2)
-├── hacktown-cover.html       # Capa e landing page interativa do evento
 ├── README.md                 # Guia do projeto, agenda e status dos blocos pendentes
 ├── assets/
 │   └── speakers/             # Fotos e especificações visuais dos palestrantes
@@ -88,7 +87,6 @@ Ao abrir [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/h
 
 1. Clone ou baixe este repositório.
 2. Abra [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/hacktown-presentation/presentation.html) diretamente em qualquer navegador moderno.
-3. Para visualizar a capa interativa, abra [`hacktown-cover.html`](file:///home/daniloamaral/Desktop/hacktown-2026/hacktown-presentation/hacktown-cover.html).
 
 ---
 
