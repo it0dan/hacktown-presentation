@@ -23,14 +23,14 @@ Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologi
 
 ---
 
-## 🗺️ Agenda & Conteúdo da Apresentação
+## 🗺️ Agenda & Status dos Blocos da Apresentação
 
-### 1. Contexto Geral & Histórico
+### 1. Contexto Geral & Histórico `[CONCLUÍDO]`
 - **Mercado de IA em 2026:** Investimentos globais, déficit de talentos de tecnologia e o paradoxo do ROI em GenAI (95% dos pilotos travados em Proof of Concept).
 - **Evolução do Design de Times:** Do Manifesto Ágil (2001) e Spotify Model (2012) ao **Team Topologies** (2019) e **Topologies para Agentes** (2026).
 - **Ciclo de Vida do Software (SDLC):** De Waterfall e Agile/DevOps até **Platform Engineering** e a integração de runtime agêntico no ciclo produtivo.
 
-### 2. A Era Agêntica & Arquitetura Harness
+### 2. A Era Agêntica & Arquitetura Harness `[CONCLUÍDO]`
 - **O que é um Agente de IA:** Diferença entre Workflow determinístico vs. Agentes autônomos.
 - **O Loop Fundamental do Agente:** `Percebe ➔ Raciocina ➔ Age ➔ Observa` (repetindo até atingir o objetivo).
 - **Fórmula Central:** $$\text{Agente} = \text{Modelo} + \text{Harness}$$
@@ -39,15 +39,13 @@ Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologi
   - **Sensores (Feedback):** Traces de observabilidade, guardrails determinísticos, LLM-as-Judge e HITL (Human-in-the-Loop).
   - **Evals:** Validação contínua da assertividade do agente transformando falhas em novos contextos.
 
-### 3. Loop Engineering
-- A evolução da engenharia de IA: `Prompt Eng.` ➔ `Context Eng.` ➔ `Harness Eng.` ➔ `Loop Eng.` ➔ `Graph Eng.`
-- Estruturação do loop de decisão e resiliência do agente contra falhas em cascata.
+---
 
-### 4. Live Coding / Demonstração Prática
-- Uma squad agêntica completa reagindo ao vivo a uma mudança regulatória em ambiente controlado.
+### ⏳ Blocos Pendentes (Em Desenvolvimento)
 
-### 5. Considerações & O Futuro dos Times de Tecnologia
-- Como reestruturar os 4 tipos de time (*Stream-aligned*, *Enabling*, *Complicated-subsystem*, *Platform*) para operarem com agentes de IA integrados.
+- ⏳ **3. Loop Engineering:** Tipos de loop (*Inner Loop*, *Outer Loop*, *Multi-Agent Loop*), autonomia controlada, stopping conditions, circuit breakers e auto-recuperação de contexto.
+- ⏳ **4. Live Coding:** Demonstração prática com Squad Agêntica (*Dev Agent*, *Tester Agent* e *Human-in-the-Loop*) reagindo a mudanças regulatórias em tempo real.
+- ⏳ **5. Considerações & Futuro:** Reestruturação de times (*Stream-aligned*, *Platform*), governança, redução de carga cognitiva e a transição para *Graph Engineering* (A2A).
 
 ---
 
@@ -72,9 +70,9 @@ Ao abrir [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/h
 
 ```text
 .
-├── presentation.html         # Apresentação oficial completa em slides HTML/CSS/JS
+├── presentation.html         # Apresentação oficial em slides HTML/CSS/JS (Blocos 1 e 2)
 ├── hacktown-cover.html       # Capa e landing page interativa do evento
-├── README.md                 # Guia do projeto e resumo do conteúdo
+├── README.md                 # Guia do projeto, agenda e status dos blocos pendentes
 ├── assets/
 │   └── speakers/             # Fotos e especificações visuais dos palestrantes
 │       ├── dan.jpg
