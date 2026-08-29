@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HackTown 2026 — Capa & Apresentação Oficial</title>
+  <meta name="description" content="Capa interativa oficial de apresentação para o HackTown 2026 em Santa Rita do Sapucaí - MG.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --bg-card: rgba(18, 24, 38, 0.7);
+      --bg-card-hover: rgba(30, 41, 64, 0.85);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-glow: rgba(99, 102, 241, 0.3);
+      
+      --primary: #6366f1;
+      --primary-glow: #818cf8;
+      --secondary: #ec4899;
+      --accent: #10b981;
+      --warning: #f59e0b;
+
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Space Grotesk', monospace;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Canvas background */
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Glowing Orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatOrb 18s ease-in-out infinite alternate;
+    }
+    .orb-1 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, #6366f1, transparent);
+      top: -100px;
+      left: -100px;
+    }
+    .orb-2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #ec4899, transparent);
+      bottom: -150px;
+      right: -100px;
+      animation-delay: -9s;
+    }
+    .orb-3 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #10b981, transparent);
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-delay: -4s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(60px, 40px) scale(1.1); }
+      100% { transform: translate(-40px, 80px) scale(0.95); }
+    }
+
+    /* Header */
+    header {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.75rem 3rem;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    }
+
+    .brand-text {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+    .brand-text span {
+      background: linear-gradient(90deg, #818cf8, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .badge-year {
+      font-family: var(--font-mono);
+      background: rgba(99, 102, 241, 0.15);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .badge-year .dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    /* Main Container */
+    main {
+      position: relative;
+      z-index: 10;
+      flex: 1;
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.75rem;
+      margin-top: 1rem;
+    }
+
+    .location-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .location-tag i {
+      color: var(--secondary);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(3.2rem, 7vw, 5.8rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #ffffff 20%, #a5b4fc 60%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--text-muted);
+      max-width: 720px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #4f46e5);
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.5);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px -5px rgba(99, 102, 241, 0.7);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(16px);
+      padding: 1.75rem;
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .stat-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-4px);
+    }
+    .stat-card:hover::before {
+      opacity: 1;
+    }
+
+    .stat-value {
+      font-family: var(--font-heading);
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.3rem;
+      background: linear-gradient(180deg, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Section Cards Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(16px);
+      border-radius: 24px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .feature-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .icon-indigo {
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+    .icon-pink {
+      background: rgba(236, 72, 153, 0.15);
+      color: #f472b6;
+      border: 1px solid rgba(236, 72, 153, 0.3);
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-glow);
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: auto;
+      font-size: 0.95rem;
+      transition: gap 0.2s ease;
+    }
+    .card-link:hover {
+      gap: 0.75rem;
+      color: #a5b4fc;
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: var(--text-main);
+    }
+
+    /* Modal / Alert Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(18, 24, 38, 0.95);
+      border: 1px solid var(--primary);
+      padding: 1rem 1.5rem;
+      border-radius: 14px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 100;
+      transform: translateY(150%);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .toast.active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Orbs & Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="brand">
+      <div class="brand-logo">HT</div>
+      <div class="brand-text">Hack<span>Town</span></div>
+    </a>
+
+    <div class="badge-year">
+      <div class="dot"></div>
+      EDITION 2026
+    </div>
+
+    <nav>
+      <a href="./presentation.html" class="nav-link"><i data-lucide="play-circle"></i> Apresentação</a>
+      <a href="./assets/speakers/README.md" class="nav-link"><i data-lucide="users"></i> Palestrantes</a>
+      <a href="./docs/REFERENCIAS.md" class="nav-link"><i data-lucide="book-open"></i> Referências</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="location-tag">
+        <i data-lucide="map-pin"></i> Santa Rita do Sapucaí — Vale da Eletrônica
+      </div>
+
+      <h1 class="hero-title">
+        Times Agênticos &
+        <span class="gradient-text">Loop Engineering</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Da squad ágil ao loop agêntico — como estruturar times quando parte da equipe também são agentes. HackTown 2026.
+      </p>
+
+      <div class="hero-actions">
+        <a href="./presentation.html" class="btn btn-primary">
+          <i data-lucide="play-circle"></i> Abrir Apresentação (Slides)
+        </a>
+        <a href="./assets/speakers/README.md" class="btn btn-secondary">
+          <i data-lucide="users"></i> Palestrantes
+        </a>
+        <a href="./docs/REFERENCIAS.md" class="btn btn-secondary">
+          <i data-lucide="file-text"></i> Referências (.md)
+        </a>
+      </div>
+    </section>
+
+    <!-- Stats Grid -->
+    <section id="estatisticas" class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">14</div>
+        <div class="stat-label">Slides de Apresentação</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">5</div>
+        <div class="stat-label">Blocos Temáticos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">45 min</div>
+        <div class="stat-label">Duração Estimada</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Conteúdo Interativo</div>
+      </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section id="destaques" class="grid-2">
+      <div class="feature-card">
+        <div class="card-icon icon-indigo">
+          <i data-lucide="user-check"></i>
+        </div>
+        <h3 class="card-title">Assets dos Palestrantes</h3>
+        <p class="card-desc">
+          Guia de estilo e perfil dos palestrantes Dan Amaral e Jean no diretório <code>assets/speakers/</code>.
+        </p>
+        <a href="./assets/speakers/README.md" class="card-link">
+          Ver guia de palestrantes <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon icon-pink">
+          <i data-lucide="bookmark"></i>
+        </div>
+        <h3 class="card-title">Documentação & Referências</h3>
+        <p class="card-desc">
+          Pesquisas (Gartner, MIT, S&P Global, Anthropic) compiladas em <code>docs/REFERENCIAS.md</code>.
+        </p>
+        <a href="./docs/REFERENCIAS.md" class="card-link">
+          Acessar referências <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>HackTown 2026 — Santa Rita do Sapucaí, MG • Dan & Jean · Sensedia</p>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Interactive Particle Background Canvas
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    const particleCount = 40;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.4;
+        this.speedY = (Math.random() - 0.5) * 0.4;
+        this.alpha = Math.random() * 0.5 + 0.1;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+          this.reset();
+        }
+      }
+
+      draw() {
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
