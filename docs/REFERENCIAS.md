@@ -24,6 +24,20 @@ Este documento compila a bibliografia, pesquisas de mercado, frameworks e artigo
 
 ---
 
+## 🔁 3. Loop Engineering (Bloco 03)
+
+- **Claude/Anthropic (30/jun/2026):** [*Loop engineering: getting started with loops*](https://claude.com/blog/getting-started-with-loops) — Delba de Oliveira & Michael Segner. Define loops como "agentes repetindo ciclos de trabalho até uma condição de parada". Tipos por trigger/stop: *Turn-based*, *Goal-based* (`/goal`), *Time-based* (`/loop`, `/schedule`), *Proactive*. Turn caps, evaluator model, dynamic workflows.
+- **Claude/Anthropic (18/jun/2026):** [*Steering Claude Code: CLAUDE.md, skills, hooks, rules, subagents*](https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more) — Michael Segner. Matriz de mecanismos de controle (autoridade vs. custo de contexto); guardrails determinísticos via hooks/permissions/managed settings; skills e hooks como blocos de construção de agent loops.
+- **LangChain (16/jun/2026):** [*The Art of Loop Engineering*](https://www.langchain.com/blog/the-art-of-loop-engineering) — Sydney Runkle. A "pilha" de 4 loops aninhados: *Agent*, *Verification*, *Event-driven*, *Hill climbing*. Loopcraft (swyx), traces, LLM-as-judge, human-in-the-loop.
+- **swyx / Latent Space:** [*loopcraft: the art of stacking loops*](https://www.latent.space/) — conceito de empilhar e estender loops para construir agentes mais eficazes (citado pela LangChain).
+- **Anthropic (26/nov/2025):** [*Effective harnesses for long-running agents*](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Justin Young. Failure modes: one-shotting, premature completion, marcar features sem testar. Solução: initializer + coding agent, feature list JSON, progress file, git commits, init.sh.
+- **Anthropic (24/mar/2026):** [*Harness design for long-running application development*](https://www.anthropic.com/engineering/harness-design-for-long-running-application-development) — Prithvi Rajasekaran. Failure modes: loss of coherence, context anxiety, self-evaluation bias. Solução generator-evaluator (inspirada em GANs), planner-generator-evaluator, context resets vs. compaction.
+- **Anthropic (29/set/2025):** [*Effective context engineering for AI agents*](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Context rot, attention budget, minimal viable context, compaction, structured note-taking, sub-agents.
+- **Anthropic (08/abr/2026):** [*Scaling Managed Agents: Decoupling the brain from the hands*](https://www.anthropic.com/engineering/managed-agents) — Session/harness/sandbox, harness assumptions que ficam stale, context anxiety, security boundary, wake/getSession para recuperação.
+- **Claude/Anthropic (29/set/2025):** [*Building agents with the Claude Agent SDK*](https://claude.com/blog/building-agents-with-the-claude-agent-sdk) — Loop gather → action → verify → repeat; verificação (rules/lint, visual, LLM-as-judge); compaction.
+
+---
+
 ## 👥 3. Design de Organização & Metodologias
 
 - **Skelton, M. & Pais, M. (2019):** *Team Topologies: Organizing Business and Technology Teams for Fast Flow*. IT Revolution Press.

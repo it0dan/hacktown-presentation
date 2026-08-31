@@ -41,9 +41,15 @@ Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologi
 
 ---
 
+### 3. Loop Engineering `[CONCLUÍDO]`
+- **O que é Loop Engineering:** Loops como agentes repetindo ciclos até uma condição de parada; por que projetar o loop (não só o harness) é essencial.
+- **Tipos de Loop (a pilha):** *Agent Loop*, *Verification Loop*, *Event-driven Loop*, *Hill Climbing Loop* (LangChain).
+- **Tipos por Trigger & Stop:** *Turn-based*, *Goal-based*, *Time-based*, *Proactive* (Claude).
+- **Vulnerabilidades:** Infinite/Doom loop, Goal drift, Context anxiety, Self-evaluation bias, Context rot, One-shotting.
+- **Padrões de Mitigação:** Stopping conditions, verificação externa, separar quem faz de quem julga, context resets + handoff, guardrails determinísticos, human-in-the-loop, progresso incremental.
+
 ### ⏳ Blocos Pendentes (Em Desenvolvimento)
 
-- ⏳ **3. Loop Engineering:** Tipos de loop (*Inner Loop*, *Outer Loop*, *Multi-Agent Loop*), autonomia controlada, stopping conditions, circuit breakers e auto-recuperação de contexto.
 - ⏳ **4. Live Coding:** Demonstração prática com Squad Agêntica (*Dev Agent*, *Tester Agent* e *Human-in-the-Loop*) reagindo a mudanças regulatórias em tempo real.
 - ⏳ **5. Considerações & Futuro:** Reestruturação de times (*Stream-aligned*, *Platform*), governança, redução de carga cognitiva e a transição para *Graph Engineering* (A2A).
 
@@ -70,7 +76,7 @@ Ao abrir [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/h
 
 ```text
 .
-├── presentation.html         # Apresentação oficial em slides HTML/CSS/JS (Blocos 1 e 2)
+├── presentation.html         # Apresentação oficial em slides HTML/CSS/JS (Blocos 1, 2 e 3)
 ├── README.md                 # Guia do projeto, agenda e status dos blocos pendentes
 ├── assets/
 │   └── speakers/             # Fotos e especificações visuais dos palestrantes
