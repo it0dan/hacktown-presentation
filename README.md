@@ -2,7 +2,7 @@
 
 > **Da squad ágil ao loop agêntico — como estruturar times quando parte da equipe também são agentes.**
 
-Repositório oficial de apoio e apresentação do **HackTown 2026** (Santa Rita do Sapucaí - MG).
+Repositório oficial de apoio e apresentação do **TDC Stage no HackTown 2026** (04/09/2026 · 14:30 · Palco 1 · ETE - Santa Rita do Sapucaí - MG).
 
 ---
 

@@ -132,25 +132,25 @@ h1 .e{color:var(--text)}
 .arow .dur{font-family:'Roboto Mono',monospace;font-size:15px;color:var(--muted);text-align:right}
 
 /* ── MARKET STATS ── */
-.stat-top{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
-.stat-card{background:var(--surf-2);border-radius:18px;padding:34px 38px 26px}
+.stat-top{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:34px}
+.stat-card{background:var(--surf-2);border-radius:18px;padding:48px 46px 36px}
 .stat-card .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(56px,7vw,104px);
-  line-height:1;letter-spacing:-.02em;margin-bottom:14px}
+  line-height:1;letter-spacing:-.02em;margin-bottom:18px}
 .stat-card .n.warn{color:var(--warn)}
 .stat-card .n.acc{color:var(--acc-strong)}
-.stat-card .l{font-size:16.5px;line-height:1.4;color:var(--text);max-width:460px;font-weight:500}
-.stat-card .s{font-family:'Roboto Mono',monospace;font-style:italic;font-size:12px;color:var(--ref);
-  margin-top:14px}
+.stat-card .l{font-size:17.5px;line-height:1.45;color:var(--text);max-width:480px;font-weight:500}
+.stat-card .s{font-family:'Roboto Mono',monospace;font-style:italic;font-size:12.5px;color:var(--ref);
+  margin-top:16px}
 
-.bridge{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,25px);
-  line-height:1.4;color:var(--warn);max-width:1080px;margin:6px 0 26px}
+.bridge{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,29px);
+  line-height:1.45;color:var(--warn);max-width:none;text-align:center;margin:14px 0 34px}
 
-.stat-bot{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;padding-top:20px;border-top:1px solid var(--line)}
+.stat-bot{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding-top:36px;border-top:1px solid var(--line)}
 .stat-bot .item{text-align:left}
-.stat-bot .n{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(28px,2.6vw,38px);
+.stat-bot .n{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(30px,2.9vw,44px);
   color:var(--acc-strong);line-height:1}
-.stat-bot .l{font-size:13.5px;color:var(--text);margin-top:9px;line-height:1.4}
-.stat-bot .s{font-family:'Roboto Mono',monospace;font-style:italic;font-size:11px;color:var(--ref);margin-top:8px}
+.stat-bot .l{font-size:15px;color:var(--text);margin-top:10px;line-height:1.45}
+.stat-bot .s{font-family:'Roboto Mono',monospace;font-style:italic;font-size:11.5px;color:var(--ref);margin-top:10px}
 
 /* ── TIMELINE ── */
 .timeline{display:flex;justify-content:space-between;position:relative;margin-top:8px;padding-top:9px}
@@ -198,8 +198,8 @@ h1 .e{color:var(--text)}
   padding:8px 16px;border-radius:20px;color:#fff;flex-shrink:0}
 .sdlc-tag.dev{background:var(--blue)}
 .sdlc-tag.ops{background:var(--warn)}
-.sdlc-split{display:grid;grid-template-columns:1.35fr 1fr;gap:52px;margin-top:10px;align-items:center}
-.sdlc-split svg{display:block;width:100%;height:auto;max-width:760px}
+.sdlc-split{display:grid;grid-template-columns:auto 1fr;gap:64px;margin-top:10px;align-items:center}
+.sdlc-split svg{display:block;width:760px;height:auto}
 .sdlc-caption{display:flex;flex-direction:column;gap:24px}
 .sdlc-caption .callout{max-width:480px}
 .sdlc-caption .sub{max-width:460px}
@@ -278,6 +278,17 @@ h1 .e{color:var(--text)}
 /* loop-def (slide 09): uma única voz — o ticker de estados (2s) governa; auras de caça silenciadas */
 #slide-loop-def .loopbox.reveal{animation:revealFadeUp .5s cubic-bezier(.22,.68,.32,1) forwards}
 #slide-loop-def .flowarrow.reveal{animation:revealFadeUp .5s cubic-bezier(.22,.68,.32,1) forwards}
+/* slide 07: DEFINIÇÃO em destaque — pop laranja de entrada (re-disparado por animateHarnessDefSignal) */
+.def-label{display:inline-block}
+@keyframes defPop{
+  0%{opacity:0;transform:translateY(12px) scale(.92);letter-spacing:.5em;
+    text-shadow:0 0 36px color-mix(in srgb,var(--warn) 85%,transparent)}
+  60%{opacity:1;transform:translateY(0) scale(1.07);letter-spacing:.22em}
+  100%{opacity:1;transform:scale(1);letter-spacing:.2em;
+    text-shadow:0 0 14px color-mix(in srgb,var(--warn) 45%,transparent)}
+}
+.def-label.pop{animation:defPop .95s cubic-bezier(.22,.68,.32,1) both}
+@media (prefers-reduced-motion:reduce){.def-label.pop{animation:none}}
 .hcenter{display:flex;flex-direction:column;align-items:center;gap:0}
 .model-box{border:2.5px solid var(--acc-strong);border-radius:14px;padding:26px 38px;text-align:center;
   background:var(--surf-2);min-width:200px}
@@ -615,11 +626,11 @@ h1 .e{color:var(--text)}
 <!-- ─── 00 · COVER ─── -->
 <section class="slide active">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer" id="ht0">--:--</span></div>
   </div>
   <div class="body">
-    <div class="tag">HACKTOWN 2026 &nbsp;<span class="dim">// 04–05 set</span></div>
+    <div class="tag">HACKTOWN 2026 &nbsp;<span class="dim">// 04/09/2026 · 14:30 · TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <h1>Times Agênticos<br/><span class="e">e</span> <span class="a">Loop Engineering</span></h1>
     <div class="lead">O próximo salto na evolução das equipes de tecnologia.</div>
     <div class="sub">Da squad ágil ao loop agêntico — como estruturar times quando parte da equipe também são agentes.</div>
@@ -634,7 +645,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 01 · APRESENTAÇÃO ─── -->
 <section class="slide">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="split-wrap">
@@ -650,7 +661,7 @@ h1 .e{color:var(--text)}
     </div>
     <div class="speaker">
       <div class="avatar">
-        <img src="assets/speakers/jean.jpeg" alt="Jean" onerror="this.remove()">
+        <img src="assets/speakers/jean.jpg" alt="Jean" onerror="this.remove()">
         <span class="initials">J</span>
       </div>
       <div class="role">Líder de times</div>
@@ -665,7 +676,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 02 · AGENDA ─── -->
 <section class="slide">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body">
@@ -715,7 +726,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 03 · MERCADO ─── -->
 <section class="slide">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:center">
@@ -732,7 +743,7 @@ h1 .e{color:var(--text)}
         <div class="s">Brasscom / Valor Econômico</div>
       </div>
     </div>
-    <div class="bridge">O dinheiro entra em IA mais rápido do que a gente entra no mercado — e o pouco time que sobra ainda opera do jeito antigo.</div>
+    <div class="bridge">O capital chega antes da capacidade. Muito dinheiro sendo investido e ainda assim talentos escassos. Se o gargalo é gente, a alavanca não é contratar, é redesenhar o time para que humanos e agentes amplifiquem uns aos outros.</div>
     <div class="stat-bot">
       <div class="item">
         <div class="n">US$4,2 bi</div>
@@ -761,7 +772,7 @@ h1 .e{color:var(--text)}
 
 <section class="slide" id="slide-topologies">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px;position:relative">
@@ -779,19 +790,19 @@ h1 .e{color:var(--text)}
         <div class="tl-dot"></div>
         <div class="tl-year">~2012</div>
         <div class="tl-title">Spotify Model</div>
-        <div class="tl-desc">Squads, tribes, chapters, guilds — virou padrão de mercado. Só que nunca foi bem assim, nem lá.</div>
+        <div class="tl-desc">Virou referência de mercado, apesar de nunca ter sido proposto como um modelo prescritivo. Era uma fotografia de uma organização em constante evolução.</div>
       </div>
       <div class="tl-node reveal-fade">
         <div class="tl-dot"></div>
         <div class="tl-year">2019</div>
         <div class="tl-title">Team Topologies</div>
-        <div class="tl-desc">4 tipos de time + 3 modos de interação — o que o Spotify Model prometia, entregue de verdade.</div>
+        <div class="tl-desc">4 tipos de time + 3 modos de interação. Formaliza o design organizacional para otimizar fluxo e reduzir carga cognitiva.</div>
       </div>
       <div class="tl-node reveal-fade">
         <div class="tl-dot"></div>
         <div class="tl-year">2026</div>
         <div class="tl-title">Topologies p/ agentes</div>
-        <div class="tl-desc">A mesma lente aplicada a agentes de IA — fronteiras de domínio, contratos explícitos.</div>
+        <div class="tl-desc">A mesma lente aplicada a agentes: fronteiras de responsabilidade estreitas, interfaces explícitas, contexto estruturado e stewardship humano nos pontos sensíveis. Em fundamentação.</div>
       </div>
     </div>
 
@@ -809,6 +820,9 @@ h1 .e{color:var(--text)}
       <div class="pbox reveal-fade"><div class="pt">Facilitating</div><div class="pd">Um time orienta e capacita, sem executar pelo outro.</div></div>
     </div>
 
+    <div class="sources" style="margin-top:22px;max-width:calc(100% - 720px)">Team Topologies (Skelton &amp; Pais, 2019)</div>
+    <div class="sources" style="margin-top:8px;max-width:calc(100% - 720px)">Skelton (2026): agentes com responsabilidades estreitas e contexto estruturado, cognitive load ↔ context window.</div>
+
     <div class="quote-corner">
       <div class="quote-block reveal-fade">
         <div class="qtext">Toda organização projeta sistemas que acabam copiando sua própria estrutura de comunicação.</div>
@@ -821,7 +835,7 @@ h1 .e{color:var(--text)}
 
 <section class="slide" id="slide-sdlc">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -901,8 +915,8 @@ h1 .e{color:var(--text)}
         <text x="380" y="202" text-anchor="middle" class="sdlc-center">CONTÍNUO</text>
       </svg>
       <div class="sdlc-caption">
-        <div class="callout" style="margin-top:0;font-size:23px">Cada salto encurtou a distância entre decidir e colocar em produção. Agentes são o próximo salto dessa mesma curva.</div>
-        <div class="sub" style="font-size:19px;max-width:460px">Um ciclo sem início nem fim — <b style="color:var(--text)">Monitor</b> realimenta <b style="color:var(--text)">Plan</b> direto. Platform Engineering absorve <b style="color:var(--text)">Build → Deploy → Operate</b> como serviço self-service; o time de stream-aligned foca em <b style="color:var(--text)">Plan → Code</b>.</div>
+        <div class="callout" style="margin-top:0;font-size:23px;max-width:none">Cada salto encurtou a distância entre decidir e colocar em produção. Agentes são o próximo salto dessa mesma curva.</div>
+        <div class="sub" style="font-size:19px;max-width:none">Um ciclo sem início nem fim — <b style="color:var(--text)">Monitor</b> realimenta <b style="color:var(--text)">Plan</b> direto.<br>Platform Engineering absorve <b style="color:var(--text)">Build → Deploy → Operate</b> como serviço self-service.</div>
       </div>
     </div>
       <div class="callout" style="margin-top:20px;max-width:none;font-size:16px"><b>Para o seu time:</b> cada salto do SDLC encurtou a distância entre decidir e entregar — agentes são o próximo salto, e o redesign começa por onde o humano entra no ciclo.</div>
@@ -913,7 +927,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 06 · O QUE É UM AGENTE DE IA ─── -->
 <section class="slide" id="slide-agent-def">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:center">
@@ -933,7 +947,7 @@ h1 .e{color:var(--text)}
       </div>
     </div>
 
-    <div class="grouplabel" style="margin:0 0 14px;font-size:14px">o loop do agente</div>
+    <div class="grouplabel" style="margin:36px 0 14px;font-size:14px">o ciclo de execução</div>
     <div id="agentLoopRow" style="display:flex;align-items:stretch;gap:16px">
       <div class="loopbox reveal-fade"><div class="ht">PERCEBE</div><div class="hd">Lê o estado atual — input, contexto, resultado da última ação.</div></div>
       <div class="flowarrow reveal-fade">→</div>
@@ -945,7 +959,7 @@ h1 .e{color:var(--text)}
     </div>
     <div id="agentLoopBack" class="reveal-fade" style="text-align:center;font-family:'Roboto Mono',monospace;font-size:17px;color:var(--warn);margin-top:16px;margin-bottom:24px">↺&nbsp; repete até atingir o objetivo — ou até parar</div>
 
-    <div class="callout" style="margin-top:auto;max-width:none;font-size:20px;padding:20px 28px;text-align:center"><b>Agente de IA</b>: um sistema que usa um LLM pra decidir suas próprias ações, em loop, até resolver o objetivo — não um fluxo fixo de passos pré-programados.</div>
+    <div class="callout" style="margin-top:auto;max-width:none;font-size:20px;padding:20px 28px;text-align:center"><b>Agente de IA</b>: Software autônomo ou semiautônomo que usa técnicas de IA para obter percepções, tomar decisões, realizar ações e alcançar objetivos.</div>
 
     <div class="sources" style="margin-top:20px">Anthropic, "Building Effective Agents", dez/2024 · Google, "Agents" whitepaper, 2024</div>
   </div>
@@ -955,7 +969,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 07 · O QUE É HARNESS ENGINEERING ─── -->
 <section class="slide" id="slide-harness-def">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:center">
@@ -979,11 +993,13 @@ h1 .e{color:var(--text)}
         </div>
       </div>
 
-      <div style="display:flex;flex-direction:column;justify-content:center">
-        <div class="grouplabel" style="margin:0 0 16px;font-size:14px">definição</div>
-        <div class="sub" style="max-width:560px;font-size:20px;line-height:1.7;color:var(--text)">Harness é tudo que envolve o modelo pra transformar previsão de texto em comportamento confiável em produção: prompts, ferramentas, contexto, guardrails, avaliação, observabilidade.</div>
-        <div class="equation" style="font-size:clamp(28px,3vw,40px);margin-top:36px">Agente <span class="op">=</span> Modelo <span class="op">+</span> <span class="hl">Harness</span></div>
-        <div class="sub" style="margin-top:14px;font-size:16px">Harness, em uma frase: <b>Guias</b> (feedforward) + <b>Sensores</b> (feedback) + <b>Evals</b> — detalhado na próxima tela.</div>
+      <div style="display:flex;flex-direction:column;justify-content:space-evenly;align-items:center">
+        <div class="grouplabel def-label" style="margin:0;font-size:15px;color:var(--warn);text-shadow:0 0 18px color-mix(in srgb,var(--warn) 55%,transparent)">definição</div>
+        <div class="sub" style="max-width:560px;font-size:20px;line-height:1.7;color:var(--text);text-align:center">Harness é tudo que envolve o modelo pra transformar previsão de texto em comportamento confiável em produção: prompts, ferramentas, contexto, guardrails, avaliação, observabilidade.</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+          <div class="equation" style="font-size:clamp(28px,3vw,40px)">Agente <span class="op">=</span> Modelo <span class="op">+</span> <span class="hl">Harness</span></div>
+          <div class="sub" style="font-size:16px;text-align:center">Harness é composto por <b>Guias</b> (feedforward) + <b>Sensores</b> (feedback) + <b>Evals</b> (avaliações).</div>
+        </div>
       </div>
     </div>
 
@@ -997,7 +1013,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 08 · AGENTE = MODELO + HARNESS ─── -->
 <section class="slide" id="slide-harness">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:center">
@@ -1047,7 +1063,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 09 · O QUE É LOOP ENGINEERING ─── -->
 <section class="slide" id="slide-loop-def">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:center">
@@ -1076,7 +1092,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 09b · INTERACTION LOOPS: HUMAN ↔ AGENT (ponto de virada) ─── -->
 <section class="slide" id="slide-interaction">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1110,7 +1126,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 10 · TIPOS DE LOOP — PILHA (1/2) ─── -->
 <section class="slide" id="slide-loop-stack1">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1170,7 +1186,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 11 · TIPOS DE LOOP — PILHA (2/2) ─── -->
 <section class="slide" id="slide-loop-stack2">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1230,7 +1246,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 12 · TIPOS DE LOOP — TURN-BASED ─── -->
 <section class="slide" id="slide-loop-trigger-turn">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1279,7 +1295,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 13 · TIPOS DE LOOP — GOAL-BASED ─── -->
 <section class="slide" id="slide-loop-trigger-goal">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1329,7 +1345,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 14 · TIPOS DE LOOP — TIME-BASED ─── -->
 <section class="slide" id="slide-loop-trigger-time">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1379,7 +1395,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 15 · TIPOS DE LOOP — PROACTIVE ─── -->
 <section class="slide" id="slide-loop-trigger-proactive">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1428,7 +1444,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 14 · VULNERABILIDADES ─── -->
 <section class="slide" id="slide-loop-vulns">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1483,7 +1499,7 @@ h1 .e{color:var(--text)}
 <!-- ─── 15 · MITIGAÇÃO ─── -->
 <section class="slide" id="slide-loop-mit">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1541,7 +1557,7 @@ h1 .e{color:var(--text)}
 
 <section class="slide" id="slide-future-limits">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1561,7 +1577,7 @@ h1 .e{color:var(--text)}
 
 <section class="slide" id="slide-future-roadmap">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
@@ -1580,7 +1596,7 @@ h1 .e{color:var(--text)}
 
 <section class="slide" id="slide-future-close">
   <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:center">
@@ -1875,10 +1891,9 @@ function animateSdlcTimeline(){
 // ═══════════════════════════════════════════
 function animateHarnessDefSignal(){
   const dot = document.getElementById('evoSignal');
-  if(!dot) return;
-  dot.classList.remove('run');
-  void dot.offsetWidth;
-  dot.classList.add('run');
+  if(dot){ dot.classList.remove('run'); void dot.offsetWidth; dot.classList.add('run'); }
+  const label = document.querySelector('#slide-harness-def .def-label');
+  if(label){ label.classList.remove('pop'); void label.offsetWidth; label.classList.add('pop'); }
 }
 // ═══════════════════════════════════════════
 // BLOCO 03 · LOOP ENGINEERING — animações de entrada
