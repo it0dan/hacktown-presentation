@@ -12,6 +12,8 @@ Repositório oficial de apoio e apresentação do **HackTown 2026** (Santa Rita 
 
 Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologies** para as **Squads Agênticas**, introduzindo os conceitos de **Harness Engineering** e **Loop Engineering** para garantir previsibilidade, governança e alto desempenho na era da IA autônoma.
 
+**Tese central:** quando agentes entram no ciclo de vida de desenvolvimento, o diferencial não é velocidade — é **redesenhar os loops de interação humano↔agente**; e fazer isso de forma confiável exige harness. Times agênticos são essa **arquitetura de loops**, não uma cultura.
+
 ---
 
 ## 🗣️ Palestrantes
@@ -48,10 +50,16 @@ Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologi
 - **Vulnerabilidades:** Infinite/Doom loop, Goal drift, Context anxiety, Self-evaluation bias, Context rot, One-shotting.
 - **Padrões de Mitigação:** Stopping conditions, verificação externa, separar quem faz de quem julga, context resets + handoff, guardrails determinísticos, human-in-the-loop, progresso incremental.
 
-### ⏳ Blocos Pendentes (Em Desenvolvimento)
+### 4. Live Coding — o Squad como prova viva da tese `[CONCLUÍDO]`
+- **Slide-âncora "Interaction Loops: Human ↔ Agent":** ponto de virada da talk — o loop deixa de ser do agente ou do humano e passa a ser **do par**; é aqui que o teaser da demo (bookend) é plantado.
+- **Ao vivo:** Squad Agêntica reagindo a uma issue real (cor do botão no app de demo) — Planner, Engineer, QA e SRE coordenados por um grafo de estados.
+- **Momento HITL:** o humano aprova ou rejeita com feedback; a falha vira contexto novo.
+- **Engenharia de palco:** reset 1-clique, fallback determinístico e observabilidade ao vivo.
 
-- ⏳ **4. Live Coding:** Demonstração prática com Squad Agêntica (*Dev Agent*, *Tester Agent* e *Human-in-the-Loop*) reagindo a mudanças regulatórias em tempo real.
-- ⏳ **5. Considerações & Futuro:** Reestruturação de times (*Stream-aligned*, *Platform*), governança, redução de carga cognitiva e a transição para *Graph Engineering* (A2A).
+### 5. Considerações & Futuro `[CONCLUÍDO]`
+- **Limites & riscos:** custo/latência, drift de qualidade, viés do avaliador e complexidade cognitiva.
+- **Rumo ao Graph Engineering:** multi-agente, grafos dinâmicos e adaptativos.
+- **Encerramento com 3 takeaways:** desenhe os loops de interação antes de escalar · governe com harness · meça aprendizado, não só throughput.
 
 ---
 
@@ -76,7 +84,7 @@ Ao abrir [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/h
 
 ```text
 .
-├── presentation.html         # Apresentação oficial em slides HTML/CSS/JS (Blocos 1, 2 e 3)
+├── presentation.html         # Apresentação oficial em slides HTML/CSS/JS (Blocos 1 a 5)
 ├── README.md                 # Guia do projeto, agenda e status dos blocos pendentes
 ├── assets/
 │   └── speakers/             # Fotos e especificações visuais dos palestrantes
