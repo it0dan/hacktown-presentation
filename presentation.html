@@ -1080,13 +1080,13 @@ h1 .e{color:var(--text)}
     </div>
 
     <div class="pillgrid" style="grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px">
-      <div class="pbox"><div class="pt">Intenção</div><div class="pd">O humano traduz desejo em objetivo verificável.</div></div>
-      <div class="pbox"><div class="pt">Autonomia</div><div class="pd">O agente opera dentro de limites, com harness.</div></div>
-      <div class="pbox"><div class="pt">Gate</div><div class="pd">HITL em ações sensíveis — o humano decide.</div></div>
-      <div class="pbox"><div class="pt">Correção</div><div class="pd">O humano realimenta o loop; a falha vira contexto.</div></div>
+      <div class="pbox reveal-fade"><div class="pt">Intenção</div><div class="pd">O humano traduz desejo em objetivo verificável.</div></div>
+      <div class="pbox reveal-fade"><div class="pt">Autonomia</div><div class="pd">O agente opera dentro de limites, com harness.</div></div>
+      <div class="pbox reveal-fade"><div class="pt">Gate</div><div class="pd">HITL em ações sensíveis — o humano decide.</div></div>
+      <div class="pbox reveal-fade"><div class="pt">Correção</div><div class="pd">O humano realimenta o loop; a falha vira contexto.</div></div>
     </div>
 
-    <div class="callout" style="margin-top:24px;max-width:none;font-size:18px;padding:16px 26px">Este é o coração da talk: <b>o loop não é do agente nem do humano — é do par.</b> No próximo bloco, provamos isso ao vivo com um squad agêntico.</div>
+    <div class="callout reveal-fade" style="margin-top:24px;max-width:none;font-size:18px;padding:16px 26px">Este é o coração da talk: <b>o loop não é do agente nem do humano — é do par.</b> No próximo bloco, provamos isso ao vivo com um squad agêntico.</div>
     <div class="sources" style="margin-top:12px">Team Topologies (Skelton/Pais) · Swarm/coordination literature · HITL — LangChain · Anthropic</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 3.2 INTERACTION LOOPS</span><span class="hb-idx">-- / --</span></div>
@@ -1534,19 +1534,19 @@ h1 .e{color:var(--text)}
     <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Prova viva: <span class="a">o squad agêntico</span></h1>
     <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Prometemos lá atrás: redesenhar os loops de interação. Este é o momento de <b style="color:var(--text)">mostrar</b>, não contar.</div>
     <div class="pillgrid" style="grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px">
-      <div class="pbox" style="--tc:var(--blue)"><div class="pt">Cenário</div><div class="pd">Issue real no app de demo: <b>trocar a cor do botão de compra</b>.</div></div>
-      <div class="pbox" style="--tc:var(--acc-strong)"><div class="pt">Ecossistema</div><div class="pd">Squad com seis papéis — SRE, Engineer, QA, Planner — coordenados por um grafo de estados.</div></div>
-      <div class="pbox" style="--tc:var(--warn)"><div class="pt">Governança</div><div class="pd">Cada agente roda com harness: guias, sensores e <b>gate HITL</b>.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--blue)"><div class="pt">Cenário</div><div class="pd">Issue real no app de demo: <b>trocar a cor do botão de compra</b>.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--acc-strong)"><div class="pt">Ecossistema</div><div class="pd">Squad com seis papéis — SRE, Engineer, QA, Planner — coordenados por um grafo de estados.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--warn)"><div class="pt">Governança</div><div class="pd">Cada agente roda com harness: guias, sensores e <b>gate HITL</b>.</div></div>
     </div>
     <div class="grouplabel" style="font-size:14px">o fio da meada — do pedido ao deploy</div>
     <div class="chipflow">
-      <div class="c">Issue (botão azul → verde)</div><div class="arrow">&rarr;</div>
-      <div class="c">Intake planeja</div><div class="arrow">&rarr;</div>
-      <div class="c">Engineer codifica</div><div class="arrow">&rarr;</div>
-      <div class="c">QA valida</div><div class="arrow">&rarr;</div>
-      <div class="c">SRE observa</div>
+      <div class="c reveal-fade">Issue (botão azul → verde)</div><div class="arrow">&rarr;</div>
+      <div class="c reveal-fade">Intake planeja</div><div class="arrow">&rarr;</div>
+      <div class="c reveal-fade">Engineer codifica</div><div class="arrow">&rarr;</div>
+      <div class="c reveal-fade">QA valida</div><div class="arrow">&rarr;</div>
+      <div class="c reveal-fade">SRE observa</div>
     </div>
-    <div class="callout" style="margin-top:24px;max-width:none;font-size:18px"><b>Repare:</b> em cada transição há um ponto onde um humano pode entrar — é nesses gates que o loop de interação se desenha.</div>
+    <div class="callout reveal-fade" style="margin-top:24px;max-width:none;font-size:18px"><b>Repare:</b> em cada transição há um ponto onde um humano pode entrar — é nesses gates que o loop de interação se desenha.</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 4.1 LIVE CODING</span><span class="hb-idx">-- / --</span></div>
 </section>
@@ -1560,7 +1560,7 @@ h1 .e{color:var(--text)}
     <div class="tag">BLOCO 04 &nbsp;<span class="dim">// 4.2 o loop em ação</span></div>
     <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">O loop <span class="a">rodando</span></h1>
     <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Veja o grafo de estados em tempo real: cada agente percebe, decide, age e observa — e para quando a condição de parada bate.</div>
-    <div class="trig-arch">
+    <div class="trig-arch reveal-fade">
       <div class="ta-badge">State Graph · ciclo de vida da issue</div>
       <div class="ta-flow">
         <div class="ta-row"><div class="ta-node"><div class="tn-t">Planner</div><div class="tn-s">quebra a issue em tarefas</div></div></div>
@@ -1573,7 +1573,7 @@ h1 .e{color:var(--text)}
       </div>
       <div class="ta-note">cada agente tem <b>turn cap</b> e <b>hill-climbing</b>: se a meta anda, continua; se não, devolve ao humano</div>
     </div>
-    <div class="callout" style="margin-top:20px;max-width:none;font-size:17px">A coordenação não é um pipeline fixo — é um <b>grafo dirigido por eventos</b>, como os diagramas do Bloco 03.</div>
+    <div class="callout reveal-fade" style="margin-top:20px;max-width:none;font-size:17px">A coordenação não é um pipeline fixo — é um <b>grafo dirigido por eventos</b>, como os diagramas do Bloco 03.</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 4.2 LIVE CODING</span><span class="hb-idx">-- / --</span></div>
 </section>
@@ -1588,11 +1588,11 @@ h1 .e{color:var(--text)}
     <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">O <span class="a">momento HITL</span></h1>
     <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Aqui a tese fica palpável: o agente propõe, o humano decide. O loop de interação <b style="color:var(--text)">acontecendo diante da plateia</b>.</div>
     <div class="pillgrid" style="grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px">
-      <div class="pbox" style="--tc:var(--blue)"><div class="pt">Aprovar</div><div class="pd">O humano aceita a mudança sugerida — o agente segue para o deploy.</div></div>
-      <div class="pbox" style="--tc:var(--warn)"><div class="pt">Rejeitar e dar feedback</div><div class="pd">O humano aponta o problema — a falha vira contexto novo e o loop reinicia melhor.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--blue)"><div class="pt">Aprovar</div><div class="pd">O humano aceita a mudança sugerida — o agente segue para o deploy.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--warn)"><div class="pt">Rejeitar e dar feedback</div><div class="pd">O humano aponta o problema — a falha vira contexto novo e o loop reinicia melhor.</div></div>
     </div>
-    <div class="equation" style="font-size:clamp(28px,3vw,40px);margin-top:6px">Agente <span class="op">propõe</span> &rarr; <span class="hl">Humano decide</span> <span class="op">&rarr;</span> Loop evolui</div>
-    <div class="callout" style="margin-top:26px;max-width:none;font-size:18px"><b>Design, não acidente:</b> o HITL não é uma falha de autonomia — é uma decisão deliberada de onde o humano agrega mais valor.</div>
+    <div class="equation reveal-fade" style="font-size:clamp(28px,3vw,40px);margin-top:6px">Agente <span class="op">propõe</span> &rarr; <span class="hl">Humano decide</span> <span class="op">&rarr;</span> Loop evolui</div>
+    <div class="callout reveal-fade" style="margin-top:26px;max-width:none;font-size:18px"><b>Design, não acidente:</b> o HITL não é uma falha de autonomia — é uma decisão deliberada de onde o humano agrega mais valor.</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 4.3 HITL</span><span class="hb-idx">-- / --</span></div>
 </section>
@@ -1607,11 +1607,11 @@ h1 .e{color:var(--text)}
     <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Seguro para <span class="a">palco</span></h1>
     <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Demonstração ao vivo exige previsibilidade. Três garantias embutidas no ambiente:</div>
     <div class="pillgrid" style="grid-template-columns:repeat(3,1fr);gap:16px">
-      <div class="pbox" style="--tc:var(--acc-strong)"><div class="pt">Reset 1-clique</div><div class="pd">Estado do demo volta ao baseline com um único endpoint — recuperação instantânea.</div></div>
-      <div class="pbox" style="--tc:var(--blue)"><div class="pt">Fallback determinístico</div><div class="pd">Sem chave de LLM, o squad usa respostas determinísticas — a demo nunca trava.</div></div>
-      <div class="pbox" style="--tc:var(--warn)"><div class="pt">Observabilidade</div><div class="pd">Telemetria ao vivo mostra cada passo do loop, inclusive o HITL.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--acc-strong)"><div class="pt">Reset 1-clique</div><div class="pd">Estado do demo volta ao baseline com um único endpoint — recuperação instantânea.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--blue)"><div class="pt">Fallback determinístico</div><div class="pd">Sem chave de LLM, o squad usa respostas determinísticas — a demo nunca trava.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--warn)"><div class="pt">Observabilidade</div><div class="pd">Telemetria ao vivo mostra cada passo do loop, inclusive o HITL.</div></div>
     </div>
-    <div class="callout" style="margin-top:22px;max-width:none;font-size:17px"><b>Lição transferível:</b> o mesmo cuidado que protege uma demo protege produção — ambientes reproduzíveis, rollback fácil e observabilidade.</div>
+    <div class="callout reveal-fade" style="margin-top:22px;max-width:none;font-size:17px"><b>Lição transferível:</b> o mesmo cuidado que protege uma demo protege produção — ambientes reproduzíveis, rollback fácil e observabilidade.</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 4.4 ENGENHARIA DE PALCO</span><span class="hb-idx">-- / --</span></div>
 </section>
@@ -1630,12 +1630,12 @@ h1 .e{color:var(--text)}
     <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Onde o <span class="a">entusiasmo</span> esbarra</h1>
     <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Escalar agentes no SDLC é ótimo — até o custo e a complexidade aparecerem. Planejar com honestidade.</div>
     <div class="mit-grid">
-      <div class="mit-card"><span class="mc-ic">&#128176;</span><div class="mc-title">Custo e latência</div><div class="mc-desc">Mais iterações e evals significam mais tokens e tempo. Nem todo passo merece um agente.</div></div>
-      <div class="mit-card"><span class="mc-ic">&#128201;</span><div class="mc-title">Drift de qualidade</div><div class="mc-desc">Modelo e dados mudam; o que era confiável hoje pode degradar amanhã. Requer evals contínuos.</div></div>
-      <div class="mit-card"><span class="mc-ic">&#129518;</span><div class="mc-title">Viés do avaliador</div><div class="mc-desc">Auto-avaliação elogia demais; separar quem faz de quem julga ajuda, mas não elimina.</div></div>
-      <div class="mit-card"><span class="mc-ic">&#129504;</span><div class="mc-title">Complexidade cognitiva</div><div class="mc-desc">Coordenar muitos agentes é um problema de engenharia novo — grafos ajudam, mas exigem maturidade.</div></div>
+      <div class="mit-card reveal-fade"><span class="mc-ic">&#128176;</span><div class="mc-title">Custo e latência</div><div class="mc-desc">Mais iterações e evals significam mais tokens e tempo. Nem todo passo merece um agente.</div></div>
+      <div class="mit-card reveal-fade"><span class="mc-ic">&#128201;</span><div class="mc-title">Drift de qualidade</div><div class="mc-desc">Modelo e dados mudam; o que era confiável hoje pode degradar amanhã. Requer evals contínuos.</div></div>
+      <div class="mit-card reveal-fade"><span class="mc-ic">&#129518;</span><div class="mc-title">Viés do avaliador</div><div class="mc-desc">Auto-avaliação elogia demais; separar quem faz de quem julga ajuda, mas não elimina.</div></div>
+      <div class="mit-card reveal-fade"><span class="mc-ic">&#129504;</span><div class="mc-title">Complexidade cognitiva</div><div class="mc-desc">Coordenar muitos agentes é um problema de engenharia novo — grafos ajudam, mas exigem maturidade.</div></div>
     </div>
-    <div class="callout" style="margin-top:16px;max-width:none;font-size:17px"><b>Para o seu time:</b> adote em etapas, mantenha humanos nos gates sensíveis e meça não só throughput, mas <b>aprendizado</b>.</div>
+    <div class="callout reveal-fade" style="margin-top:16px;max-width:none;font-size:17px"><b>Para o seu time:</b> adote em etapas, mantenha humanos nos gates sensíveis e meça não só throughput, mas <b>aprendizado</b>.</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 5.1 LIMITES</span><span class="hb-idx">-- / --</span></div>
 </section>
@@ -1650,11 +1650,11 @@ h1 .e{color:var(--text)}
     <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Próximo degrau: <span class="a">Graph Engineering</span></h1>
     <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Do loop individual ao <b style="color:var(--text)">orquestrador de múltiplos agentes</b>: a evolução natural que já apontávamos no Bloco 02.</div>
     <div class="pillgrid" style="grid-template-columns:repeat(3,1fr);gap:16px">
-      <div class="pbox" style="--tc:var(--acc-strong)"><div class="pt">Multi-agente</div><div class="pd">Equipes de agentes cooperando — routing, handoff e disputa por recursos.</div></div>
-      <div class="pbox" style="--tc:var(--blue)"><div class="pt">Dinâmico</div><div class="pd">Grafos que se moldam em runtime, não fixos em código.</div></div>
-      <div class="pbox" style="--tc:var(--warn)"><div class="pt">Adaptativo</div><div class="pd">Os mesmos princípios de loop, agora em escala de sistema.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--acc-strong)"><div class="pt">Multi-agente</div><div class="pd">Equipes de agentes cooperando — routing, handoff e disputa por recursos.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--blue)"><div class="pt">Dinâmico</div><div class="pd">Grafos que se moldam em runtime, não fixos em código.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--warn)"><div class="pt">Adaptativo</div><div class="pd">Os mesmos princípios de loop, agora em escala de sistema.</div></div>
     </div>
-    <div class="callout" style="margin-top:20px;max-width:none;font-size:17px"><b>Para o seu time:</b> domine o loop antes do grafo. O que você aprende em um agente — parada, verificação, gates — é a gramática do sistema inteiro.</div>
+    <div class="callout reveal-fade" style="margin-top:20px;max-width:none;font-size:17px"><b>Para o seu time:</b> domine o loop antes do grafo. O que você aprende em um agente — parada, verificação, gates — é a gramática do sistema inteiro.</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 5.2 GRAPH ENGINEERING</span><span class="hb-idx">-- / --</span></div>
 </section>
@@ -1669,15 +1669,15 @@ h1 .e{color:var(--text)}
     <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Três coisas para <span class="a">levar</span></h1>
     <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px"></div>
     <div class="pillgrid" style="grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:26px">
-      <div class="pbox" style="--tc:var(--acc-strong)"><div class="pt">1 &middot; Interação</div><div class="pd">Desenhe os loops de interação humano-agente antes de escalar autonomia.</div></div>
-      <div class="pbox" style="--tc:var(--blue)"><div class="pt">2 &middot; Governança</div><div class="pd">Todo agente em produção vive dentro de um harness — guias, sensores, evals.</div></div>
-      <div class="pbox" style="--tc:var(--warn)"><div class="pt">3 &middot; Aprendizado</div><div class="pd">Meça o que o sistema aprende, não só o que entrega.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--acc-strong)"><div class="pt">1 &middot; Interação</div><div class="pd">Desenhe os loops de interação humano-agente antes de escalar autonomia.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--blue)"><div class="pt">2 &middot; Governança</div><div class="pd">Todo agente em produção vive dentro de um harness — guias, sensores, evals.</div></div>
+      <div class="pbox reveal-fade" style="--tc:var(--warn)"><div class="pt">3 &middot; Aprendizado</div><div class="pd">Meça o que o sistema aprende, não só o que entrega.</div></div>
     </div>
-    <div class="quote-block" style="max-width:880px;margin:0 auto">
+    <div class="quote-block reveal-fade" style="max-width:880px;margin:0 auto">
       <div class="qtext">Times agênticos não são cultura — são arquitetura de loops de interação, governada por harness.</div>
       <div class="qattr">Tese desta palestra</div>
     </div>
-    <div class="callout" style="margin-top:24px;max-width:none;font-size:18px">Obrigado! Continuem a conversa: <b>arquitetura agêntica</b>, <b>loop engineering</b> e <b>grafos de agentes</b> estão só começando.</div>
+    <div class="callout reveal-fade" style="margin-top:24px;max-width:none;font-size:18px">Obrigado! Continuem a conversa: <b>arquitetura agêntica</b>, <b>loop engineering</b> e <b>grafos de agentes</b> estão só começando.</div>
   </div>
   <div class="hud-bottom"><span class="sec">// ENCERRAMENTO</span><span class="hb-idx">-- / --</span></div>
 </section>
@@ -1728,6 +1728,7 @@ function refreshActiveSlide(){
   if(s.id === 'slide-loop-trigger-turn' || s.id === 'slide-loop-trigger-goal' || s.id === 'slide-loop-trigger-time' || s.id === 'slide-loop-trigger-proactive') animateLoopTrigger(s.id);
   if(s.id === 'slide-loop-vulns') animateLoopVulns();
   if(s.id === 'slide-loop-mit') animateLoopMit();
+  if(NEW_SLIDE_ANIMS[s.id]) animateNewSlide(s.id);
   const body = s.querySelector('.body');
   const footer = s.querySelector('.hud-bottom');
   if(!body || !footer) return;
@@ -2071,6 +2072,35 @@ function animateLoopMit(){
   });
   if(callout){ callout.style.animationDelay = (cards.length*70 + 200)+'ms'; callout.classList.add('reveal'); }
 }
+
+// ═══════════════════════════════════════════
+// ANIMAÇÕES DOS NOVOS BLOCOS (04/05 + interação)
+// Stagger genérico reaproveitando reveal-fade
+// ═══════════════════════════════════════════
+function animateStagger(id, sel, base){
+  const slide = document.getElementById(id);
+  if(!slide) return;
+  const els = slide.querySelectorAll(sel);
+  els.forEach(el=>{ el.classList.remove('reveal'); el.style.animationDelay=''; });
+  void slide.offsetWidth;
+  els.forEach((el,i)=>{ el.style.animationDelay = (i*base)+'ms'; el.classList.add('reveal'); });
+}
+const NEW_SLIDE_ANIMS = {
+  'slide-interaction':   { sel: '.pillgrid .pbox, .callout',                     base: 80 },
+  'slide-live-setup':    { sel: '.pillgrid .pbox, .chipflow .c, .callout',       base: 70 },
+  'slide-live-loop':     { sel: '.trig-arch, .callout',                          base: 0  },
+  'slide-live-hitl':     { sel: '.pillgrid .pbox, .equation, .callout',          base: 90 },
+  'slide-live-reset':    { sel: '.pillgrid .pbox, .callout',                     base: 80 },
+  'slide-future-limits': { sel: '.mit-card, .callout',                           base: 70 },
+  'slide-future-roadmap':{ sel: '.pillgrid .pbox, .callout',                     base: 80 },
+  'slide-future-close':  { sel: '.pillgrid .pbox, .quote-block, .callout',       base: 90 },
+};
+function animateNewSlide(id){
+  const cfg = NEW_SLIDE_ANIMS[id];
+  if(!cfg) return;
+  animateStagger(id, cfg.sel, cfg.base);
+}
+
 function updateHudIndex(){
   const tot = String(slides.length - 1).padStart(2,'0');
   const cur = String(idx).padStart(2,'0');
