@@ -90,23 +90,34 @@ h1 .e{color:var(--text)}
 .cmeta .mv{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:500}
 
 /* ── SPEAKER SPLIT ── */
-.split-wrap{flex:1;display:grid;grid-template-columns:1fr 1fr;position:relative}
+.split-wrap{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:min-content;
+  align-content:center;position:relative}
 .split-wrap::before{content:'';position:absolute;left:50%;top:6%;bottom:6%;width:1px;
   background:var(--line2);transform:translateX(-50%)}
-.speaker{display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;
-  padding:0 56px;gap:22px}
-.avatar{width:168px;height:168px;border-radius:24px;background:linear-gradient(150deg,var(--acc-strong),var(--acc));
-  display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;position:relative}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.avatar .initials{font-family:'Montserrat',sans-serif;font-weight:700;font-size:52px;color:var(--surf)}
-.speaker .role{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.26em;
+.speaker{display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:flex-start;
+  padding:0 56px;gap:16px}
+.avatar{position:relative;width:224px;height:224px;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;overflow:hidden;border-radius:30px}
+.avatar::before{content:'';position:absolute;inset:-30%;
+  background:conic-gradient(from 0deg,var(--acc-strong),var(--acc) 25%,var(--warn) 50%,var(--acc) 75%,var(--acc-strong));
+  animation:ring-spin 5s linear infinite}
+.avatar img{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);border-radius:25px;
+  object-fit:cover;display:block;z-index:1}
+.avatar .initials{position:absolute;font-family:'Montserrat',sans-serif;font-weight:700;font-size:64px;
+  color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.speaker .role{font-family:'Roboto Mono',monospace;font-size:13px;letter-spacing:.26em;
   text-transform:uppercase;color:var(--acc)}
-.speaker .name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(28px,2.6vw,38px);
-  line-height:1.1;margin-top:-6px}
-.speaker .bio{font-size:16.5px;line-height:1.65;color:var(--muted);max-width:420px;font-weight:400}
+.speaker .name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(30px,2.8vw,46px);
+  line-height:1.1;margin-top:-4px}
+.speaker .bio{font-size:17.5px;line-height:1.6;color:var(--muted);max-width:520px;font-weight:400}
 .speaker .tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:2px}
 .speaker .tags span{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;
   color:var(--acc-strong);border:1px solid var(--line2);padding:5px 11px;border-radius:20px}
+@keyframes ring-spin{to{transform:rotate(1turn)}}
+@media (prefers-reduced-motion:reduce){
+  .avatar::before{animation:none}
+  .avatar::before{background:linear-gradient(150deg,var(--acc-strong),var(--acc) 50%,var(--warn))}
+}
 
 /* ── AGENDA ── */
 .agenda{max-width:1180px;margin:0 auto;width:100%}
@@ -599,13 +610,13 @@ h1 .e{color:var(--text)}
     <div class="r"><span class="pulse"></span><span class="hud-timer" id="ht0">--:--</span></div>
   </div>
   <div class="body">
-    <div class="tag">HACKTOWN 2026 &nbsp;<span class="dim">// 04–07 set</span></div>
+    <div class="tag">HACKTOWN 2026 &nbsp;<span class="dim">// 04–05 set</span></div>
     <h1>Times Agênticos<br/><span class="e">e</span> <span class="a">Loop Engineering</span></h1>
     <div class="lead">O próximo salto na evolução das equipes de tecnologia.</div>
     <div class="sub">Da squad ágil ao loop agêntico — como estruturar times quando parte da equipe também são agentes.</div>
     <div class="cmeta">
-      <div><div class="ml">Arquitetura</div><div class="mv">Dan · Sensedia</div></div>
-      <div><div class="ml">Liderança Dev</div><div class="mv">Jean · Sensedia</div></div>
+      <div><div class="ml">Arquiteto de Soluções</div><div class="mv">Dan · Sensedia</div></div>
+      <div><div class="ml">Líder de Times</div><div class="mv">Jean · Sensedia</div></div>
     </div>
   </div>
   <div class="hud-bottom"><span class="sec">// COVER</span><span class="hb-idx">-- / --</span></div>
@@ -623,20 +634,20 @@ h1 .e{color:var(--text)}
         <img src="assets/speakers/dan.jpg" alt="Dan Amaral" onerror="this.remove()">
         <span class="initials">DA</span>
       </div>
-      <div class="role">Arquitetura</div>
+      <div class="role">Arquiteto de Soluções</div>
       <div class="name">Dan</div>
-      <div class="bio">Solutions Architect na Sensedia, à frente da direção de IA do time de Soluções. AI Champion e membro do comitê técnico do TDC — constrói pontes entre arquitetura agêntica e prática de engenharia.</div>
+      <div class="bio">Pai, da música, dos animais. Arquiteto de Soluções especialista em integrações e estratégia de inteligência artificial, auxilia clientes a alcançar o resultado desejado habilitando ecossistemas digitais e potencializando negócios através de práticas de integração modernas. Palestrante e criador de conteúdo nas horas vagas, integra o comitê técnico do TDC.</div>
       <div class="tags"><span>Agentic Architecture</span><span>Harness Engineering</span></div>
     </div>
     <div class="speaker">
       <div class="avatar">
-        <img src="assets/speakers/jean.jpg" alt="Jean" onerror="this.remove()">
+        <img src="assets/speakers/jean.jpeg" alt="Jean" onerror="this.remove()">
         <span class="initials">J</span>
       </div>
-      <div class="role">Liderança Dev</div>
+      <div class="role">Líder de times</div>
       <div class="name">Jean</div>
-      <div class="bio">Lidera pessoas e times de desenvolvimento na Sensedia. Traz a visão de gestão e liderança para dentro da conversa sobre agentes — como esses times mudam quando parte da equipe também executa.</div>
-      <div class="tags"><span>Team Topologies</span><span>Liderança de Squads</span></div>
+      <div class="bio">Profissional de tecnologia e desenvolvedor há 10 anos, com 5 anos de experiência em liderança de equipes de tecnologia, arquitetura, integração e inteligência artificial. Atua com foco em cultura, agilidade, formação de líderes técnicos e mentoria para desenvolvimento e realocação profissional.</div>
+      <div class="tags"><span>Squad Leadership</span><span>Product Engineering</span></div>
     </div>
   </div>
   <div class="hud-bottom"><span class="sec">// APRESENTAÇÃO</span><span class="hb-idx">-- / --</span></div>
@@ -677,7 +688,7 @@ h1 .e{color:var(--text)}
         <div class="num">04</div>
         <div class="info">
           <div class="t">Live Coding</div>
-          <div class="d">Uma squad agêntica completa reagindo, ao vivo, a uma mudança regulatória.</div>
+          <div class="d">Uma squad agêntica reagindo, ao vivo, a uma demanda real de desenvolvimento.</div>
         </div>
       </div>
       <div class="arow">
@@ -1086,7 +1097,7 @@ h1 .e{color:var(--text)}
       <div class="pbox reveal-fade"><div class="pt">Correção</div><div class="pd">O humano realimenta o loop; a falha vira contexto.</div></div>
     </div>
 
-    <div class="callout reveal-fade" style="margin-top:24px;max-width:none;font-size:18px;padding:16px 26px">Este é o coração da talk: <b>o loop não é do agente nem do humano — é do par.</b> No próximo bloco, provamos isso ao vivo com um squad agêntico.</div>
+    <div class="callout reveal-fade" style="margin-top:24px;max-width:none;font-size:18px;padding:16px 26px">Este é o coração da talk: <b>o loop não é do agente nem do humano — é do par.</b> Logo em seguida, provamos isso ao vivo com um squad agêntico.</div>
     <div class="sources" style="margin-top:12px">Team Topologies (Skelton/Pais) · Swarm/coordination literature · HITL — LangChain · Anthropic</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 3.2 INTERACTION LOOPS</span><span class="hb-idx">-- / --</span></div>
@@ -1520,102 +1531,6 @@ h1 .e{color:var(--text)}
   </div>
   <div class="hud-bottom"><span class="sec">// 3.7 MITIGAÇÃO</span><span class="hb-idx">-- / --</span></div>
 </section>
-
-<!-- BLOCO 04 · LIVE CODING — o squad como prova viva da tese -->
-
-
-<section class="slide" id="slide-live-setup">
-  <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
-    <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
-  </div>
-  <div class="body" style="justify-content:flex-start;padding-top:8px">
-    <div class="tag">BLOCO 04 &nbsp;<span class="dim">// 4.1 ao vivo — o squad agêntico</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Prova viva: <span class="a">o squad agêntico</span></h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Prometemos lá atrás: redesenhar os loops de interação. Este é o momento de <b style="color:var(--text)">mostrar</b>, não contar.</div>
-    <div class="pillgrid" style="grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px">
-      <div class="pbox reveal-fade" style="--tc:var(--blue)"><div class="pt">Cenário</div><div class="pd">Issue real no app de demo: <b>trocar a cor do botão de compra</b>.</div></div>
-      <div class="pbox reveal-fade" style="--tc:var(--acc-strong)"><div class="pt">Ecossistema</div><div class="pd">Squad com seis papéis — SRE, Engineer, QA, Planner — coordenados por um grafo de estados.</div></div>
-      <div class="pbox reveal-fade" style="--tc:var(--warn)"><div class="pt">Governança</div><div class="pd">Cada agente roda com harness: guias, sensores e <b>gate HITL</b>.</div></div>
-    </div>
-    <div class="grouplabel" style="font-size:14px">o fio da meada — do pedido ao deploy</div>
-    <div class="chipflow">
-      <div class="c reveal-fade">Issue (botão azul → verde)</div><div class="arrow">&rarr;</div>
-      <div class="c reveal-fade">Intake planeja</div><div class="arrow">&rarr;</div>
-      <div class="c reveal-fade">Engineer codifica</div><div class="arrow">&rarr;</div>
-      <div class="c reveal-fade">QA valida</div><div class="arrow">&rarr;</div>
-      <div class="c reveal-fade">SRE observa</div>
-    </div>
-    <div class="callout reveal-fade" style="margin-top:24px;max-width:none;font-size:18px"><b>Repare:</b> em cada transição há um ponto onde um humano pode entrar — é nesses gates que o loop de interação se desenha.</div>
-  </div>
-  <div class="hud-bottom"><span class="sec">// 4.1 LIVE CODING</span><span class="hb-idx">-- / --</span></div>
-</section>
-
-<section class="slide" id="slide-live-loop">
-  <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
-    <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
-  </div>
-  <div class="body" style="justify-content:flex-start;padding-top:8px">
-    <div class="tag">BLOCO 04 &nbsp;<span class="dim">// 4.2 o loop em ação</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">O loop <span class="a">rodando</span></h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Veja o grafo de estados em tempo real: cada agente percebe, decide, age e observa — e para quando a condição de parada bate.</div>
-    <div class="trig-arch reveal-fade">
-      <div class="ta-badge">State Graph · ciclo de vida da issue</div>
-      <div class="ta-flow">
-        <div class="ta-row"><div class="ta-node"><div class="tn-t">Planner</div><div class="tn-s">quebra a issue em tarefas</div></div></div>
-        <div class="ta-conn"><span class="ta-flowdot"></span></div>
-        <div class="ta-row"><div class="ta-node blue"><div class="tn-t">Engineer</div><div class="tn-s">codifica e abre o PR</div></div></div>
-        <div class="ta-conn"><span class="ta-flowdot"></span></div>
-        <div class="ta-row"><div class="ta-node warn"><div class="tn-t">QA</div><div class="tn-s">testa e chama HITL se incerto</div></div></div>
-        <div class="ta-conn"><span class="ta-flowdot"></span></div>
-        <div class="ta-row"><div class="ta-node solid"><div class="tn-t">SRE</div><div class="tn-s">observa telemetria pós-deploy</div></div></div>
-      </div>
-      <div class="ta-note">cada agente tem <b>turn cap</b> e <b>hill-climbing</b>: se a meta anda, continua; se não, devolve ao humano</div>
-    </div>
-    <div class="callout reveal-fade" style="margin-top:20px;max-width:none;font-size:17px">A coordenação não é um pipeline fixo — é um <b>grafo dirigido por eventos</b>, como os diagramas do Bloco 03.</div>
-  </div>
-  <div class="hud-bottom"><span class="sec">// 4.2 LIVE CODING</span><span class="hb-idx">-- / --</span></div>
-</section>
-
-<section class="slide" id="slide-live-hitl">
-  <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
-    <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
-  </div>
-  <div class="body" style="justify-content:center">
-    <div class="tag">BLOCO 04 &nbsp;<span class="dim">// 4.3 o momento humano</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">O <span class="a">momento HITL</span></h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Aqui a tese fica palpável: o agente propõe, o humano decide. O loop de interação <b style="color:var(--text)">acontecendo diante da plateia</b>.</div>
-    <div class="pillgrid" style="grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px">
-      <div class="pbox reveal-fade" style="--tc:var(--blue)"><div class="pt">Aprovar</div><div class="pd">O humano aceita a mudança sugerida — o agente segue para o deploy.</div></div>
-      <div class="pbox reveal-fade" style="--tc:var(--warn)"><div class="pt">Rejeitar e dar feedback</div><div class="pd">O humano aponta o problema — a falha vira contexto novo e o loop reinicia melhor.</div></div>
-    </div>
-    <div class="equation reveal-fade" style="font-size:clamp(28px,3vw,40px);margin-top:6px">Agente <span class="op">propõe</span> &rarr; <span class="hl">Humano decide</span> <span class="op">&rarr;</span> Loop evolui</div>
-    <div class="callout reveal-fade" style="margin-top:26px;max-width:none;font-size:18px"><b>Design, não acidente:</b> o HITL não é uma falha de autonomia — é uma decisão deliberada de onde o humano agrega mais valor.</div>
-  </div>
-  <div class="hud-bottom"><span class="sec">// 4.3 HITL</span><span class="hb-idx">-- / --</span></div>
-</section>
-
-<section class="slide" id="slide-live-reset">
-  <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
-    <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
-  </div>
-  <div class="body" style="justify-content:center">
-    <div class="tag">BLOCO 04 &nbsp;<span class="dim">// 4.4 engenharia de palco</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Seguro para <span class="a">palco</span></h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Demonstração ao vivo exige previsibilidade. Três garantias embutidas no ambiente:</div>
-    <div class="pillgrid" style="grid-template-columns:repeat(3,1fr);gap:16px">
-      <div class="pbox reveal-fade" style="--tc:var(--acc-strong)"><div class="pt">Reset 1-clique</div><div class="pd">Estado do demo volta ao baseline com um único endpoint — recuperação instantânea.</div></div>
-      <div class="pbox reveal-fade" style="--tc:var(--blue)"><div class="pt">Fallback determinístico</div><div class="pd">Sem chave de LLM, o squad usa respostas determinísticas — a demo nunca trava.</div></div>
-      <div class="pbox reveal-fade" style="--tc:var(--warn)"><div class="pt">Observabilidade</div><div class="pd">Telemetria ao vivo mostra cada passo do loop, inclusive o HITL.</div></div>
-    </div>
-    <div class="callout reveal-fade" style="margin-top:22px;max-width:none;font-size:17px"><b>Lição transferível:</b> o mesmo cuidado que protege uma demo protege produção — ambientes reproduzíveis, rollback fácil e observabilidade.</div>
-  </div>
-  <div class="hud-bottom"><span class="sec">// 4.4 ENGENHARIA DE PALCO</span><span class="hb-idx">-- / --</span></div>
-</section>
-
 
 <!-- BLOCO 05 · CONSIDERAÇÕES &amp; FUTURO -->
 
@@ -2087,10 +2002,6 @@ function animateStagger(id, sel, base){
 }
 const NEW_SLIDE_ANIMS = {
   'slide-interaction':   { sel: '.pillgrid .pbox, .callout',                     base: 80 },
-  'slide-live-setup':    { sel: '.pillgrid .pbox, .chipflow .c, .callout',       base: 70 },
-  'slide-live-loop':     { sel: '.trig-arch, .callout',                          base: 0  },
-  'slide-live-hitl':     { sel: '.pillgrid .pbox, .equation, .callout',          base: 90 },
-  'slide-live-reset':    { sel: '.pillgrid .pbox, .callout',                     base: 80 },
   'slide-future-limits': { sel: '.mit-card, .callout',                           base: 70 },
   'slide-future-roadmap':{ sel: '.pillgrid .pbox, .callout',                     base: 80 },
   'slide-future-close':  { sel: '.pillgrid .pbox, .quote-block, .callout',       base: 90 },

@@ -20,8 +20,8 @@ Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologi
 
 | Palestrante | Função & Bio | Tags / Especialidade |
 | :--- | :--- | :--- |
-| **Dan (Danilo Amaral)** | **Solutions Architect @ Sensedia**<br/>À frente da direção de IA do time de Soluções. AI Champion e membro do comitê técnico do TDC — constrói pontes entre arquitetura agêntica e prática de engenharia. | `Agentic Architecture` `Harness Engineering` |
-| **Jean** | **Liderança Dev @ Sensedia**<br/>Lidera pessoas e times de desenvolvimento na Sensedia. Traz a visão de gestão e liderança para dentro da conversa sobre agentes — como esses times mudam quando parte da equipe também executa. | `Team Topologies` `Liderança de Squads` |
+| **Dan (Danilo Amaral)** | **Arquiteto de Soluções @ Sensedia**<br/>Pai, da música, dos animais. Arquiteto de Soluções especialista em integrações e estratégia de inteligência artificial, auxilia clientes a alcançar o resultado desejado habilitando ecossistemas digitais e potencializando negócios através de práticas de integração modernas. Palestrante e criador de conteúdo nas horas vagas, integra o comitê técnico do TDC. | `Agentic Architecture` `Harness Engineering` |
+| **Jean** | **Líder de Times @ Sensedia**<br/>Profissional de tecnologia e desenvolvedor há 10 anos, com 5 anos de experiência em liderança de equipes de tecnologia, arquitetura, integração e inteligência artificial. Atua com foco em cultura, agilidade, formação de líderes técnicos e mentoria para desenvolvimento e realocação profissional. | `Squad Leadership` `Product Engineering` |
 
 ---
 
@@ -50,11 +50,10 @@ Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologi
 - **Vulnerabilidades:** Infinite/Doom loop, Goal drift, Context anxiety, Self-evaluation bias, Context rot, One-shotting.
 - **Padrões de Mitigação:** Stopping conditions, verificação externa, separar quem faz de quem julga, context resets + handoff, guardrails determinísticos, human-in-the-loop, progresso incremental.
 
-### 4. Live Coding — o Squad como prova viva da tese `[CONCLUÍDO]`
-- **Slide-âncora "Interaction Loops: Human ↔ Agent":** ponto de virada da talk — o loop deixa de ser do agente ou do humano e passa a ser **do par**; é aqui que o teaser da demo (bookend) é plantado.
-- **Ao vivo:** Squad Agêntica reagindo a uma issue real (cor do botão no app de demo) — Planner, Engineer, QA e SRE coordenados por um grafo de estados.
-- **Momento HITL:** o humano aprova ou rejeita com feedback; a falha vira contexto novo.
-- **Engenharia de palco:** reset 1-clique, fallback determinístico e observabilidade ao vivo.
+### 4. Live Coding — o Squad como prova viva da tese `[CONCLUÍDO — entrada direta, sem slides de intro]`
+- **Transição direta:** os slides 4.1–4.4 (intro do squad, loop rodando, HITL e engenharia de palco) foram removidos da apresentação — do Bloco 03 sai-se direto para o código ao vivo.
+- **Ao vivo:** Squad Agêntica reagindo a uma demanda real de desenvolvimento (cenário ainda a definir na branch nova da demo) — Planner, Engineer, QA e SRE coordenados por um grafo de estados.
+- **Falado durante a demo (sem slide):** momento HITL (aprovar/rejeitar com feedback) e garantias de palco (reset 1-clique, fallback determinístico, observabilidade ao vivo).
 
 ### 5. Considerações & Futuro `[CONCLUÍDO]`
 - **Limites & riscos:** custo/latência, drift de qualidade, viés do avaliador e complexidade cognitiva.

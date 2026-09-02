@@ -38,7 +38,7 @@ Este documento compila a bibliografia, pesquisas de mercado, frameworks e artigo
 
 ---
 
-## 👥 3. Design de Organização & Metodologias
+## 👥 4. Design de Organização & Metodologias
 
 - **Skelton, M. & Pais, M. (2019):** *Team Topologies: Organizing Business and Technology Teams for Fast Flow*. IT Revolution Press.
   - 4 Tipos de Time: *Stream-aligned*, *Enabling*, *Complicated-subsystem*, *Platform*.
@@ -48,7 +48,7 @@ Este documento compila a bibliografia, pesquisas de mercado, frameworks e artigo
 
 ---
 
-## 🎨 4. Identidade Visual da Apresentação
+## 🎨 5. Identidade Visual da Apresentação
 
 - **Brand:** Sensedia (Light Theme por padrão com opções de Dark Theme Purple Rain).
 - **Tipografia:** `Montserrat` (Títulos e Corpo) e `Roboto Mono` (Tags, Timers, HUD e Código).
