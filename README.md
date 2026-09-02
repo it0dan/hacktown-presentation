@@ -68,8 +68,9 @@ Ao abrir [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/h
 
 | Tecla / Atalho | Ação |
 | :---: | :--- |
-| `➡️` / `Espaço` / `PgDn` | Avança para o próximo slide |
-| `⬅️` / `PgUp` | Volta para o slide anterior |
+| `Clique` | Avança para o próximo slide |
+| `➡️` / `Espaço` / `PgDn` / `⬇️` | Avança para o próximo slide |
+| `⬅️` / `PgUp` / `⬆️` | Volta para o slide anterior |
 | `Home` / `End` | Vai para o primeiro / último slide |
 | `T` | Inicia / Pausa o Cronômetro HUD (45 min) |
 | `R` | Reinicia o Cronômetro |

@@ -268,6 +268,16 @@ h1 .e{color:var(--text)}
 }
 #agentLoopBack.reveal{animation:revealFadeUp .5s cubic-bezier(.22,.68,.32,1) forwards,
   chaseArrow 3.2s ease-in-out infinite}
+/* ciclo do agente (slide 06) mais contemplativo: 1 passo a cada 2s (4 × 8s) */
+#slide-agent-def .loopbox.reveal{animation:revealFadeUp .5s cubic-bezier(.22,.68,.32,1) forwards,
+  chaseGlow 8s ease-in-out infinite}
+#slide-agent-def .flowarrow.reveal{animation:revealFadeUp .5s cubic-bezier(.22,.68,.32,1) forwards,
+  chaseArrow 8s ease-in-out infinite}
+#slide-agent-def #agentLoopBack.reveal{animation:revealFadeUp .5s cubic-bezier(.22,.68,.32,1) forwards,
+  chaseArrow 8s ease-in-out infinite}
+/* loop-def (slide 09): uma única voz — o ticker de estados (2s) governa; auras de caça silenciadas */
+#slide-loop-def .loopbox.reveal{animation:revealFadeUp .5s cubic-bezier(.22,.68,.32,1) forwards}
+#slide-loop-def .flowarrow.reveal{animation:revealFadeUp .5s cubic-bezier(.22,.68,.32,1) forwards}
 .hcenter{display:flex;flex-direction:column;align-items:center;gap:0}
 .model-box{border:2.5px solid var(--acc-strong);border-radius:14px;padding:26px 38px;text-align:center;
   background:var(--surf-2);min-width:200px}
@@ -320,7 +330,6 @@ h1 .e{color:var(--text)}
 .eterm{font-family:'Roboto Mono',monospace;font-size:16px;color:var(--muted);padding:3px 0}
 .eterm.now{color:var(--warn);font-weight:700;font-size:19px}
 .eterm.future{color:var(--acc-strong);font-weight:700;font-size:19px}
-.eterm .etag{font-size:10.5px;color:var(--ref);margin-left:10px;font-style:italic;letter-spacing:.02em}
 .earrow{color:var(--ref);font-size:15px;padding:2px 0}
 
 .split2{display:grid;grid-template-columns:0.85fr 1.4fr;gap:56px;margin-top:20px;align-items:start}
@@ -934,9 +943,9 @@ h1 .e{color:var(--text)}
       <div class="flowarrow reveal-fade">→</div>
       <div class="loopbox reveal-fade"><div class="ht">OBSERVA</div><div class="hd">Vê o resultado da própria ação e decide o próximo passo.</div></div>
     </div>
-    <div id="agentLoopBack" class="reveal-fade" style="text-align:center;font-family:'Roboto Mono',monospace;font-size:17px;color:var(--warn);margin-top:16px">↺&nbsp; repete até atingir o objetivo — ou até parar</div>
+    <div id="agentLoopBack" class="reveal-fade" style="text-align:center;font-family:'Roboto Mono',monospace;font-size:17px;color:var(--warn);margin-top:16px;margin-bottom:24px">↺&nbsp; repete até atingir o objetivo — ou até parar</div>
 
-    <div class="callout" style="margin-top:34px;max-width:none;font-size:20px;padding:20px 28px"><b>Agente de IA</b>: um sistema que usa um LLM pra decidir suas próprias ações, em loop, até resolver o objetivo — não um fluxo fixo de passos pré-programados.</div>
+    <div class="callout" style="margin-top:auto;max-width:none;font-size:20px;padding:20px 28px;text-align:center"><b>Agente de IA</b>: um sistema que usa um LLM pra decidir suas próprias ações, em loop, até resolver o objetivo — não um fluxo fixo de passos pré-programados.</div>
 
     <div class="sources" style="margin-top:20px">Anthropic, "Building Effective Agents", dez/2024 · Google, "Agents" whitepaper, 2024</div>
   </div>
@@ -953,25 +962,24 @@ h1 .e{color:var(--text)}
     <div class="tag">BLOCO 02 &nbsp;<span class="dim">// 2.2 o que é harness engineering</span></div>
     <h1 style="font-size:clamp(36px,4.2vw,56px);margin-bottom:34px">O que é <span class="a">Harness Engineering</span>?</h1>
 
-    <div class="split2" style="gap:80px">
-      <div>
+    <div class="split2" style="gap:80px;flex:1;align-items:stretch">
+      <div style="display:flex;flex-direction:column">
         <div class="grouplabel" style="margin:0 0 16px;font-size:14px">evolução da disciplina</div>
-        <div class="evochain" style="font-size:1.15em" id="evoChain">
+        <div class="evochain" style="font-size:1.15em;flex:1;justify-content:space-evenly" id="evoChain">
           <div class="signal-pulse" id="evoSignal"></div>
           <div class="eterm" style="font-size:19px">prompt engineering</div>
           <div class="earrow" style="font-size:18px">↓</div>
           <div class="eterm" style="font-size:19px">context engineering</div>
           <div class="earrow" style="font-size:18px">↓</div>
-          <div class="eterm now" style="font-size:23px">harness engineering<span class="etag" style="font-size:13px">você está aqui</span></div>
+          <div class="eterm now" style="font-size:23px">harness engineering</div>
           <div class="earrow" style="font-size:18px">↓</div>
-          <div class="eterm future" style="font-size:23px">loop engineering<span class="etag" style="font-size:13px">bloco 03</span></div>
+          <div class="eterm future" style="font-size:23px">loop engineering</div>
           <div class="earrow" style="font-size:18px">↓</div>
-          <div class="eterm future" style="font-size:23px">graph engineering<span class="etag" style="font-size:13px">bloco 05</span></div>
+          <div class="eterm future" style="font-size:23px">graph engineering</div>
         </div>
-        <div class="sub" style="margin-top:26px;max-width:400px;font-size:16px">Nenhuma fase substitui a anterior — cada uma carrega a de baixo dentro de si.</div>
       </div>
 
-      <div>
+      <div style="display:flex;flex-direction:column;justify-content:center">
         <div class="grouplabel" style="margin:0 0 16px;font-size:14px">definição</div>
         <div class="sub" style="max-width:560px;font-size:20px;line-height:1.7;color:var(--text)">Harness é tudo que envolve o modelo pra transformar previsão de texto em comportamento confiável em produção: prompts, ferramentas, contexto, guardrails, avaliação, observabilidade.</div>
         <div class="equation" style="font-size:clamp(28px,3vw,40px);margin-top:36px">Agente <span class="op">=</span> Modelo <span class="op">+</span> <span class="hl">Harness</span></div>
@@ -979,7 +987,7 @@ h1 .e{color:var(--text)}
       </div>
     </div>
 
-    <div class="callout" style="margin-top:40px;max-width:none;font-size:19px;padding:18px 26px">O loop do agente (tela anterior) só é confiável em produção se houver harness em volta dele — é isso que o resto do Bloco 02 vai destrinchar.</div>
+    <div class="callout" style="margin-top:auto;max-width:none;font-size:19px;padding:18px 26px;text-align:center">O loop do agente só é confiável em produção se houver harness em volta dele — é isso que o resto do Bloco 02 vai destrinchar.</div>
 
     <div class="sources" style="margin-top:20px">Böckeler / Thoughtworks, "Harness Engineering"</div>
   </div>
@@ -992,7 +1000,7 @@ h1 .e{color:var(--text)}
     <div class="l"><span>HACKTOWN://LIVE</span><span>2026.09 · TDC STAGE</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
-  <div class="body" style="justify-content:flex-start;padding-top:8px">
+  <div class="body" style="justify-content:center">
     <div class="tag">BLOCO 02 &nbsp;<span class="dim">// 2.3 arquitetura harness</span></div>
     <div class="equation">Agente <span class="op">=</span> Modelo <span class="op">+</span> <span class="hl">Harness</span></div>
 
@@ -1002,7 +1010,7 @@ h1 .e{color:var(--text)}
       <div class="hf-body">
         <div class="hflow" id="hflowHarness">
           <div class="hgroup" id="hgGuias">
-            <div class="hgroup-label">Guias — feedforward</div>
+            <div class="hgroup-label">Guias (feedforward)</div>
             <div class="hbox"><div class="ht">PROMPTS &amp; SPECS</div><div class="hd">O que o agente já sabe antes de agir.</div></div>
             <div class="hbox"><div class="ht">CONTRATOS &amp; SCHEMAS</div><div class="hd">O formato que a saída precisa respeitar.</div></div>
             <div class="hbox"><div class="ht">EXEMPLOS &amp; CONTEXTO</div><div class="hd">O que orienta a decisão em tempo real.</div></div>
@@ -1010,20 +1018,20 @@ h1 .e{color:var(--text)}
           <div class="hcenter">
             <div class="model-box" id="hgModelo">
               <div class="mt">MODELO</div>
-              <div class="ms">camada de inferência — onde a decisão acontece</div>
+              <div class="ms">camada de inferência, onde a decisão acontece</div>
             </div>
             <div class="hdown-wire"></div>
             <div class="evals-box" id="hgEvals">
               <div class="et">EVALS</div>
-              <div class="es">avaliação de assertividade — fecha o loop</div>
+              <div class="es">avaliação de assertividade que fecha o loop</div>
               <div class="ex">trajectory evals · LLM-as-judge · guardrails determinísticos</div>
             </div>
           </div>
           <div class="hgroup right" id="hgSensores">
-            <div class="hgroup-label">Sensores — feedback</div>
+            <div class="hgroup-label">Sensores (feedback)</div>
             <div class="hbox"><div class="ht">OBSERVABILITY</div><div class="hd">Traces, spans, métricas do que aconteceu.</div></div>
             <div class="hbox"><div class="ht">GUARDRAILS &amp; TESTES</div><div class="hd">Contratos de saída verificados de fato.</div></div>
-            <div class="hbox"><div class="ht">LLM-AS-JUDGE</div><div class="hd">Sensor semântico — julga o que é subjetivo.</div></div>
+            <div class="hbox"><div class="ht">LLM-AS-JUDGE</div><div class="hd">Sensor semântico, julga o que é subjetivo.</div></div>
             <div class="hbox"><div class="ht">HITL</div><div class="hd">Revisão humana pega o que o automático não pega.</div></div>
           </div>
           <div class="hfb-row" id="hfbRow"></div>
@@ -1032,9 +1040,6 @@ h1 .e{color:var(--text)}
       </div>
       <div class="hf-band bottom"><span>G · Governance</span><span class="r">HITL, políticas, guardrails</span></div>
     </div>
-
-    <div class="callout" style="margin-top:10px;max-width:none;font-size:17px;padding:15px 24px"><b>Guias</b> reduzem erro antes da ação. <b>Sensores</b> reduzem dano depois. Quando um eval falha, a falha vira contexto novo para os Guias — o harness aprende com o próprio erro.</div>
-      <div class="callout" style="margin-top:16px;max-width:none;font-size:16px"><b>Para o seu time:</b> harness é o custo de governança que líderes aceitam — sem ele, autonomia vira risco em vez de alavanca.</div>
 </div>
   <div class="hud-bottom"><span class="sec">// 2.3 ARQUITETURA HARNESS</span><span class="hb-idx">-- / --</span></div>
 </section>
@@ -1048,23 +1053,22 @@ h1 .e{color:var(--text)}
   <div class="body" style="justify-content:center">
     <div class="tag">BLOCO 03 &nbsp;<span class="dim">// 3.1 o que é loop engineering</span></div>
     <h1 style="font-size:clamp(36px,4.2vw,56px);margin-bottom:10px">O que é <span class="a">Loop Engineering</span>?</h1>
-    <div class="sub" style="margin-bottom:26px;font-size:19px;max-width:920px">O harness envolve o modelo. O loop engineering projeta <b style="color:var(--text)">como o agente itera até parar</b> — e o que acontece em cada volta.</div>
+    <div class="sub" style="margin-bottom:36px;font-size:19px;max-width:920px"><b>Loop engineering</b> é a prática de projetar os ciclos de trabalho que o agente repete até uma <b style="color:var(--text)">condição de parada</b>: a cada volta ele observa o estado, decide, age e verifica o próprio resultado antes de continuar. O modelo só prevê; é o loop que transforma repetição em trabalho confiável.</div>
 
-    <div class="grouplabel" style="margin:0 0 14px;font-size:14px">o loop do agente, agora com foco em parar</div>
-    <div id="loopDefRow" style="display:flex;align-items:stretch;gap:14px">
-      <div class="loopbox reveal-fade"><div class="ht">PERCEBE</div><div class="hd">Lê o estado atual — input, contexto, resultado da última ação.</div></div>
+    <div id="loopDefRow" style="display:flex;align-items:stretch;gap:18px">
+      <div class="loopbox reveal-fade"><div class="ht">PERCEBE</div><div class="hd">Lê o estado atual: input, contexto, resultado da última ação.</div></div>
       <div class="flowarrow reveal-fade">→</div>
       <div class="loopbox reveal-fade"><div class="ht">RACIOCINA</div><div class="hd">O modelo decide qual ação faz sentido agora.</div></div>
       <div class="flowarrow reveal-fade">→</div>
-      <div class="loopbox reveal-fade"><div class="ht">AGE</div><div class="hd">Chama uma ferramenta, escreve, executa — efeito no mundo.</div></div>
+      <div class="loopbox reveal-fade"><div class="ht">AGE</div><div class="hd">Chama uma ferramenta, escreve, executa e produz efeito no mundo.</div></div>
       <div class="flowarrow reveal-fade">→</div>
-      <div class="loopbox reveal-fade"><span class="stopmark">⏹ STOP</span><span class="okmark">✓ OK</span><div class="ht">OBSERVA</div><div class="hd">Vê o resultado e decide o próximo passo — <b>ou para</b>.</div></div>
+      <div class="loopbox reveal-fade"><span class="stopmark">⏹ STOP</span><span class="okmark">✓ OK</span><div class="ht">OBSERVA</div><div class="hd">Vê o resultado e decide o próximo passo, <b>ou para</b>.</div></div>
     </div>
-    <div class="stopbadge reveal-fade"><span class="dot"></span><span class="sb-arrow">↻</span>&nbsp;repete até atingir a <b>condição de parada</b> (stop condition)</div>
+    <div class="stopbadge reveal-fade" style="align-self:center;margin-top:30px;text-align:center"><span class="dot"></span><span class="sb-arrow">↻</span>&nbsp;repete até atingir a <b>condição de parada</b> (stop condition)</div>
 
-    <div class="callout" style="margin-top:30px;max-width:none;font-size:19px;padding:18px 26px"><b>Loop engineering</b> é a disciplina de projetar esses ciclos de repetição — <b>quando</b> o agente roda, <b>como</b> ele verifica o próprio trabalho e <b>quando</b> ele para — para que a autonomia seja previsível e segura.</div>
+    <div class="callout" style="margin-top:40px;max-width:none;font-size:19px;padding:18px 26px;text-align:center"><b>Loop engineering</b> é a disciplina de projetar esses ciclos de repetição (<b>quando</b> o agente roda, <b>como</b> ele verifica o próprio trabalho e <b>quando</b> ele para) para que a autonomia seja previsível e segura.</div>
 
-    <div class="sources" style="margin-top:18px">Claude/Anthropic, "Loop engineering: getting started with loops", jun/2026 · LangChain, "The Art of Loop Engineering", jun/2026 · swyx, "loopcraft"</div>
+    <div class="sources" style="margin-top:26px">Claude/Anthropic, "Loop engineering: getting started with loops", jun/2026 · LangChain, "The Art of Loop Engineering", jun/2026 · swyx, "loopcraft"</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 3.1 O QUE É LOOP ENGINEERING</span><span class="hb-idx">-- / --</span></div>
 </section>
@@ -1818,15 +1822,15 @@ function animateAgentDef(){
   children.forEach((el,i)=>{
     const entranceDelay = 260 + i*90; // entra depois dos pboxes
     if(el.classList.contains('loopbox')){
-      el.style.animationDelay = `${entranceDelay}ms, ${loopboxIdx*800}ms`;
+      el.style.animationDelay = `${entranceDelay}ms, ${loopboxIdx*2000}ms`;
       loopboxIdx++;
     } else {
-      el.style.animationDelay = `${entranceDelay}ms, ${(loopboxIdx-1)*800 + 400}ms`;
+      el.style.animationDelay = `${entranceDelay}ms, ${(loopboxIdx-1)*2000 + 1000}ms`;
     }
     el.classList.add('reveal');
   });
 
-  loopBack.style.animationDelay = `${260 + children.length*90}ms, 2800ms`;
+  loopBack.style.animationDelay = `${260 + children.length*90}ms, 7000ms`;
   loopBack.classList.add('reveal');
 }
 // ═══════════════════════════════════════════
@@ -1904,14 +1908,13 @@ function animateLoopDef(){
   loopDefTimers.forEach(t=>clearTimeout(t));
   loopDefTimers = [];
 
-  const stepMs = 620;
+  const stepMs = 2000;
   const startDelay = children.length*90 + 260;
   let cycle = 0;
 
   function runCycle(){
     if(!slide.classList.contains('active')) return; // para quando sai do slide
     const outcome = (cycle % 2 === 0) ? 'stop' : 'success';
-    if(badge){ badge.classList.toggle('success', outcome==='success'); }
     // recomeça limpo: remove o estado anterior do box OBSERVA
     boxes.forEach(b=>b.classList.remove('stop','success'));
     boxes.forEach((box,i)=>{
@@ -1925,17 +1928,21 @@ function animateLoopDef(){
             if(!slide.classList.contains('active')) return;
             box.classList.remove('travel');
             box.classList.add(outcome);
-            if(outcome==='stop' && badge){ badge.classList.add('reveal'); }
-          }, 420));
+            if(badge){
+              // badge só existe quando a condição de parada acontece; sucesso o dissolve de volta ao estado inicial
+              badge.classList.toggle('success', outcome==='success');
+              badge.classList.toggle('reveal', outcome==='stop');
+            }
+          }, 1300));
         }
       }, t));
     });
     cycle++;
-    loopDefTimer = setTimeout(runCycle, boxes.length*stepMs + 900);
+    loopDefTimer = setTimeout(runCycle, boxes.length*stepMs + 2300);
   }
 
   loopDefTimer = setTimeout(runCycle, startDelay);
-  if(callout){ callout.style.animationDelay = (startDelay + boxes.length*stepMs + 700)+'ms'; callout.classList.add('reveal'); }
+  if(callout){ callout.style.animationDelay = (startDelay + boxes.length*stepMs + 2300)+'ms'; callout.classList.add('reveal'); }
 }
 function animateLoopStack(id){
   const slide = document.getElementById(id);
@@ -2055,8 +2062,8 @@ function toggleBlackout(){
 // KEYBOARD
 // ═══════════════════════════════════════════
 document.addEventListener('keydown', e=>{
-  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){ e.preventDefault(); next(); }
-  else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); prev(); }
+  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'||e.key==='ArrowDown'){ e.preventDefault(); next(); }
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='ArrowUp'){ e.preventDefault(); prev(); }
   else if(e.key==='Home') show(0);
   else if(e.key==='End') show(slides.length-1);
   else if(e.key==='t'||e.key==='T'){ e.preventDefault(); toggleTimer(); }
@@ -2068,6 +2075,14 @@ document.addEventListener('keydown', e=>{
     if(!document.fullscreenElement) document.documentElement.requestFullscreen();
     else document.exitFullscreen();
   }
+});
+
+// avanço por clique (botão esquerdo; ignora seleção de texto em andamento)
+document.addEventListener('click', e=>{
+  if(e.button!==0 || e.defaultPrevented) return;
+  const sel = window.getSelection();
+  if(sel && String(sel).length) return; // usuário selecionando/copiando texto
+  next();
 });
 
 // ═══════════════════════════════════════════
