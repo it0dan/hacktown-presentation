@@ -1,7 +1,7 @@
 # 🎤 CUE-SHEET — Times Agênticos e Loop Engineering
 
 **HackTown 2026 · 04/09 · 14:30 · TDC Stage (Palco 1) · ETE Santa Rita do Sapucaí - MG**
-**Slot: 45 min · Deck: 17 slides (HUD 00–16) · Live coding: Bloco 04, sem slide dedicado**
+**Slot: 45 min · Deck: 18 slides (HUD 00–17) · Live coding: Bloco 04, com card de transição (HUD 16)**
 
 ---
 
@@ -22,8 +22,9 @@
 | 10 | Interaction Loops — ⭐ coração da talk | 3′ | 25′ | ________ |
 | 11–14 | Triggers: Turn / Goal / Time / Proactive (ritmo, ~30″ cada) | 2′30″ | 27′30″ | ________ |
 | 15 | Quebras & Mitigação — espelho esquerda→direita + ponte pro demo | 2′30″ | 30′ | ________ |
-| — | **LIVE CODING — Bloco 04** (entrar **imediatamente** após 15) | 12′ | 42′ | ________ |
-| 16 | Encerramento — **mensagem única**: "Desenhe os loops. Governe com harness. Mantenha o humano no loop." + obrigado | 2′ | 44′ | ________ |
+| 16 | Card LIVE — "Padrões no papel não bastam. Demo ao vivo." (voz livre) | 0′30″ | 30′30″ | ________ |
+| — | **LIVE CODING — Bloco 04** (trocar de janela **com o card 16 na tela**) | 11′30″ | 42′ | ________ |
+| 17 | Encerramento — **mensagem única**: "Desenhe os loops. Governe com harness. Mantenha o humano no loop." + obrigado | 2′ | 44′ | ________ |
 
 > ⚠️ Budget de segurança: ~30″ holgados no acumulado (44′30″/45′). Timer da HUD conta 45:00 regressivo — conferir em 25′ (estando no 14/Proactive ou antes, vai bem; além disso, encurtar o demo, não a teoria).
 
@@ -41,9 +42,9 @@
 
 **14 → 15 (proactive → quebras):** "Rotinas sempre-on soam bonitas. Agora, o que acontece quando elas dão errado — e o que as segura."
 
-**15 → LIVE (frase de entrada):** *"Padrões no papel não bastam. Vamos ver isso rodando de verdade — uma squad agêntica respondendo a uma demanda real, agora mesmo."* → trocar de janela/app **antes de virar o slide** (ou colapsar o navegador) para não mostrar o desktop.
+**15 → 16 (card LIVE):** avançar e deixar a frase cair sobre o card: *"Padrões no papel não bastam…"* → trocar de janela/app **com o card 16 na tela** para não mostrar o desktop.
 
-**LIVE → 16 (retorno):** volta o navegador no HUD, avança pro 16. "Se tudo isso parece promissor, deixem-me ser honesto(a) sobre o preço — e sobre o que não se delega."
+**LIVE → 17 (retorno):** volta o navegador no card (16), avança pro 17. "Se tudo isso parece promissor, deixem-me ser honesto(a) sobre o preço — e sobre o que não se delega."
 
 ---
 
