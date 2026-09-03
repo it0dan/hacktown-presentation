@@ -348,7 +348,7 @@ h1 .e{color:var(--text)}
   font-size:clamp(13.5px,1.5vw,20px);color:var(--muted)}
 .fin-thanks{margin-top:clamp(24px,5vh,52px);font-family:'Roboto Mono',monospace;font-size:clamp(10.5px,1vw,13px);
   letter-spacing:.22em;text-transform:uppercase;color:var(--ref)}
-#slide-future-limits .reveal{animation:heroSpring .85s cubic-bezier(.2,1.25,.35,1) both}
+#slide-future-limits .reveal,#slide-live-demo .reveal{animation:heroSpring .85s cubic-bezier(.2,1.25,.35,1) both}
 @keyframes heroSpring{
   0%{opacity:0;transform:translateY(30px) scale(.96);filter:blur(12px)}
   60%{filter:blur(0)}
@@ -1417,6 +1417,23 @@ h1 .e{color:var(--text)}
   <div class="hud-bottom"><span class="sec">// 3.6 QUEBRAS &amp; MITIGAÇÃO</span><span class="hb-idx">-- / --</span></div>
 </section>
 
+<!-- ─── 16 · LIVE CODING — card de transição para a demo ─── -->
+<section class="slide" id="slide-live-demo">
+  <div class="hud-top">
+    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
+    <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
+  </div>
+  <div class="body" style="justify-content:center;align-items:center;text-align:center">
+    <div class="fin-hero">
+      <div class="hx-line reveal-fade">Padrões no papel <span class="hx-l1">não bastam</span>.</div>
+      <div class="hx-line reveal-fade"><span class="hx-l3">Demo ao vivo</span>.</div>
+    </div>
+    <div class="fin-sub reveal-fade">squad agêntica · planner · engineer · qa · sre — reagindo a uma demanda real, agora</div>
+    <div class="fin-thanks reveal-fade">reset 1-clique &middot; fallback determinístico &middot; observabilidade ao vivo</div>
+  </div>
+  <div class="hud-bottom"><span class="sec">// 4. LIVE CODING</span><span class="hb-idx">-- / --</span></div>
+</section>
+
 <section class="slide" id="slide-future-limits">
   <div class="hud-top">
     <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
@@ -1838,6 +1855,7 @@ function animateStagger(id, sel, base){
 }
 const NEW_SLIDE_ANIMS = {
   'slide-interaction':   { sel: '.pillgrid .pbox, .callout',                     base: 80 },
+  'slide-live-demo':     { sel: '.hx-line, .fin-sub, .fin-thanks', base: 170 },
   'slide-future-limits': { sel: '.hx-line, .fin-sub, .fin-thanks', base: 170 },
 };
 function animateNewSlide(id){
