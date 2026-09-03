@@ -4,10 +4,12 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Times Agênticos e Loop Engineering — Hacktown 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+/* ── FONTES LOCAL (offline-proof, sem depender de CDN) ── */
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url('assets/fonts/montserrat-var.woff2') format('woff2')}
+@font-face{font-family:'Roboto Mono';font-style:normal;font-weight:300 500;font-display:swap;
+  src:url('assets/fonts/robotomono-var.woff2') format('woff2')}
 :root{
   /* ── Sensedia brand — LIGHT ── */
   --bg:        #F9F9F9;   /* High Light */
@@ -193,11 +195,6 @@ h1 .e{color:var(--text)}
 .quote-corner{position:absolute;right:0;bottom:48px}
 
 /* ── SDLC CIRCLE ── */
-.sdlc-key{display:flex;gap:12px;align-items:center;margin-bottom:16px}
-.sdlc-tag{font-family:'Roboto Mono',monospace;font-weight:700;font-size:13.5px;letter-spacing:.16em;
-  padding:8px 16px;border-radius:20px;color:#fff;flex-shrink:0}
-.sdlc-tag.dev{background:var(--blue)}
-.sdlc-tag.ops{background:var(--warn)}
 .sdlc-split{display:grid;grid-template-columns:auto 1fr;gap:64px;margin-top:10px;align-items:center}
 .sdlc-split svg{display:block;width:760px;height:auto}
 .sdlc-caption{display:flex;flex-direction:column;gap:24px}
@@ -208,11 +205,6 @@ h1 .e{color:var(--text)}
 .sdlc-arc{stroke-dasharray:5 7;animation:sdlcFlow 1.4s linear infinite}
 @keyframes sdlcFlow{to{stroke-dashoffset:-24}}
 
-/* ── CHIPFLOW (mini sequência com setas, reutilizável) ── */
-.chipflow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:18px}
-.chipflow .c{font-family:'Roboto Mono',monospace;font-weight:500;font-size:15.5px;
-  border:1px solid var(--line2);border-radius:20px;padding:10px 20px;color:var(--text);background:var(--surf-2)}
-.chipflow .arrow{color:var(--ref);font-size:18px}
 
 /* ── EQUAÇÃO DE DESTAQUE ── */
 .equation{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(38px,4.6vw,64px);
@@ -345,10 +337,25 @@ h1 .e{color:var(--text)}
 
 .split2{display:grid;grid-template-columns:0.85fr 1.4fr;gap:56px;margin-top:20px;align-items:start}
 
-/* ── DECO ── */
-.deco{position:absolute;top:60px;right:72px;font-family:'Roboto Mono',monospace;font-size:10.5px;
-  line-height:1.7;color:var(--muted);opacity:.5;text-align:right;pointer-events:none}
-.deco .v{color:var(--acc)}
+
+/* ── Encerramento — mensagem única em três batidas ── */
+.fin-hero{display:flex;flex-direction:column;gap:clamp(6px,1.2vh,14px);align-items:center}
+.hx-line{font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:-.015em;
+  font-size:clamp(36px,4.9vw,70px);line-height:1.14;color:var(--text);white-space:nowrap}
+.hx-l1,.hx-l2{color:var(--acc-strong)}
+.hx-l3{color:var(--warn)}
+.fin-sub{margin-top:clamp(14px,2.6vh,30px);font-family:'Roboto Mono',monospace;font-style:italic;
+  font-size:clamp(13.5px,1.5vw,20px);color:var(--muted)}
+.fin-thanks{margin-top:clamp(24px,5vh,52px);font-family:'Roboto Mono',monospace;font-size:clamp(10.5px,1vw,13px);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ref)}
+#slide-future-limits .reveal{animation:heroSpring .85s cubic-bezier(.2,1.25,.35,1) both}
+@keyframes heroSpring{
+  0%{opacity:0;transform:translateY(30px) scale(.96);filter:blur(12px)}
+  60%{filter:blur(0)}
+  82%{transform:translateY(-4px) scale(1.006)}
+  100%{opacity:1;transform:none;filter:blur(0)}
+}
+@media (max-width:1100px){.hx-line{white-space:normal}}
 
 /* ── BLACKOUT / BREAK ── */
 #blackout{position:fixed;inset:0;background:var(--bg);z-index:500;display:none;
@@ -398,109 +405,110 @@ h1 .e{color:var(--text)}
 .loopbox.success .okmark{opacity:1;transform:translateY(0)}
 .loopbox.success .stopmark{opacity:0;transform:translateY(4px)}
 
-/* ── Diagrama de loop (estilo harness) ── */
-.loop-diagram{position:relative;border:1.5px dashed var(--line2);border-radius:16px;
-  padding:26px 30px 20px;margin-top:6px;background:var(--surf)}
-.loop-diagram .ld-badge{position:absolute;top:-15px;left:24px;background:var(--surf-2);
-  border:1px solid var(--line2);border-radius:8px;padding:5px 16px;
-  font-family:'Montserrat',sans-serif;font-weight:700;font-style:italic;font-size:14px;color:var(--acc-strong)}
-.loop-diagram .ld-flow{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
-.ld-node{border:2px solid var(--acc-strong);border-radius:12px;padding:14px 20px;text-align:center;
-  background:var(--surf-2);min-width:120px}
-.ld-node .ln-t{font-family:'Montserrat',sans-serif;font-weight:800;font-size:17px;color:var(--acc-strong);letter-spacing:.02em}
-.ld-node .ln-s{font-size:12px;color:var(--muted);margin-top:4px;font-style:italic;line-height:1.3}
-.ld-node.warn{border-color:var(--warn)}
-.ld-node.warn .ln-t{color:var(--warn)}
-.ld-node.blue{border-color:var(--blue)}
-.ld-node.blue .ln-t{color:var(--blue)}
-.ld-node.model{border-width:2.5px;min-width:150px}
-.ld-node.model .ln-t{font-size:20px}
-.ld-arrow{display:flex;flex-direction:column;align-items:center;color:var(--ref);font-size:22px;line-height:1}
-.ld-arrow .la-label{font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--ref);
-  margin-top:4px;text-transform:uppercase}
-.ld-arrow.back{color:var(--warn)}
-.ld-arrow.back .la-label{color:var(--warn)}
-.ld-arrow.blue{color:var(--blue)}
-.ld-arrow.blue .la-label{color:var(--blue)}
-.ld-arrow .la-ic{animation:ldPulse 2.2s ease-in-out infinite}
-@keyframes ldPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}}
-.ld-arrow.back .la-ic{animation:ldPulseBack 2.2s ease-in-out infinite}
-@keyframes ldPulseBack{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}}
-.ld-note{text-align:center;font-family:'Roboto Mono',monospace;font-size:12px;font-style:italic;
-  color:var(--muted);margin-top:16px;padding-top:12px;border-top:1px dashed var(--line2)}
-.ld-note b{color:var(--warn);font-style:normal}
 
-/* ── Cards de loop (pilha) — versão rica ── */
-.loopstack{display:flex;flex-direction:column;gap:0;position:relative;margin-top:8px}
-.lstack-row{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
-.lstack-row + .lstack-row{margin-top:26px}
-.loopcard{border:2px solid var(--line2);border-radius:16px;padding:22px 26px;background:var(--surf-2);
-  position:relative;display:flex;flex-direction:column}
-.loopcard .lc-tag{font-family:'Roboto Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ref);margin-bottom:6px}
-.loopcard .lc-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:26px;margin-bottom:4px}
-.loopcard .lc-sub{font-size:15px;color:var(--muted);line-height:1.55;margin-bottom:14px}
-.loopcard .lc-impact{font-family:'Roboto Mono',monospace;font-size:12.5px;letter-spacing:.06em;
-  color:var(--acc-strong);border-top:1px dashed var(--line2);padding-top:10px;margin-top:auto}
-.loopcard .lc-impact b{color:var(--acc-strong)}
-.loopcard .lc-num{position:absolute;top:-14px;left:18px;background:var(--acc-strong);color:#fff;
-  font-family:'Roboto Mono',monospace;font-weight:700;font-size:13px;border-radius:8px;padding:3px 12px}
-.loopcard:nth-child(2) .lc-num{background:var(--warn)}
-.loopcard:nth-child(2) .lc-impact b{color:var(--warn)}
-.loopcard .lc-impact .w{color:var(--warn)}
-
-/* mini-diagrama dentro do loopcard */
-.lcdiag{display:flex;align-items:center;gap:8px;margin:6px 0 14px;flex-wrap:wrap}
-.lcdiag .node{font-family:'Roboto Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.04em;
-  border:1.5px solid var(--acc-strong);border-radius:8px;padding:6px 10px;color:var(--acc-strong);background:var(--surf)}
-.lcdiag .node.warn{border-color:var(--warn);color:var(--warn)}
-.lcdiag .node.blue{border-color:var(--blue);color:var(--blue)}
-.lcdiag .arr{color:var(--ref);font-size:15px}
-.lcdiag .arr.back{color:var(--warn)}
-.lcdiag .arr.blue{color:var(--blue)}
 
 /* ── Tipos por trigger — diagrama visual ── */
 
-/* grid de vulnerabilidades — cards maiores com animação */
-.vuln-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
-.vuln-card{border-top:4px solid var(--warn);background:var(--surf-2);border-radius:0 12px 12px 12px;
-  padding:22px 24px;position:relative;transition:transform .25s ease, box-shadow .25s ease}
-.vuln-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.12)}
-.vuln-card .vc-ic{font-size:26px;margin-bottom:10px;display:block}
-.vuln-card .vc-name{font-family:'Roboto Mono',monospace;font-weight:700;font-size:16px;letter-spacing:.04em;
-  color:var(--warn);text-transform:uppercase;margin-bottom:10px}
-.vuln-card .vc-desc{font-size:15px;color:var(--text);line-height:1.55;margin-bottom:12px}
-.vuln-card .vc-map{font-family:'Roboto Mono',monospace;font-size:11.5px;font-style:italic;color:var(--ref);
-  border-top:1px dashed var(--line2);padding-top:10px;line-height:1.55}
-.vuln-card .vc-map b{color:var(--muted);font-style:normal}
-.vuln-card.reveal{animation:revealFadeUp .5s cubic-bezier(.22,.68,.32,1) forwards,
-  vulnGlow 4s ease-in-out infinite}
-@keyframes vulnGlow{
-  0%{box-shadow:0 0 0 rgba(0,0,0,0)}
-  12%{box-shadow:0 0 26px 3px color-mix(in srgb, var(--warn) 40%, transparent)}
-  30%{box-shadow:0 0 0 rgba(0,0,0,0)}
-  100%{box-shadow:0 0 0 rgba(0,0,0,0)}
+/* ── 3.6 Quebras & Mitigação — tabuleiro espelhado ── */
+
+.bk-wrap{--bkgap:clamp(8px,1.4vh,15px);--bkhead:clamp(34px,3.6vh,42px);position:relative;
+  display:grid;grid-template-columns:1fr clamp(56px,5vw,94px) 1fr;column-gap:clamp(10px,1.5vw,24px);
+  grid-template-rows:minmax(0,1fr);align-items:stretch;margin-top:4px}
+/* brilhos ambientes discretos atrás dos painéis */
+.bk-wrap::before,.bk-wrap::after{content:'';position:absolute;top:-5%;bottom:-5%;width:46%;z-index:0;
+  pointer-events:none;filter:blur(52px);animation:bkBreath 7s ease-in-out infinite alternate}
+.bk-wrap::before{left:-3%;background:radial-gradient(closest-side,color-mix(in srgb,var(--warn) 15%,transparent),transparent 72%)}
+.bk-wrap::after{right:-3%;background:radial-gradient(closest-side,color-mix(in srgb,var(--acc-strong) 17%,transparent),transparent 72%);
+  animation-delay:3.5s}
+@keyframes bkBreath{from{opacity:.35}to{opacity:.8}}
+
+/* painéis espelhados */
+.bk-panel{position:relative;z-index:1;display:grid;grid-template-rows:var(--bkhead) 1fr 1fr 1fr;
+  row-gap:var(--bkgap);min-width:0}
+
+/* badges — com sheen sweep */
+.bk-head{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;
+  height:var(--bkhead);font-family:'Roboto Mono',monospace;font-weight:700;font-size:clamp(10.5px,1vw,13px);
+  letter-spacing:.18em;text-transform:uppercase;border-radius:24px;padding:0 18px}
+.bk-head::after{content:'';position:absolute;inset:0;transform:translateX(-140%) skewX(-18deg);
+  background:linear-gradient(100deg,transparent 38%,rgba(255,255,255,.5) 50%,transparent 62%);
+  animation:bksheen 5.5s ease-in-out infinite}
+.bk-panel.good .bk-head::after{animation-delay:1.4s}
+.bk-head .hd-ind{width:8px;height:8px;border-radius:50%;background:currentColor;flex-shrink:0;
+  animation:pulse 1.6s ease-in-out infinite}
+.bk-panel.bad .bk-head{color:var(--warn);background:color-mix(in srgb,var(--warn) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--warn) 55%,transparent)}
+.bk-panel.good .bk-head{color:var(--acc-strong);background:color-mix(in srgb,var(--acc-strong) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--acc-strong) 55%,transparent)}
+@keyframes bksheen{0%,55%{transform:translateX(-140%) skewX(-18deg)}80%,100%{transform:translateX(140%) skewX(-18deg)}}
+
+/* trilho central — setas fluindo de fraqueza para blindagem */
+.bk-rail{position:relative;z-index:1;display:grid;grid-template-rows:var(--bkhead) 1fr 1fr 1fr;
+  row-gap:var(--bkgap);grid-column:2;min-width:0}
+.rl-sp{visibility:hidden}
+.rail-cell{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;transform:translateX(-8px);transition:opacity .55s ease,transform .55s ease}
+.rail-cell.draw{opacity:1;transform:none}
+.rl-line{position:relative;width:100%;height:2px;
+  background:repeating-linear-gradient(90deg,var(--ref) 0 6px,transparent 6px 13px)}
+.rl-line::before{content:'';position:absolute;right:-2px;top:50%;transform:translateY(-50%);
+  width:0;height:0;border-left:7px solid var(--ref);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
+.rl-dot{position:absolute;top:50%;left:0;width:6px;height:6px;border-radius:50%;transform:translateY(-50%);
+  animation:rlFlow 2.6s linear infinite}
+@keyframes rlFlow{0%{left:0;opacity:0}12%{opacity:1}86%{opacity:1}100%{left:calc(100% - 10px);opacity:0}}
+.rail-cell:nth-of-type(2) .rl-dot{background:var(--warn);animation-delay:.2s}
+.rail-cell:nth-of-type(3) .rl-dot{background:var(--acc-strong);animation-delay:1.1s}
+.rail-cell:nth-of-type(4) .rl-dot{background:var(--ok);animation-delay:2s}
+
+/* cards espelhados — altura uniforme por linha compartilhada */
+.bk-card{position:relative;z-index:1;display:flex;flex-direction:column;gap:5px;min-width:0;
+  background:var(--surf);border:1px solid var(--line);border-radius:15px;
+  padding:clamp(11px,1.6vh,17px) clamp(16px,1.7vw,24px);box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.bk-card::before{content:'';position:absolute;top:0;height:3px;border-radius:0 0 4px 4px}
+.f-bound::before{left:12px;right:44%;background:linear-gradient(90deg,var(--warn),transparent)}
+.f-fix::before{left:44%;right:12px;background:linear-gradient(90deg,transparent,var(--acc-strong))}
+.bk-kick{display:flex;align-items:center;gap:9px;margin-bottom:2px}
+.bk-kick .bic{font-size:clamp(15px,1.5vw,19px);line-height:1}
+.bk-kick .bn{font-family:'Roboto Mono',monospace;font-weight:700;font-size:clamp(11.5px,1.05vw,14px);
+  letter-spacing:.05em;text-transform:uppercase}
+.f-bound .bn{color:var(--warn)}
+.f-fix .bn{color:var(--acc-strong)}
+.bk-d{font-size:clamp(13px,1.15vw,15.5px);line-height:1.5;color:var(--text)}
+.bk-f{margin-top:auto;padding-top:7px;font-family:'Roboto Mono',monospace;font-style:italic;
+  font-size:clamp(9.5px,.85vw,11.5px);color:var(--ref);border-top:1px dashed var(--line)}
+.bk-f b{color:var(--muted);font-style:normal}
+
+/* entrada: spring overshoot + blur-to-focus */
+#slide-loop-breaks .bk-head.reveal,#slide-loop-breaks .bk-card.reveal,
+#slide-loop-breaks .callout.reveal,#slide-loop-breaks .sources.reveal{
+  animation:bkSpring .8s cubic-bezier(.2,1.25,.35,1) both}
+@keyframes bkSpring{
+  0%{opacity:0;transform:translateY(26px) scale(.94);filter:blur(10px)}
+  55%{filter:blur(0)}
+  78%{transform:translateY(-3px) scale(1.004)}
+  100%{opacity:1;transform:none;filter:blur(0)}
 }
 
-/* padrões de mitigação — cards maiores com animação */
-.mit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:6px}
-.mit-card{border-left:4px solid var(--acc-strong);background:var(--surf-2);border-radius:0 12px 12px 0;
-  padding:16px 22px;transition:transform .25s ease, box-shadow .25s ease}
-.mit-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.12)}
-.mit-card .mc-ic{font-size:22px;margin-bottom:6px;display:block}
-.mit-card .mc-title{font-family:'Roboto Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.05em;
-  color:var(--acc-strong);text-transform:uppercase;margin-bottom:6px}
-.mit-card .mc-desc{font-size:14px;color:var(--text);line-height:1.5}
-.mit-card .mc-src{font-family:'Roboto Mono',monospace;font-size:10.5px;font-style:italic;color:var(--ref);
-  margin-top:8px}
-.mit-card.reveal{animation:revealFadeUp .5s cubic-bezier(.22,.68,.32,1) forwards,
-  mitGlow 4s ease-in-out infinite}
-@keyframes mitGlow{
-  0%{box-shadow:0 0 0 rgba(0,0,0,0)}
-   12%{box-shadow:0 0 26px 3px color-mix(in srgb, var(--acc-strong) 40%, transparent)}
-   30%{box-shadow:0 0 0 rgba(0,0,0,0)}
-   100%{box-shadow:0 0 0 rgba(0,0,0,0)}
- }
+/* compactação para notebooks/projetores baixos — evita invadir o rodapé (a escala do fit não resolve colisão conteúdo↔footer) */
+@media (max-height:830px){
+  #slide-loop-breaks .body{padding-top:4px}
+  #slide-loop-breaks h1{font-size:30px!important;margin-bottom:2px!important}
+  #slide-loop-breaks .sub{font-size:14.5px!important;margin-bottom:8px!important}
+  .bk-wrap{--bkgap:6px;--bkhead:28px}
+  .bk-card{padding:9px 14px;gap:3px;border-radius:12px}
+  .bk-d{font-size:12.5px;line-height:1.45}
+  .bk-f{font-size:9px;padding-top:4px}
+  .bk-kick .bic{font-size:13px}
+  .bk-kick .bn{font-size:11px}
+  .bk-head{font-size:10px;padding:0 12px}
+  #slide-loop-breaks .callout{margin-top:10px!important;font-size:14px!important;padding:9px 18px!important}
+  #slide-loop-breaks .sources{margin-top:6px!important;margin-bottom:auto;font-size:10.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  .rl-dot,.bk-head::after,.bk-wrap::before,.bk-wrap::after,.bk-head .hd-ind{animation:none}
+  .rail-cell,.rail-cell.draw{opacity:1;transform:none}
+}
+
 
 /* ── Diagramas de arquitetura de loop (estilo fluxo) ── */
 .loop-arch{border:1.5px dashed var(--line2);border-radius:16px;position:relative;margin-top:6px;
@@ -701,7 +709,7 @@ h1 .e{color:var(--text)}
         <div class="num">03</div>
         <div class="info">
           <div class="t">Loop Engineering</div>
-          <div class="d">Os tipos de loop, e por que ele só funciona dentro de um harness.</div>
+          <div class="d">Os tipos de loop, onde eles quebram e como blindá-los — sempre dentro de um harness.</div>
         </div>
       </div>
       <div class="arow">
@@ -715,7 +723,7 @@ h1 .e{color:var(--text)}
         <div class="num">05</div>
         <div class="info">
           <div class="t">Considerações &amp; Futuro</div>
-          <div class="d">Como estruturar sua squad agêntica, e o que vem depois do loop.</div>
+          <div class="d">Limites e custos da autonomia — e o papel central do humano no loop.</div>
         </div>
       </div>
     </div>
@@ -1123,126 +1131,6 @@ h1 .e{color:var(--text)}
   <div class="hud-bottom"><span class="sec">// 3.2 INTERACTION LOOPS</span><span class="hb-idx">-- / --</span></div>
 </section>
 
-<!-- ─── 10 · TIPOS DE LOOP — PILHA (1/2) ─── -->
-<section class="slide" id="slide-loop-stack1">
-  <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
-    <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
-  </div>
-  <div class="body" style="justify-content:flex-start;padding-top:8px">
-    <div class="tag">BLOCO 03 &nbsp;<span class="dim">// 3.2 tipos de loop — a pilha</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">A pilha de loops <span class="a">(1/2)</span></h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:900px">Loops se <b style="color:var(--text)">empilham</b> — cada nível envolve o anterior e adiciona uma camada de controle. (swyx, "loopcraft")</div>
-
-    <div class="loopstack">
-      <div class="lstack-row">
-        <div class="loopcard reveal-fade">
-          <div class="lc-num">LOOP 1</div>
-          <div class="lc-tag">agent loop</div>
-          <div class="lc-title">O Agente</div>
-          <div class="lc-sub">Modelo chamando ferramentas em loop até a tarefa estar completa.</div>
-          <div class="loop-arch">
-            <div class="la-badge">Agent Loop</div>
-            <div class="la-flow">
-              <div class="la-node"><div class="ln-t">CONTEXTO</div><div class="ln-s">input + estado</div></div>
-              <div class="la-conn"><span class="la-clabel">alimenta</span><span class="la-flowdot"></span></div>
-              <div class="la-node model"><div class="ln-t">MODELO</div><div class="ln-s">decide a ação</div></div>
-              <div class="la-conn"><span class="la-clabel">chama</span><span class="la-flowdot"></span></div>
-              <div class="la-node blue"><div class="ln-t">TOOLS</div><div class="ln-s">efeito no mundo</div></div>
-              <div class="la-conn dashed warn"><span class="la-clabel">resultado</span><span class="la-flowdot"></span></div>
-              <div class="la-node ghost"><div class="ln-t">↺</div><div class="ln-s">repete</div></div>
-            </div>
-            <div class="la-note">loop até a tarefa estar <b>completa</b></div>
-          </div>
-          <div class="lc-impact">Impacto: <b>automatizar trabalho</b></div>
-        </div>
-        <div class="loopcard reveal-fade">
-          <div class="lc-num">LOOP 2</div>
-          <div class="lc-tag">verification loop</div>
-          <div class="lc-title">Verificação</div>
-          <div class="lc-sub">Um <b>grader</b> (determinístico ou LLM-as-judge) checa a saída contra um rubric e devolve feedback quando falha.</div>
-          <div class="loop-arch">
-            <div class="la-badge">Verification Loop</div>
-            <div class="la-flow">
-              <div class="la-node"><div class="ln-t">AGENT LOOP</div><div class="ln-s">produz saída</div></div>
-              <div class="la-conn"><span class="la-clabel">saída</span><span class="la-flowdot"></span></div>
-              <div class="la-node warn"><div class="ln-t">GRADER</div><div class="ln-s">checa vs. rubric</div></div>
-              <div class="la-conn dashed warn"><span class="la-clabel">falhou · feedback</span><span class="la-flowdot"></span></div>
-              <div class="la-node ghost"><div class="ln-t">↺</div><div class="ln-s">re-itera</div></div>
-            </div>
-            <div class="la-note"><span class="ok">passou → entrega</span> · <span class="w">falhou → volta com feedback</span></div>
-          </div>
-          <div class="lc-impact">Impacto: <b>garantir qualidade</b> · tradeoff: <span class="w">latência e custo</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="callout" style="margin-top:22px;max-width:none;font-size:17px;padding:15px 24px">O agent loop faz o trabalho; o verification loop garante que ele seja <b>correto e consistente</b> — vale o custo quando qualidade importa mais que velocidade, que é a maioria dos casos de produção.</div>
-    <div class="sources" style="margin-top:14px">LangChain, "The Art of Loop Engineering", jun/2026</div>
-  </div>
-  <div class="hud-bottom"><span class="sec">// 3.2 TIPOS DE LOOP — PILHA</span><span class="hb-idx">-- / --</span></div>
-</section>
-
-<!-- ─── 11 · TIPOS DE LOOP — PILHA (2/2) ─── -->
-<section class="slide" id="slide-loop-stack2">
-  <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
-    <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
-  </div>
-  <div class="body" style="justify-content:flex-start;padding-top:8px">
-    <div class="tag">BLOCO 03 &nbsp;<span class="dim">// 3.3 tipos de loop — a pilha</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">A pilha de loops <span class="a">(2/2)</span></h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:900px">Os dois níveis que <b style="color:var(--text)">escalam</b> e <b style="color:var(--text)">melhoram</b> o agente — onde o valor compõe.</div>
-
-    <div class="loopstack">
-      <div class="lstack-row">
-        <div class="loopcard reveal-fade">
-          <div class="lc-num">LOOP 3</div>
-          <div class="lc-tag">event-driven loop</div>
-          <div class="lc-title">Eventos</div>
-          <div class="lc-sub">Um evento dispara (webhook, cron, schedule) e o agente roda — componente contínuo dentro de um sistema maior.</div>
-          <div class="loop-arch">
-            <div class="la-badge">Event-driven Loop</div>
-            <div class="la-flow">
-              <div class="la-node warn"><div class="ln-t">EVENTO</div><div class="ln-s">webhook · cron</div></div>
-              <div class="la-conn"><span class="la-clabel">dispara</span><span class="la-flowdot"></span></div>
-              <div class="la-node model"><div class="ln-t">AGENT LOOP</div><div class="ln-s">roda em background</div></div>
-              <div class="la-conn"><span class="la-clabel">executa</span><span class="la-flowdot"></span></div>
-              <div class="la-node blue"><div class="ln-t">SISTEMA</div><div class="ln-s">atualiza o mundo</div></div>
-            </div>
-            <div class="la-note">agente <b>sempre-on</b>, não invocado manualmente</div>
-          </div>
-          <div class="lc-impact">Impacto: <b>automação em escala</b></div>
-        </div>
-        <div class="loopcard reveal-fade">
-          <div class="lc-num">LOOP 4</div>
-          <div class="lc-tag">hill-climbing loop</div>
-          <div class="lc-title">Melhoria contínua</div>
-          <div class="lc-sub">Traces de produção alimentam um analysis agent que <b>reescreve o harness</b> (prompt, tool, grader).</div>
-          <div class="loop-arch">
-            <div class="la-badge">Hill-climbing Loop</div>
-            <div class="la-flow">
-              <div class="la-node"><div class="ln-t">AGENT LOOP</div><div class="ln-s">produz traces</div></div>
-              <div class="la-conn"><span class="la-clabel">registra</span><span class="la-flowdot"></span></div>
-              <div class="la-node blue"><div class="ln-t">TRACES</div><div class="ln-s">log do que fez</div></div>
-              <div class="la-conn"><span class="la-clabel">analisa</span><span class="la-flowdot"></span></div>
-              <div class="la-node warn"><div class="ln-t">ANALYSIS</div><div class="ln-s">detecta problemas</div></div>
-              <div class="la-conn dashed warn"><span class="la-clabel">atualiza harness</span><span class="la-flowdot"></span></div>
-              <div class="la-node ghost"><div class="ln-t">↺</div><div class="ln-s">melhora</div></div>
-            </div>
-            <div class="la-note">a seta <b>chega dentro</b> e atualiza o agent loop diretamente</div>
-          </div>
-          <div class="lc-impact">Impacto: <b>melhoria do harness</b></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="callout" style="margin-top:22px;max-width:none;font-size:17px;padding:15px 24px">O <b>key move</b> do hill-climbing: a seta de retorno não volta só ao topo — ela <b>chega dentro e atualiza o agent loop diretamente</b>. Cada ciclo do loop externo torna os loops internos mais eficazes.</div>
-    <div class="sources" style="margin-top:14px">LangChain, "The Art of Loop Engineering", jun/2026</div>
-  </div>
-  <div class="hud-bottom"><span class="sec">// 3.3 TIPOS DE LOOP — PILHA</span><span class="hb-idx">-- / --</span></div>
-</section>
-
 <!-- ─── 12 · TIPOS DE LOOP — TURN-BASED ─── -->
 <section class="slide" id="slide-loop-trigger-turn">
   <div class="hud-top">
@@ -1403,10 +1291,10 @@ h1 .e{color:var(--text)}
     <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Proactive <span class="a">loop</span></h1>
     <div class="sub" style="margin-bottom:10px;font-size:17px;max-width:900px">Routine <b style="color:var(--text)">sempre-on</b>: o agente roda sem humano, acionado por evento — cada tarefa para na meta, a routine roda até desligar.</div>
 
-    <div class="trig-arch" style="max-width:min(1300px,90vw);margin:14px auto 0;padding:46px 40px 20px">
+    <div class="trig-arch" style="max-width:min(1300px,90vw);margin:8px auto 0;padding:36px 40px 16px">
       <div class="ta-badge">Proactive</div>
       <div class="loop-row">
-        <div class="loop-ring-box" style="width:520px;height:380px">
+        <div class="loop-ring-box" style="width:500px;height:366px">
           <svg viewBox="0 0 520 380">
             <defs><marker id="arrR15" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 Z" style="fill:var(--ref)"/></marker></defs>
             <circle cx="260" cy="195" r="150" style="fill:none;stroke:var(--line2);stroke-width:1.5"/>
@@ -1426,8 +1314,8 @@ h1 .e{color:var(--text)}
           <div class="lr-node" style="left:108.45px;top:282.5px"><div class="ta-node blue"><div class="tn-t">Meta</div><div class="tn-s">tarefa atingida</div></div></div>
         </div>
       </div>
-      <div class="ta-row" style="margin-top:2px;gap:14px">
-        <div class="ta-conn dashed blue" style="height:44px"><span class="ta-clabel">compõe</span><span class="ta-flowdot"></span></div>
+      <div class="ta-row" style="margin-top:0;gap:14px">
+        <div class="ta-conn dashed blue" style="height:34px"><span class="ta-clabel">compõe</span><span class="ta-flowdot"></span></div>
       </div>
       <div class="ta-row">
         <div class="ta-node"><div class="tn-t">/schedule + /goal + workflows + auto</div><div class="tn-s">primitives combinadas</div></div>
@@ -1435,188 +1323,91 @@ h1 .e{color:var(--text)}
       <div class="ta-note">cada tarefa para na <b>meta</b>; a routine roda até desligar</div>
     </div>
 
-    <div class="callout" style="margin-top:28px;max-width:min(1500px,94vw);margin-left:auto;margin-right:auto;font-size:17px;padding:11px 24px"><b>Uso:</b> streams recorrentes — bugs, triage, migrações. Compõe <span style="font-family:'Roboto Mono',monospace;font-size:14px">/schedule</span> (routine) + <span style="font-family:'Roboto Mono',monospace;font-size:14px">/goal</span> (o que é "done") + <b>dynamic workflows</b> + <b>auto mode</b>.</div>
+    <div class="callout" style="margin-top:16px;max-width:min(1500px,94vw);margin-left:auto;margin-right:auto;font-size:17px;padding:11px 24px"><b>Uso:</b> streams recorrentes — bugs, triage, migrações. Compõe <span style="font-family:'Roboto Mono',monospace;font-size:14px">/schedule</span> (routine) + <span style="font-family:'Roboto Mono',monospace;font-size:14px">/goal</span> (o que é "done") + <b>dynamic workflows</b> + <b>auto mode</b>.</div>
     <div class="sources" style="margin-top:4px">Claude/Anthropic, "Loop engineering: getting started with loops", jun/2026</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 3.5 TIPOS DE LOOP — TRIGGER</span><span class="hb-idx">-- / --</span></div>
 </section>
 
-<!-- ─── 14 · VULNERABILIDADES ─── -->
-<section class="slide" id="slide-loop-vulns">
+<section class="slide" id="slide-loop-breaks">
   <div class="hud-top">
     <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
   <div class="body" style="justify-content:flex-start;padding-top:8px">
-    <div class="tag">BLOCO 03 &nbsp;<span class="dim">// 3.6 vulnerabilidades</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Onde o loop <span class="a">quebra</span></h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:900px">Autonomia sem controle vira risco. Cada vulnerabilidade mapeada para o fenômeno documentado nas fontes primárias.</div>
+    <div class="tag" style="margin-top:auto">BLOCO 03 &nbsp;<span class="dim">// 3.6 onde o loop quebra — e como blindar</span></div>
+    <h1 style="font-size:clamp(30px,3.4vw,46px);margin-bottom:4px">Onde o loop <span class="a">quebra</span> — e o que o segura</h1>
+    <div class="sub" style="margin-bottom:14px;font-size:16.5px;max-width:940px">Autonomia sem controle vira risco. Fenômenos documentados nas fontes primárias, mapeados diretamente para os padrões que os impedem.</div>
 
-    <div class="vuln-grid">
-      <div class="vuln-card reveal-fade">
-        <span class="vc-ic">🔄</span>
-        <div class="vc-name">Infinite / Doom loop</div>
-        <div class="vc-desc">O agente repete sem progresso, queimando tokens e tempo — sem limite de iterações.</div>
-        <div class="vc-map"><b>Fonte:</b> turn caps ausentes · mitigação "stop after 5 tries" (Claude)</div>
+    <div class="bk-wrap">
+      <div class="bk-panel bad">
+        <div class="bk-head reveal-fade"><span class="hd-ind"></span>// ONDE O LOOP QUEBRA</div>
+        <div class="bk-card f-bound reveal-fade">
+          <div class="bk-kick"><span class="bic">🔄</span><span class="bn">Infinite / Doom loop</span></div>
+          <div class="bk-d">O agente repete sem progresso, queimando tokens e tempo — sem limite de iterações.</div>
+          <div class="bk-f"><b>Fonte:</b> turn caps ausentes · Claude, "getting started with loops"</div>
+        </div>
+        <div class="bk-card f-bound reveal-fade">
+          <div class="bk-kick"><span class="bic">🎯</span><span class="bn">Goal drift</span></div>
+          <div class="bk-d">O agente declara vitória cedo demais, ou perde o objetivo original no meio do caminho.</div>
+          <div class="bk-f"><b>Fonte:</b> premature completion · Anthropic, "Effective harnesses"</div>
+        </div>
+        <div class="bk-card f-bound reveal-fade">
+          <div class="bk-kick"><span class="bic">🧠</span><span class="bn">Context rot</span></div>
+          <div class="bk-d">Conforme o contexto cresce, recall e raciocínio de longo alcance degradam.</div>
+          <div class="bk-f"><b>Fonte:</b> Anthropic, "Effective context engineering"</div>
+        </div>
       </div>
-      <div class="vuln-card reveal-fade">
-        <span class="vc-ic">🎯</span>
-        <div class="vc-name">Goal drift</div>
-        <div class="vc-desc">O agente declara vitória cedo demais, ou perde o objetivo original no meio do caminho.</div>
-        <div class="vc-map"><b>Fonte:</b> premature completion (Anthropic, "Effective harnesses")</div>
+
+      <div class="bk-rail" aria-hidden="true">
+        <div class="rl-sp"></div>
+        <div class="rail-cell"><div class="rl-line"><i class="rl-dot"></i></div></div>
+        <div class="rail-cell"><div class="rl-line"><i class="rl-dot"></i></div></div>
+        <div class="rail-cell"><div class="rl-line"><i class="rl-dot"></i></div></div>
       </div>
-      <div class="vuln-card reveal-fade">
-        <span class="vc-ic">😰</span>
-        <div class="vc-name">Context anxiety</div>
-        <div class="vc-desc">O agente encerra o trabalho prematuramente ao sentir o limite de contexto se aproximando.</div>
-        <div class="vc-map"><b>Fonte:</b> Sonnet 4.5 (Anthropic, "Harness design")</div>
-      </div>
-      <div class="vuln-card reveal-fade">
-        <span class="vc-ic">🪞</span>
-        <div class="vc-name">Self-evaluation bias</div>
-        <div class="vc-desc">O agente elogia o próprio trabalho com confiança — mesmo quando é obviamente medíocre.</div>
-        <div class="vc-map"><b>Fonte:</b> Anthropic, "Harness design for long-running apps"</div>
-      </div>
-      <div class="vuln-card reveal-fade">
-        <span class="vc-ic">🧠</span>
-        <div class="vc-name">Context rot</div>
-        <div class="vc-desc">Conforme o contexto cresce, a capacidade de recall e o raciocínio de longo alcance degradam.</div>
-        <div class="vc-map"><b>Fonte:</b> Anthropic, "Effective context engineering"</div>
-      </div>
-      <div class="vuln-card reveal-fade">
-        <span class="vc-ic">💥</span>
-        <div class="vc-name">One-shotting</div>
-        <div class="vc-desc">Tenta fazer tudo de uma vez, estoura o contexto e deixa estado meio-implementado.</div>
-        <div class="vc-map"><b>Fonte:</b> Anthropic, "Effective harnesses for long-running agents"</div>
+
+      <div class="bk-panel good">
+        <div class="bk-head reveal-fade"><span class="hd-ind"></span>// PADRÕES PARA MITIGAR</div>
+        <div class="bk-card f-fix reveal-fade">
+          <div class="bk-kick"><span class="bic">🛡️</span><span class="bn">Guardrails determinísticos</span></div>
+          <div class="bk-d">Hooks, permissions e managed settings — instrução é a ferramenta errada para o que "nunca" deve acontecer.</div>
+          <div class="bk-f"><b>Fonte:</b> Claude, "Steering Claude Code"</div>
+        </div>
+        <div class="bk-card f-fix reveal-fade">
+          <div class="bk-kick"><span class="bic">⚖️</span><span class="bn">Separar quem faz de quem julga</span></div>
+          <div class="bk-d">Generator-evaluator (inspirado em GANs) — tunar um evaluator cético é mais tratável que auto-crítica.</div>
+          <div class="bk-f"><b>Fonte:</b> Anthropic, "Harness design"</div>
+        </div>
+        <div class="bk-card f-fix reveal-fade">
+          <div class="bk-kick"><span class="bic">👤</span><span class="bn">HITL / HOTL</span></div>
+          <div class="bk-d">Humano <b>dentro</b> do loop aprovando ações sensíveis (HITL) ou <b>em cima</b> do loop supervisionando (HOTL).</div>
+          <div class="bk-f"><b>Fonte:</b> LangChain · Anthropic</div>
+        </div>
       </div>
     </div>
 
-    <div class="sources" style="margin-top:18px">Anthropic Engineering (2025–2026) · Claude/Anthropic (2026)</div>
+    <div class="callout reveal-fade" style="margin-top:16px;max-width:none;font-size:17px;padding:13px 24px;text-align:center">Cada fraqueza tem um padrão espelho. Mas padrões no papel não bastam — <b>vamos ver isso rodando de verdade, com uma squad agêntica, agora mesmo.</b></div>
+    <div class="sources" style="margin-top:10px;margin-bottom:auto">Anthropic Engineering (2025–2026) · Claude/Anthropic (2026) · LangChain (2026)</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 3.6 VULNERABILIDADES</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 3.6 QUEBRAS &amp; MITIGAÇÃO</span><span class="hb-idx">-- / --</span></div>
 </section>
-
-<!-- ─── 15 · MITIGAÇÃO ─── -->
-<section class="slide" id="slide-loop-mit">
-  <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
-    <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
-  </div>
-  <div class="body" style="justify-content:flex-start;padding-top:8px">
-    <div class="tag">BLOCO 03 &nbsp;<span class="dim">// 3.7 padrões &amp; práticas</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Padrões para <span class="a">mitigar</span></h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:900px">O que separa um loop confiável de um loop perigoso — práticas consolidadas nas fontes primárias.</div>
-
-    <div class="mit-grid">
-      <div class="mit-card reveal-fade">
-        <span class="mc-ic">🛑</span>
-        <div class="mc-title">Stopping conditions explícitas</div>
-        <div class="mc-desc">Turn caps, critérios determinísticos e evaluator model — o agente não decide sozinho quando parar.</div>
-        <div class="mc-src">Claude · Anthropic</div>
-      </div>
-      <div class="mit-card reveal-fade">
-        <span class="mc-ic">🔍</span>
-        <div class="mc-title">Verificação externa</div>
-        <div class="mc-desc">Grader, segundo agente de review, LLM-as-judge cético e testes end-to-end com browser automation.</div>
-        <div class="mc-src">LangChain · Anthropic</div>
-      </div>
-      <div class="mit-card reveal-fade">
-        <span class="mc-ic">⚖️</span>
-        <div class="mc-title">Separar quem faz de quem julga</div>
-        <div class="mc-desc">Generator-evaluator (inspirado em GANs) — tunar um evaluator cético é mais tratável que auto-crítica.</div>
-        <div class="mc-src">Anthropic, "Harness design"</div>
-      </div>
-      <div class="mit-card reveal-fade">
-        <span class="mc-ic">📦</span>
-        <div class="mc-title">Context resets + handoff</div>
-        <div class="mc-desc">Artefatos estruturados: feature list JSON, progress file, git commits, init.sh — estado limpo entre sessões.</div>
-        <div class="mc-src">Anthropic, "Effective harnesses"</div>
-      </div>
-      <div class="mit-card reveal-fade">
-        <span class="mc-ic">🛡️</span>
-        <div class="mc-title">Guardrails determinísticos</div>
-        <div class="mc-desc">Hooks, permissions e managed settings — instrução é a ferramenta errada para o que "nunca" deve acontecer.</div>
-        <div class="mc-src">Claude, "Steering Claude Code"</div>
-      </div>
-      <div class="mit-card reveal-fade">
-        <span class="mc-ic">👤</span>
-        <div class="mc-title">Human-in-the-loop</div>
-        <div class="mc-desc">Revisão humana ao vivo em ações sensíveis e irreversíveis — transações financeiras, operações de DB.</div>
-        <div class="mc-src">LangChain · Anthropic</div>
-      </div>
-    </div>
-
-    <div class="callout" style="margin-top:16px;max-width:none;font-size:16px;padding:12px 20px"><b>Progresso incremental</b> — uma feature por vez, estado limpo ao final de cada iteração — é o antídoto direto para o one-shotting e o goal drift.</div>
-    <div class="sources" style="margin-top:10px">Anthropic Engineering (2025–2026) · Claude/Anthropic (2026) · LangChain (2026)</div>
-  </div>
-  <div class="hud-bottom"><span class="sec">// 3.7 MITIGAÇÃO</span><span class="hb-idx">-- / --</span></div>
-</section>
-
-<!-- BLOCO 05 · CONSIDERAÇÕES &amp; FUTURO -->
-
 
 <section class="slide" id="slide-future-limits">
   <div class="hud-top">
     <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
-  <div class="body" style="justify-content:flex-start;padding-top:8px">
-    <div class="tag">BLOCO 05 &nbsp;<span class="dim">// 5.1 limites e riscos</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Onde o <span class="a">entusiasmo</span> esbarra</h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Escalar agentes no SDLC é ótimo — até o custo e a complexidade aparecerem. Planejar com honestidade.</div>
-    <div class="mit-grid">
-      <div class="mit-card reveal-fade"><span class="mc-ic">&#128176;</span><div class="mc-title">Custo e latência</div><div class="mc-desc">Mais iterações e evals significam mais tokens e tempo. Nem todo passo merece um agente.</div></div>
-      <div class="mit-card reveal-fade"><span class="mc-ic">&#128201;</span><div class="mc-title">Drift de qualidade</div><div class="mc-desc">Modelo e dados mudam; o que era confiável hoje pode degradar amanhã. Requer evals contínuos.</div></div>
-      <div class="mit-card reveal-fade"><span class="mc-ic">&#129518;</span><div class="mc-title">Viés do avaliador</div><div class="mc-desc">Auto-avaliação elogia demais; separar quem faz de quem julga ajuda, mas não elimina.</div></div>
-      <div class="mit-card reveal-fade"><span class="mc-ic">&#129504;</span><div class="mc-title">Complexidade cognitiva</div><div class="mc-desc">Coordenar muitos agentes é um problema de engenharia novo — grafos ajudam, mas exigem maturidade.</div></div>
+  <div class="body" style="justify-content:center;align-items:center;text-align:center">
+    <div class="fin-hero">
+      <div class="hx-line reveal-fade">Desenhe os <span class="hx-l1">loops</span>.</div>
+      <div class="hx-line reveal-fade">Governe com <span class="hx-l2">harness</span>.</div>
+      <div class="hx-line reveal-fade">Mantenha o <span class="hx-l3">humano</span> no loop.</div>
     </div>
-    <div class="callout reveal-fade" style="margin-top:16px;max-width:none;font-size:17px"><b>Para o seu time:</b> adote em etapas, mantenha humanos nos gates sensíveis e meça não só throughput, mas <b>aprendizado</b>.</div>
-  </div>
-  <div class="hud-bottom"><span class="sec">// 5.1 LIMITES</span><span class="hb-idx">-- / --</span></div>
-</section>
-
-<section class="slide" id="slide-future-roadmap">
-  <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
-    <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
-  </div>
-  <div class="body" style="justify-content:flex-start;padding-top:8px">
-    <div class="tag">BLOCO 05 &nbsp;<span class="dim">// 5.2 rumo ao graph engineering</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Próximo degrau: <span class="a">Graph Engineering</span></h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px">Do loop individual ao <b style="color:var(--text)">orquestrador de múltiplos agentes</b>: a evolução natural que já apontávamos no Bloco 02.</div>
-    <div class="pillgrid" style="grid-template-columns:repeat(3,1fr);gap:16px">
-      <div class="pbox reveal-fade" style="--tc:var(--acc-strong)"><div class="pt">Multi-agente</div><div class="pd">Equipes de agentes cooperando — routing, handoff e disputa por recursos.</div></div>
-      <div class="pbox reveal-fade" style="--tc:var(--blue)"><div class="pt">Dinâmico</div><div class="pd">Grafos que se moldam em runtime, não fixos em código.</div></div>
-      <div class="pbox reveal-fade" style="--tc:var(--warn)"><div class="pt">Adaptativo</div><div class="pd">Os mesmos princípios de loop, agora em escala de sistema.</div></div>
-    </div>
-    <div class="callout reveal-fade" style="margin-top:20px;max-width:none;font-size:17px"><b>Para o seu time:</b> domine o loop antes do grafo. O que você aprende em um agente — parada, verificação, gates — é a gramática do sistema inteiro.</div>
-  </div>
-  <div class="hud-bottom"><span class="sec">// 5.2 GRAPH ENGINEERING</span><span class="hb-idx">-- / --</span></div>
-</section>
-
-<section class="slide" id="slide-future-close">
-  <div class="hud-top">
-    <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
-    <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
-  </div>
-  <div class="body" style="justify-content:center">
-    <div class="tag">ENCERRAMENTO &nbsp;<span class="dim">// leve para casa</span></div>
-    <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Três coisas para <span class="a">levar</span></h1>
-    <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:920px"></div>
-    <div class="pillgrid" style="grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:26px">
-      <div class="pbox reveal-fade" style="--tc:var(--acc-strong)"><div class="pt">1 &middot; Interação</div><div class="pd">Desenhe os loops de interação humano-agente antes de escalar autonomia.</div></div>
-      <div class="pbox reveal-fade" style="--tc:var(--blue)"><div class="pt">2 &middot; Governança</div><div class="pd">Todo agente em produção vive dentro de um harness — guias, sensores, evals.</div></div>
-      <div class="pbox reveal-fade" style="--tc:var(--warn)"><div class="pt">3 &middot; Aprendizado</div><div class="pd">Meça o que o sistema aprende, não só o que entrega.</div></div>
-    </div>
-    <div class="quote-block reveal-fade" style="max-width:880px;margin:0 auto">
-      <div class="qtext">Times agênticos não são cultura — são arquitetura de loops de interação, governada por harness.</div>
-      <div class="qattr">Tese desta palestra</div>
-    </div>
-    <div class="callout reveal-fade" style="margin-top:24px;max-width:none;font-size:18px">Obrigado! Continuem a conversa: <b>arquitetura agêntica</b>, <b>loop engineering</b> e <b>grafos de agentes</b> estão só começando.</div>
+    <div class="fin-sub reveal-fade">Automatize o esforço, não a responsabilidade.</div>
+    <div class="fin-thanks reveal-fade">Obrigado! &middot; Dan &amp; Jean &middot; HackTown 2026</div>
   </div>
   <div class="hud-bottom"><span class="sec">// ENCERRAMENTO</span><span class="hb-idx">-- / --</span></div>
 </section>
-
 </div><!-- /deck -->
 
 <div class="nav">
@@ -1659,10 +1450,8 @@ function refreshActiveSlide(){
   if(s.id === 'slide-sdlc') animateSdlcTimeline();
   if(s.id === 'slide-harness-def') animateHarnessDefSignal();
   if(s.id === 'slide-loop-def') animateLoopDef();
-  if(s.id === 'slide-loop-stack1' || s.id === 'slide-loop-stack2') animateLoopStack(s.id);
   if(s.id === 'slide-loop-trigger-turn' || s.id === 'slide-loop-trigger-goal' || s.id === 'slide-loop-trigger-time' || s.id === 'slide-loop-trigger-proactive') animateLoopTrigger(s.id);
-  if(s.id === 'slide-loop-vulns') animateLoopVulns();
-  if(s.id === 'slide-loop-mit') animateLoopMit();
+  if(s.id === 'slide-loop-breaks') animateLoopBreaks();
   if(NEW_SLIDE_ANIMS[s.id]) animateNewSlide(s.id);
   const body = s.querySelector('.body');
   const footer = s.querySelector('.hud-bottom');
@@ -1959,20 +1748,6 @@ function animateLoopDef(){
   loopDefTimer = setTimeout(runCycle, startDelay);
   if(callout){ callout.style.animationDelay = (startDelay + boxes.length*stepMs + 2300)+'ms'; callout.classList.add('reveal'); }
 }
-function animateLoopStack(id){
-  const slide = document.getElementById(id);
-  if(!slide) return;
-  const cards = slide.querySelectorAll('.loopcard.reveal-fade');
-  const callout = slide.querySelector('.callout');
-  cards.forEach(el=>{ el.classList.remove('reveal'); el.style.animationDelay=''; });
-  if(callout){ callout.classList.remove('reveal'); callout.style.animationDelay=''; }
-  void slide.offsetWidth;
-  cards.forEach((el,i)=>{
-    el.style.animationDelay = (i*120)+'ms';
-    el.classList.add('reveal');
-  });
-  if(callout){ callout.style.animationDelay = (cards.length*120 + 200)+'ms'; callout.classList.add('reveal'); }
-}
 function animateLoopTrigger(id){
   const slide = document.getElementById(id);
   if(!slide) return;
@@ -1984,30 +1759,40 @@ function animateLoopTrigger(id){
   if(arch){ arch.style.animationDelay='0ms'; arch.classList.add('reveal'); }
   if(callout){ callout.style.animationDelay='250ms'; callout.classList.add('reveal'); }
 }
-function animateLoopVulns(){
-  const slide = document.getElementById('slide-loop-vulns');
+// ═══════════════════════════════════════════
+// SLIDE 3.6 "QUEBRAS & MITIGAÇÃO" — coreografia do tabuleiro:
+// badges → cartões intercalados (fraqueza ⇄ blindagem) → setas → callout
+// ═══════════════════════════════════════════
+function animateLoopBreaks(){
+  const slide = document.getElementById('slide-loop-breaks');
   if(!slide) return;
-  const cards = slide.querySelectorAll('.vuln-card.reveal-fade');
-  cards.forEach(el=>{ el.classList.remove('reveal'); el.style.animationDelay=''; });
-  void slide.offsetWidth;
-  cards.forEach((el,i)=>{
-    el.style.animationDelay = (i*70)+'ms';
-    el.classList.add('reveal');
+  const heads = slide.querySelectorAll('.bk-head');
+  const bad = slide.querySelectorAll('.bk-panel.bad .bk-card');
+  const good = slide.querySelectorAll('.bk-panel.good .bk-card');
+  const rails = slide.querySelectorAll('.rail-cell');
+  const extra = slide.querySelectorAll('#slide-loop-breaks .callout, #slide-loop-breaks .sources');
+
+  [...heads, ...bad, ...good, ...extra].forEach(el=>{
+    el.classList.remove('reveal'); el.style.animationDelay='';
   });
-}
-function animateLoopMit(){
-  const slide = document.getElementById('slide-loop-mit');
-  if(!slide) return;
-  const cards = slide.querySelectorAll('.mit-card.reveal-fade');
-  const callout = slide.querySelector('.callout');
-  cards.forEach(el=>{ el.classList.remove('reveal'); el.style.animationDelay=''; });
-  if(callout){ callout.classList.remove('reveal'); callout.style.animationDelay=''; }
-  void slide.offsetWidth;
-  cards.forEach((el,i)=>{
-    el.style.animationDelay = (i*70)+'ms';
-    el.classList.add('reveal');
+  rails.forEach(el=>el.classList.remove('draw'));
+  void slide.offsetWidth; // força reflow para reiniciar a entrada
+
+  heads.forEach((el,i)=>{ el.style.animationDelay=(i*140)+'ms'; el.classList.add('reveal'); });
+
+  // intercala linha a linha: fraqueza entra, blindagem responde
+  let t = 240;
+  for(let i=0;i<bad.length;i++){
+    bad[i].style.animationDelay = t+'ms';       bad[i].classList.add('reveal');
+    good[i].style.animationDelay = (t+70)+'ms'; good[i].classList.add('reveal');
+    t += 130;
+  }
+  rails.forEach((el,i)=>{
+    setTimeout(()=>{ if(slide.classList.contains('active')) el.classList.add('draw'); }, t+120+i*110);
   });
-  if(callout){ callout.style.animationDelay = (cards.length*70 + 200)+'ms'; callout.classList.add('reveal'); }
+  extra.forEach((el,i)=>{
+    el.style.animationDelay=(t+380+i*140)+'ms'; el.classList.add('reveal');
+  });
 }
 
 // ═══════════════════════════════════════════
@@ -2024,9 +1809,7 @@ function animateStagger(id, sel, base){
 }
 const NEW_SLIDE_ANIMS = {
   'slide-interaction':   { sel: '.pillgrid .pbox, .callout',                     base: 80 },
-  'slide-future-limits': { sel: '.mit-card, .callout',                           base: 70 },
-  'slide-future-roadmap':{ sel: '.pillgrid .pbox, .callout',                     base: 80 },
-  'slide-future-close':  { sel: '.pillgrid .pbox, .quote-block, .callout',       base: 90 },
+  'slide-future-limits': { sel: '.hx-line, .fin-sub, .fin-thanks', base: 170 },
 };
 function animateNewSlide(id){
   const cfg = NEW_SLIDE_ANIMS[id];
@@ -2093,6 +1876,8 @@ document.addEventListener('keydown', e=>{
 });
 
 // avanço por clique (botão esquerdo; ignora seleção de texto em andamento)
+// os botões do nav executam sua própria ação e NÃO avançam slide (sem duplo disparo)
+document.querySelector('.nav')?.addEventListener('click', e => e.stopPropagation());
 document.addEventListener('click', e=>{
   if(e.button!==0 || e.defaultPrevented) return;
   const sel = window.getSelection();

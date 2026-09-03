@@ -45,26 +45,24 @@ Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologi
 
 ### 3. Loop Engineering `[CONCLUÍDO]`
 - **O que é Loop Engineering:** Loops como agentes repetindo ciclos até uma condição de parada; por que projetar o loop (não só o harness) é essencial.
-- **Tipos de Loop (a pilha):** *Agent Loop*, *Verification Loop*, *Event-driven Loop*, *Hill Climbing Loop* (LangChain).
-- **Tipos por Trigger & Stop:** *Turn-based*, *Goal-based*, *Time-based*, *Proactive* (Claude).
-- **Vulnerabilidades:** Infinite/Doom loop, Goal drift, Context anxiety, Self-evaluation bias, Context rot, One-shotting.
-- **Padrões de Mitigação:** Stopping conditions, verificação externa, separar quem faz de quem julga, context resets + handoff, guardrails determinísticos, human-in-the-loop, progresso incremental.
+- **Interaction Loops:** o ponto de virada — o loop de interação humano ↔ agente (o coração da talk).
+- **Tipos de Loop por Trigger:** *Turn-based*, *Goal-based*, *Time-based*, *Proactive* (Claude).
+- **Quebras & Mitigação (slide unificado):** à esquerda, onde o loop quebra — *Infinite/Doom loop*, *Goal drift*, *Context rot*; à direita, o que segura — separar quem faz de quem julga, guardrails determinísticos e HITL/HOTL. Ponte direta para o live coding.
 
 ### 4. Live Coding — o Squad como prova viva da tese `[CONCLUÍDO — entrada direta, sem slides de intro]`
 - **Transição direta:** os slides 4.1–4.4 (intro do squad, loop rodando, HITL e engenharia de palco) foram removidos da apresentação — do Bloco 03 sai-se direto para o código ao vivo.
 - **Ao vivo:** Squad Agêntica reagindo a uma demanda real de desenvolvimento (cenário ainda a definir na branch nova da demo) — Planner, Engineer, QA e SRE coordenados por um grafo de estados.
 - **Falado durante a demo (sem slide):** momento HITL (aprovar/rejeitar com feedback) e garantias de palco (reset 1-clique, fallback determinístico, observabilidade ao vivo).
 
-### 5. Considerações & Futuro `[CONCLUÍDO]`
-- **Limites & riscos:** custo/latência, drift de qualidade, viés do avaliador e complexidade cognitiva.
-- **Rumo ao Graph Engineering:** multi-agente, grafos dinâmicos e adaptativos.
-- **Encerramento com 3 takeaways:** desenhe os loops de interação antes de escalar · governe com harness · meça aprendizado, não só throughput.
+### 5. Encerramento `[CONCLUÍDO — mensagem única]`
+- **Uma mensagem para levar:** Desenhe os *loops*. Governe com *harness*. Mantenha o *humano no loop*.
+- **Punchline:** automatize o esforço, não a responsabilidade.
 
 ---
 
 ## ⌨️ Atalhos da Apresentação (`presentation.html`)
 
-Ao abrir [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/hacktown-presentation/presentation.html) no navegador:
+Ao abrir [`presentation.html`](./presentation.html) no navegador:
 
 | Tecla / Atalho | Ação |
 | :---: | :--- |
@@ -84,14 +82,16 @@ Ao abrir [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/h
 
 ```text
 .
-├── presentation.html         # Apresentação oficial em slides HTML/CSS/JS (Blocos 1 a 5)
-├── README.md                 # Guia do projeto, agenda e status dos blocos pendentes
+├── presentation.html         # Apresentação oficial em slides HTML/CSS/JS (17 slides, Blocos 1 a 5)
+├── README.md                 # Guia do projeto, agenda dos blocos e atalhos
 ├── assets/
+│   ├── fonts/                # Fontes locais (offline-proof): Montserrat e Roboto Mono (variáveis)
 │   └── speakers/             # Fotos e especificações visuais dos palestrantes
 │       ├── dan.jpg
 │       ├── jean.jpg
 │       └── README.md
 └── docs/
+    ├── CUE-SHEET.md          # Mapa de palco: ordem, tempos, transições e resgates
     └── REFERENCIAS.md        # Artigos, pesquisas e fontes bibliográficas da talk
 ```
 
@@ -100,7 +100,7 @@ Ao abrir [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/h
 ## 🚀 Como Executar
 
 1. Clone ou baixe este repositório.
-2. Abra [`presentation.html`](file:///home/daniloamaral/Desktop/hacktown-2026/hacktown-presentation/presentation.html) diretamente em qualquer navegador moderno.
+2. Abra [`presentation.html`](./presentation.html) diretamente em qualquer navegador moderno.
 
 ---
 
