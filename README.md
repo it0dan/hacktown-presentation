@@ -51,7 +51,7 @@ Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologi
 
 ### 4. Live Coding — o Squad como prova viva da tese `[CONCLUÍDO — card de transição (HUD 16) + demo]`
 - **Card de transição (HUD 16):** mensagem hero única — "Padrões no papel não bastam. Demo ao vivo." — com as garantias de palco em microtexto (reset 1-clique, fallback determinístico, observabilidade). Do card sai-se direto para o editor.
-- **Ao vivo:** Squad Agêntica reagindo a uma demanda real de desenvolvimento (cenário ainda a definir na branch nova da demo) — Planner, Engineer, QA e SRE coordenados por um grafo de estados.
+- **Ao vivo:** Squad Agêntica de 6 especialistas (SDD Refinement, Architect, Backend, Frontend, QA e SRE) operando sobre a **Astronomy Shop (otel-demo)** — pilha de 4 loops (agent, verification, event-driven, hill-climbing) coordenados por um grafo de estados.
 - **Falado durante a demo (sem slide):** momento HITL (aprovar/rejeitar com feedback) e garantias de palco (reset 1-clique, fallback determinístico, observabilidade ao vivo).
 
 ### 5. Encerramento `[CONCLUÍDO — mensagem única]`
