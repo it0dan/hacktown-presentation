@@ -35,7 +35,7 @@ Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologi
 ### 2. A Era Agêntica & Arquitetura Harness `[CONCLUÍDO]`
 - **O que é um Agente de IA:** Diferença entre Workflow determinístico vs. Agentes autônomos.
 - **O Loop Fundamental do Agente:** `Percebe ➔ Raciocina ➔ Age ➔ Observa` (repetindo até atingir o objetivo).
-- **Fórmula Central:** $$\text{Agente} = \text{Modelo} + \text{Harness}$$
+- **Fórmula Central:** `Agente = Modelo + Harness`
 - **Componentes do Harness:**
   - **Guias (Feedforward):** Prompts, especificações, contratos de API, schemas e contexto em tempo real.
   - **Sensores (Feedback):** Traces de observabilidade, guardrails determinísticos, LLM-as-Judge e HITL (Human-in-the-Loop).

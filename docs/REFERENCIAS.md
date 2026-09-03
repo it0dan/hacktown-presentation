@@ -6,12 +6,14 @@ Este documento compila a bibliografia, pesquisas de mercado, frameworks e artigo
 
 ## 📊 1. Dados & Pesquisas de Mercado
 
-- **Gartner (2026):** *Global IT & AI Spending Forecast* — projeção de US$ 2,59 tri de investimento global em IA em 2026 (alta de 47% em relação a 2025).
-- **Brasscom / Valor Econômico (2026):** *Relatório de Talentos em Tecnologia no Brasil* — déficit acumulado de 530 mil profissionais de TI até 2026.
-- **IDC (2026):** *Latin America Artificial Intelligence Ecosystem Report* — mercado de IA no Brasil atingindo US$ 4,2 bilhões (41,7% da América Latina).
-- **S&P Global (2026):** *Enterprise AI Adoption Survey* — 42% das empresas abandonaram a maioria das iniciativas de IA em 2025 por falta de governança e ROI.
-- **MIT NANDA (2025):** *GenAI ROI & Pilot Failure Rate Study* — 95% dos pilotos de GenAI corporativos não entregam ROI mensurável sem um Harness adequado.
-- **Korn Ferry:** *Global Talent Crunch Study* — projeção de 85 milhões de vagas de tecnologia sem profissionais qualificados no mundo até 2030.
+> ⚠️ **Revisão humana pendente antes de 04/09:** confirmar URL/edição de cada relatório abaixo (marcados com `_URL: a confirmar_`).
+
+- **Gartner (2026):** *Global IT & AI Spending Forecast* — projeção de US$ 2,59 tri de investimento global em IA em 2026 (alta de 47% em relação a 2025). `_URL: a confirmar_`
+- **Brasscom / Valor Econômico (2026):** *Relatório de Talentos em Tecnologia no Brasil* — déficit acumulado de 530 mil profissionais de TI até 2026. `_URL: a confirmar_`
+- **IDC (2026):** *Latin America Artificial Intelligence Ecosystem Report* — mercado de IA no Brasil atingindo US$ 4,2 bilhões (41,7% da América Latina). `_URL: a confirmar_`
+- **S&P Global (2026):** *Enterprise AI Adoption Survey* — 42% das empresas abandonaram a maioria das iniciativas de IA em 2025 por falta de governança e ROI. `_URL: a confirmar_`
+- **MIT NANDA (2025):** *GenAI ROI & Pilot Failure Rate Study* — 95% dos pilotos de GenAI corporativos não entregam ROI mensurável sem um Harness adequado. `_URL: a confirmar_`
+- **Korn Ferry:** *Global Talent Crunch Study* — projeção de 85 milhões de vagas de tecnologia sem profissionais qualificados no mundo até 2030. `_URL: a confirmar_`
 
 ---
 

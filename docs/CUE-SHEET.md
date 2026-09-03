@@ -77,6 +77,8 @@
 
 ## 📝 Notas de fala pontuais
 
+- **Slide 03 (ponte do mercado):** roteiro oral completo — "O capital chega antes da capacidade. Muito dinheiro sendo investido e ainda assim talentos escassos. Se o gargalo é gente, a alavanca não é contratar, é redesenhar o time para que humanos e agentes amplifiquem uns aos outros." No slide ficou só a síntese ("O capital chega antes da capacidade. Se o gargalo é gente, a alavanca não é contratar — é redesenhar o time.").
+
 - **Slide 15, card HITL/HOTL:** HITL = humano *dentro* do loop (gate de aprovação, ação sensível); HOTL = humano *em cima* do loop (supervisiona, intervém quando necessário — menos intrusivo). Um exemplo basta pra plateia.
 - **Slide 16 (fechamento):** recitar as três batidas devagar, uma por linha — "Desenhe os **loops**" / "Governe com **harness**" / "Mantenha o **humano no loop**" — e a seguir a punchline: *automatize o esforço, não a responsabilidade*. Encerrar olhando para a plateia, não para o slide. O detalhe rico (custo, latência, complexidade, julgamento) fica para a conversa de corredor.
 - **Ritmo dos triggers (11–14):** ~30″ cada. Se a bagagem de tempo estiver boa, gastar mais no **Goal-based** (evaluator = conceito que costura com harness/evals).
