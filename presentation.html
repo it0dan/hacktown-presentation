@@ -1452,11 +1452,27 @@ let idx = 0;
 
 function show(n){
   slides[idx].classList.remove('active');
-  idx = (n + slides.length) % slides.length;
+  idx = Math.max(0, Math.min(slides.length - 1, n)); // clamp — sem loop de volta à capa no fim do deck
   slides[idx].classList.add('active');
+  syncHash();
   updateHudIndex();
   requestAnimationFrame(refreshActiveSlide);
 }
+
+// ═══════════════════════════════════════════
+// POSIÇÃO VIA HASH — sobrevive a recarga/crash durante a talk (#N = HUD N)
+// ═══════════════════════════════════════════
+function slideFromHash(){
+  const m = location.hash.match(/^#(\d{1,2})$/);
+  if(!m) return 0;
+  const n = parseInt(m[1], 10);
+  return (n >= 0 && n <= slides.length - 1) ? n : 0;
+}
+function syncHash(){ try{ history.replaceState(null, '', '#' + idx); }catch(e){} }
+window.addEventListener('hashchange', ()=>{
+  const n = slideFromHash();
+  if(n !== idx) show(n);
+});
 
 // ═══════════════════════════════════════════
 // FIT-TO-SCREEN (evita que o rodapé saia da viewport
@@ -1474,7 +1490,6 @@ function refreshActiveSlide(){
   if(s.id === 'slide-sdlc') animateSdlcTimeline();
   if(s.id === 'slide-harness-def') animateHarnessDefSignal();
   if(s.id === 'slide-loop-def') animateLoopDef();
-  if(s.id === 'slide-loop-trigger-turn' || s.id === 'slide-loop-trigger-goal' || s.id === 'slide-loop-trigger-time' || s.id === 'slide-loop-trigger-proactive') animateLoopTrigger(s.id);
   if(s.id === 'slide-loop-breaks') animateLoopBreaks();
   if(NEW_SLIDE_ANIMS[s.id]) animateNewSlide(s.id);
   const body = s.querySelector('.body');
@@ -1772,17 +1787,6 @@ function animateLoopDef(){
   loopDefTimer = setTimeout(runCycle, startDelay);
   if(callout){ callout.style.animationDelay = (startDelay + boxes.length*stepMs + 2300)+'ms'; callout.classList.add('reveal'); }
 }
-function animateLoopTrigger(id){
-  const slide = document.getElementById(id);
-  if(!slide) return;
-  const arch = slide.querySelector('.trig-arch');
-  const callout = slide.querySelector('.callout');
-  if(arch){ arch.classList.remove('reveal'); arch.style.animationDelay=''; }
-  if(callout){ callout.classList.remove('reveal'); callout.style.animationDelay=''; }
-  void slide.offsetWidth;
-  if(arch){ arch.style.animationDelay='0ms'; arch.classList.add('reveal'); }
-  if(callout){ callout.style.animationDelay='250ms'; callout.classList.add('reveal'); }
-}
 // ═══════════════════════════════════════════
 // SLIDE 3.6 "QUEBRAS & MITIGAÇÃO" — coreografia do tabuleiro:
 // badges → cartões intercalados (fraqueza ⇄ blindagem) → setas → callout
@@ -1963,6 +1967,9 @@ function initTheme(){
 initTheme();
 renderTimer();
 drawDotGrid();
+idx = slideFromHash();
+slides.forEach((s,i)=>s.classList.toggle('active', i===idx));
+syncHash();
 updateHudIndex();
 requestAnimationFrame(refreshActiveSlide);
 </script>
