@@ -123,11 +123,11 @@ h1 .e{color:var(--text)}
 
 /* ── AGENDA ── */
 .agenda{max-width:1180px;margin:0 auto;width:100%}
-.arow{display:grid;grid-template-columns:64px 1fr 140px 96px;align-items:center;gap:20px;
-  padding:22px 0;border-bottom:1px solid var(--line)}
+.arow{display:grid;grid-template-columns:64px 1fr;align-items:center;gap:20px;
+  padding:32px 0;border-bottom:1px solid var(--line)}
 .arow:first-child{border-top:1px solid var(--line)}
-.arow .num{font-family:'Roboto Mono',monospace;font-size:22px;color:var(--line2)}
-.arow .info .t{font-family:'Montserrat',sans-serif;font-weight:600;font-size:22px}
+.arow .num{font-family:'Roboto Mono',monospace;font-size:24px;color:var(--line2)}
+.arow .info .t{font-family:'Montserrat',sans-serif;font-weight:600;font-size:26px}
 .arow .info .d{font-size:14.5px;color:var(--muted);margin-top:4px;max-width:640px}
 .arow .who{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--acc-strong);
   border:1px solid var(--line2);border-radius:20px;padding:5px 12px;text-align:center;justify-self:start}
@@ -601,6 +601,35 @@ h1 .e{color:var(--text)}
 .ta-note b{color:var(--warn);font-style:normal}
 .ta-note .ok{color:var(--acc-strong)}
 
+/* ─── 3.2 interaction loop — slide-vitrine: nós maiores e distribuição vertical ─── */
+#slide-interaction .trig-arch{margin-top:28px;padding:46px 72px 38px}
+#slide-interaction .ta-node.model,
+#slide-interaction .ta-node.blue{min-width:400px;padding:26px 48px;border-radius:16px}
+#slide-interaction .ta-node.model .tn-t,
+#slide-interaction .ta-node.blue .tn-t{font-size:34px}
+#slide-interaction .ta-node.model .tn-s,
+#slide-interaction .ta-node.blue .tn-s{font-size:18px}
+#slide-interaction .flowarrow{font-size:42px;margin:0 30px;color:var(--acc)}
+#slide-interaction .ta-note{margin-top:28px;font-size:15px}
+#slide-interaction .pillgrid{gap:18px;margin-top:30px}
+#slide-interaction .pbox{padding:22px 24px}
+#slide-interaction .pbox .pd{font-size:16px}
+#slide-interaction .callout{margin-top:30px}
+@media (max-height:830px){
+  #slide-interaction h1{font-size:30px!important;margin-bottom:4px!important}
+  #slide-interaction .sub{font-size:14.5px!important;margin-bottom:8px!important}
+  #slide-interaction .trig-arch{margin-top:12px;padding:32px 48px 24px}
+  #slide-interaction .ta-node.model,#slide-interaction .ta-node.blue{min-width:310px;padding:15px 34px}
+  #slide-interaction .ta-node.model .tn-t,#slide-interaction .ta-node.blue .tn-t{font-size:25px}
+  #slide-interaction .ta-node.model .tn-s,#slide-interaction .ta-node.blue .tn-s{font-size:14.5px}
+  #slide-interaction .flowarrow{font-size:28px;margin:0 20px}
+  #slide-interaction .ta-note{margin-top:14px;font-size:12.5px}
+  #slide-interaction .pillgrid{gap:12px;margin-top:16px}
+  #slide-interaction .pbox{padding:12px 16px}
+  #slide-interaction .pbox .pd{font-size:13.5px}
+  #slide-interaction .callout{margin-top:14px;font-size:15px!important;padding:12px 20px!important}
+}
+
 /* ─── loop rings — diagramas circulares fiéis ao artigo original da Anthropic ─── */
 .ta-node.solid{background:var(--acc-strong);border-color:var(--acc-strong)}
 .ta-node.solid .tn-t{color:#fff}
@@ -695,35 +724,30 @@ h1 .e{color:var(--text)}
         <div class="num">01</div>
         <div class="info">
           <div class="t">Contexto Geral &amp; Histórico</div>
-          <div class="d">Dados de mercado, Team Topologies e Platform Engineering — de onde viemos.</div>
         </div>
       </div>
       <div class="arow">
         <div class="num">02</div>
         <div class="info">
           <div class="t">Era Agêntica</div>
-          <div class="d">Agent = Model + Harness. MCP e A2A como camada de Tooling.</div>
         </div>
       </div>
       <div class="arow">
         <div class="num">03</div>
         <div class="info">
           <div class="t">Loop Engineering</div>
-          <div class="d">Os tipos de loop, onde eles quebram e como blindá-los — sempre dentro de um harness.</div>
         </div>
       </div>
       <div class="arow">
         <div class="num">04</div>
         <div class="info">
           <div class="t">Live Coding</div>
-          <div class="d">Uma squad agêntica reagindo, ao vivo, a uma demanda real de desenvolvimento.</div>
         </div>
       </div>
       <div class="arow">
         <div class="num">05</div>
         <div class="info">
           <div class="t">Considerações &amp; Futuro</div>
-          <div class="d">Limites e custos da autonomia — e o papel central do humano no loop.</div>
         </div>
       </div>
     </div>
@@ -1103,7 +1127,7 @@ h1 .e{color:var(--text)}
     <div class="l"><span>HACKTOWN://LIVE</span><span>04/09/2026 · 14:30</span><span>TDC STAGE · ETE - Santa Rita do Sapucaí - MG</span></div>
     <div class="r"><span class="pulse"></span><span class="hud-timer">--:--</span></div>
   </div>
-  <div class="body" style="justify-content:flex-start;padding-top:8px">
+  <div class="body" style="justify-content:center">
     <div class="tag">BLOCO 03 &nbsp;<span class="dim">// 3.2 a virada — interação humano ↔ agente</span></div>
     <h1 style="font-size:clamp(32px,3.8vw,50px);margin-bottom:6px">Redesenhar os <span class="a">loops de interação</span></h1>
     <div class="sub" style="margin-bottom:16px;font-size:17px;max-width:940px">Quando agentes entram no SDLC, o problema deixa de ser velocidade e passa a ser: <b style="color:var(--text)">como humano e agente se revezam</b> — quem percebe, quem decide, quem age, quem aprova, quem corrige.</div>
