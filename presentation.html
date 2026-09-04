@@ -497,7 +497,7 @@ h1 .e{color:var(--text)}
 /* ── 3.6 Quebras & Mitigação — tabuleiro espelhado ── */
 
 .bk-wrap{--bkgap:clamp(8px,1.4vh,15px);--bkhead:clamp(34px,3.6vh,42px);position:relative;
-  display:grid;grid-template-columns:1fr clamp(56px,5vw,94px) 1fr;column-gap:clamp(10px,1.5vw,24px);
+  display:grid;grid-template-columns:minmax(0,1fr);
   grid-template-rows:minmax(0,1fr);align-items:stretch;margin-top:4px}
 /* brilhos ambientes discretos atrás dos painéis */
 .bk-wrap::before,.bk-wrap::after{content:'';position:absolute;top:-5%;bottom:-5%;width:46%;z-index:0;
@@ -1524,7 +1524,7 @@ h1 .e{color:var(--text)}
   <div class="body" style="justify-content:flex-start;padding-top:8px">
     <div class="tag" style="margin-top:auto">BLOCO 03 &nbsp;<span class="dim">// 3.7 onde o loop quebra — e como blindar</span></div>
     <h1 style="font-size:clamp(30px,3.4vw,46px);margin-bottom:4px">Onde o loop <span class="a">quebra</span> — e o que o segura</h1>
-    <div class="sub" style="margin-bottom:14px;font-size:16.5px;max-width:940px">Autonomia sem controle vira risco. Fenômenos documentados nas fontes primárias, mapeados diretamente para os padrões que os impedem.</div>
+    <div class="sub" style="margin-bottom:14px;font-size:16.5px;max-width:940px">Autonomia sem controle vira risco. Fenômenos documentados nas fontes primárias — os pontos exatos onde a autonomia falha.</div>
 
     <div class="bk-wrap">
       <div class="bk-panel bad">
@@ -1546,35 +1546,9 @@ h1 .e{color:var(--text)}
         </div>
       </div>
 
-      <div class="bk-rail" aria-hidden="true">
-        <div class="rl-sp"></div>
-        <div class="rail-cell"><div class="rl-line"><i class="rl-dot"></i></div></div>
-        <div class="rail-cell"><div class="rl-line"><i class="rl-dot"></i></div></div>
-        <div class="rail-cell"><div class="rl-line"><i class="rl-dot"></i></div></div>
-      </div>
-
-      <div class="bk-panel good">
-        <div class="bk-head reveal-fade"><span class="hd-ind"></span>// PADRÕES PARA MITIGAR</div>
-        <div class="bk-card f-fix reveal-fade">
-          <div class="bk-kick"><span class="bic">🛡️</span><span class="bn">Guardrails determinísticos</span></div>
-          <div class="bk-d">Hooks, permissions e managed settings — instrução é a ferramenta errada para o que "nunca" deve acontecer.</div>
-          <div class="bk-f"><b>Fonte:</b> Claude, "Steering Claude Code"</div>
-        </div>
-        <div class="bk-card f-fix reveal-fade">
-          <div class="bk-kick"><span class="bic">⚖️</span><span class="bn">Separar quem faz de quem julga</span></div>
-          <div class="bk-d">Generator-evaluator (inspirado em GANs) — tunar um evaluator cético é mais tratável que auto-crítica.</div>
-          <div class="bk-f"><b>Fonte:</b> Anthropic, "Harness design"</div>
-        </div>
-        <div class="bk-card f-fix reveal-fade">
-          <div class="bk-kick"><span class="bic">👤</span><span class="bn">HITL / HOTL</span></div>
-          <div class="bk-d">Humano <b>dentro</b> do loop aprovando ações sensíveis (HITL) ou <b>em cima</b> do loop supervisionando (HOTL).</div>
-          <div class="bk-f"><b>Fonte:</b> LangChain · Anthropic</div>
-        </div>
-      </div>
     </div>
 
-    <div class="callout reveal-fade" style="margin-top:16px;max-width:none;font-size:17px;padding:13px 24px;text-align:center">Cada fraqueza tem um padrão espelho. Mas padrões no papel não bastam — <b>vamos ver isso rodando de verdade, com uma squad agêntica, agora mesmo.</b></div>
-    <div class="sources" style="margin-top:10px;margin-bottom:auto">Anthropic Engineering (2025–2026) · Claude/Anthropic (2026) · LangChain (2026)</div>
+    <div class="sources" style="margin-top:10px;margin-bottom:auto">Claude/Anthropic (2026) · Anthropic Engineering (2025–2026)</div>
   </div>
   <div class="hud-bottom"><span class="sec">// 3.7 QUEBRAS &amp; MITIGAÇÃO <span class="sp hand">· JEAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
@@ -1965,36 +1939,27 @@ function animateLoopDef(){
   if(callout){ callout.style.animationDelay = (startDelay + boxes.length*stepMs + 2300)+'ms'; callout.classList.add('reveal'); }
 }
 // ═══════════════════════════════════════════
-// SLIDE 3.6 "QUEBRAS & MITIGAÇÃO" — coreografia do tabuleiro:
-// badges → cartões intercalados (fraqueza ⇄ blindagem) → setas → callout
+// SLIDE 3.6 "QUEBRAS" — coreografia: badge → cartões de fraqueza → sources
 // ═══════════════════════════════════════════
 function animateLoopBreaks(){
   const slide = document.getElementById('slide-loop-breaks');
   if(!slide) return;
   const heads = slide.querySelectorAll('.bk-head');
-  const bad = slide.querySelectorAll('.bk-panel.bad .bk-card');
-  const good = slide.querySelectorAll('.bk-panel.good .bk-card');
-  const rails = slide.querySelectorAll('.rail-cell');
-  const extra = slide.querySelectorAll('#slide-loop-breaks .callout, #slide-loop-breaks .sources');
+  const cards = slide.querySelectorAll('.bk-panel .bk-card');
+  const extra = slide.querySelectorAll('#slide-loop-breaks .sources');
 
-  [...heads, ...bad, ...good, ...extra].forEach(el=>{
+  [...heads, ...cards, ...extra].forEach(el=>{
     el.classList.remove('reveal'); el.style.animationDelay='';
   });
-  rails.forEach(el=>el.classList.remove('draw'));
   void slide.offsetWidth; // força reflow para reiniciar a entrada
 
   heads.forEach((el,i)=>{ el.style.animationDelay=(i*140)+'ms'; el.classList.add('reveal'); });
 
-  // intercala linha a linha: fraqueza entra, blindagem responde
   let t = 240;
-  for(let i=0;i<bad.length;i++){
-    bad[i].style.animationDelay = t+'ms';       bad[i].classList.add('reveal');
-    good[i].style.animationDelay = (t+70)+'ms'; good[i].classList.add('reveal');
-    t += 130;
-  }
-  rails.forEach((el,i)=>{
-    setTimeout(()=>{ if(slide.classList.contains('active')) el.classList.add('draw'); }, t+120+i*110);
+  cards.forEach((el,i)=>{
+    el.style.animationDelay=(t+i*130)+'ms'; el.classList.add('reveal');
   });
+  t += cards.length*130;
   extra.forEach((el,i)=>{
     el.style.animationDelay=(t+380+i*140)+'ms'; el.classList.add('reveal');
   });
