@@ -73,6 +73,9 @@ Ao abrir [`presentation.html`](./presentation.html) no navegador:
 | `T` | Inicia / Pausa o Cronômetro HUD (45 min) |
 | `R` | Reinicia o Cronômetro |
 | `B` | Tela de Pausa / Break |
+| `S` | Tela de Fontes & Referências (painel Q&A — links para as fontes citadas) |
+| `G` | Tela de Glossário (painel Q&A — 18 termos da talk) |
+| `Esc` | Fecha os painéis Q&A (`S`/`G`) |
 | `D` | Alterna entre Modo Escuro 🌙 e Claro ☀️ |
 | `F` | Alterna modo Tela Cheia (*Fullscreen*) |
 

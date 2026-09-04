@@ -66,6 +66,8 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);
   font-family:'Roboto Mono',monospace;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;
   color:var(--muted);padding-top:18px;border-top:1px solid var(--line)}
 .hud-bottom .sec{color:var(--acc)}
+.hud-bottom .sp{color:var(--muted)}
+.hud-bottom .sp.hand{color:var(--warn)}
 .pulse{width:6px;height:6px;border-radius:50%;background:var(--acc);box-shadow:0 0 7px var(--acc);
   animation:pulse 2s ease-in-out infinite;display:inline-block}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -367,6 +369,36 @@ h1 .e{color:var(--text)}
   font-variant-numeric:tabular-nums;letter-spacing:.05em}
 @keyframes blink{50%{opacity:.25}}
 
+/* ── PAINÉIS BACKUP: FONTES (S) / GLOSSÁRIO (G) ── */
+.bkp{position:fixed;inset:0;z-index:490;background:var(--bg);display:none;flex-direction:column;padding:46px 72px 34px}
+.bkp.active{display:flex}
+.bkp-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;
+  font-family:'Roboto Mono',monospace;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);padding-bottom:16px;border-bottom:1px solid var(--line)}
+.bkp-head .bkh-l{color:var(--acc);font-size:14px}
+.bkp-body{flex:1;min-height:0;overflow-y:auto;padding:24px 4px 10px;scrollbar-width:thin}
+.bkp-foot{display:flex;justify-content:space-between;gap:24px;padding-top:14px;border-top:1px solid var(--line);
+  font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ref)}
+
+.rgrp{margin-bottom:20px}
+.rgrp:last-child{margin-bottom:0}
+.rgrp .rh{font-family:'Roboto Mono',monospace;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--warn);margin-bottom:8px}
+.rlist{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.rentry{display:flex;align-items:baseline;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);min-width:0}
+.rentry .rn{font-weight:600;font-size:15px;line-height:1.35}
+.rentry .rd{font-size:13px;color:var(--muted);white-space:nowrap}
+.rentry a{font-family:'Roboto Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--acc);text-decoration:none;border:1px solid var(--line2);border-radius:14px;padding:2px 9px;
+  white-space:nowrap;margin-left:auto}
+.rentry a:hover{border-color:var(--acc);color:var(--acc-strong)}
+
+.gl-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.gl{padding:8px 0;border-bottom:1px dashed var(--line)}
+.gl .gw{font-family:'Roboto Mono',monospace;font-size:13.5px;letter-spacing:.05em;color:var(--acc)}
+.gl .gd{font-size:14px;line-height:1.45;color:var(--text);margin-top:2px}
+@media (max-width:1100px){.rlist,.gl-grid{grid-template-columns:1fr}}
+
 /* ── NAV ── */
 .nav{position:fixed;bottom:18px;right:24px;display:none;gap:5px;z-index:10}
 .nav button{background:transparent;border:1px solid var(--line2);color:var(--muted);padding:5px 10px;
@@ -656,7 +688,97 @@ h1 .e{color:var(--text)}
 </head>
 <body>
 
-<div id="blackout"><span class="bc">Pausa</span><span class="bt" id="breakClock">00:00</span></div>
+  <div id="blackout"><span class="bc">Pausa</span><span class="bt" id="breakClock">00:00</span></div>
+
+<!-- ─── PAINEL BACKUP · FONTES (tecla S) ─── -->
+<div class="bkp" id="refpanel">
+  <div class="bkp-head">
+    <span class="bkh-l">// FONTES &amp; REFERÊNCIAS</span>
+    <span>cada claim citada no palco · links abrem em nova aba</span>
+  </div>
+  <div class="bkp-body">
+    <div class="rgrp">
+      <div class="rh">MERCADO 2026 · HUD 03</div>
+      <div class="rlist">
+        <div class="rentry"><span class="rn">Global IT &amp; AI Spending Forecast</span><span class="rd">Gartner · 2026</span><a href="https://www.gartner.com" target="_blank" rel="noopener">site oficial ↗</a></div>
+        <div class="rentry"><span class="rn">Relatório de Talentos em Tecnologia</span><span class="rd">Brasscom / Valor Econômico · 2026</span><a href="https://brasscom.org" target="_blank" rel="noopener">site oficial ↗</a></div>
+        <div class="rentry"><span class="rn">Latin America AI Ecosystem Report</span><span class="rd">IDC · 2026</span><a href="https://www.idc.com" target="_blank" rel="noopener">site oficial ↗</a></div>
+        <div class="rentry"><span class="rn">Enterprise AI Adoption Survey</span><span class="rd">S&amp;P Global · 2026</span><a href="https://www.spglobal.com" target="_blank" rel="noopener">site oficial ↗</a></div>
+        <div class="rentry"><span class="rn">GenAI ROI &amp; Pilot Failure Rate Study</span><span class="rd">MIT NANDA · 2025</span><a href="https://www.mit.edu" target="_blank" rel="noopener">site oficial ↗</a></div>
+        <div class="rentry"><span class="rn">Global Talent Crunch</span><span class="rd">Korn Ferry · até 2030</span><a href="https://www.kornferry.com" target="_blank" rel="noopener">site oficial ↗</a></div>
+      </div>
+    </div>
+    <div class="rgrp">
+      <div class="rh">ORGANIZAÇÃO &amp; MÉTODO · HUD 04</div>
+      <div class="rlist">
+        <div class="rentry"><span class="rn">Team Topologies</span><span class="rd">Skelton &amp; Pais · 2019</span><a href="https://teamtopologies.com" target="_blank" rel="noopener">site oficial ↗</a></div>
+        <div class="rentry"><span class="rn">&quot;How Do Committees Invent?&quot; (Lei de Conway)</span><span class="rd">Melvin Conway · 1967</span><a href="https://www.mit.edu" target="_blank" rel="noopener">mit ↗</a></div>
+        <div class="rentry"><span class="rn">Manifesto Ágil</span><span class="rd">Kent Beck et al. · 2001</span><a href="https://agilemanifesto.org" target="_blank" rel="noopener">manifesto ↗</a></div>
+      </div>
+    </div>
+    <div class="rgrp">
+      <div class="rh">AGENTES &amp; HARNESS · HUD 06–08</div>
+      <div class="rlist">
+        <div class="rentry"><span class="rn">Building Effective Agents</span><span class="rd">Anthropic · dez/2024</span><a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener">artigo ↗</a></div>
+        <div class="rentry"><span class="rn">Harness Engineering</span><span class="rd">Birgitta Böckeler · Thoughtworks</span><a href="https://www.thoughtworks.com" target="_blank" rel="noopener">site oficial ↗</a></div>
+        <div class="rentry"><span class="rn">Agents: Reasoning and Action in LLMs</span><span class="rd">Google Cloud · 2024</span><a href="https://cloud.google.com" target="_blank" rel="noopener">site oficial ↗</a></div>
+        <div class="rentry"><span class="rn">Model Context Protocol (MCP)</span><span class="rd">especificação aberta</span><a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">spec ↗</a></div>
+      </div>
+    </div>
+    <div class="rgrp">
+      <div class="rh">LOOP ENGINEERING · HUD 09–15</div>
+      <div class="rlist">
+        <div class="rentry"><span class="rn">Loop engineering: getting started with loops</span><span class="rd">Delba de Oliveira &amp; Michael Segner · Claude · jun/2026</span><a href="https://claude.com/blog/getting-started-with-loops" target="_blank" rel="noopener">artigo ↗</a></div>
+        <div class="rentry"><span class="rn">Steering Claude Code: CLAUDE.md, skills, hooks, rules, subagents</span><span class="rd">Michael Segner · Claude · jun/2026</span><a href="https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more" target="_blank" rel="noopener">artigo ↗</a></div>
+        <div class="rentry"><span class="rn">The Art of Loop Engineering</span><span class="rd">Sydney Runkle · LangChain · jun/2026</span><a href="https://www.langchain.com/blog/the-art-of-loop-engineering" target="_blank" rel="noopener">artigo ↗</a></div>
+        <div class="rentry"><span class="rn">loopcraft: the art of stacking loops</span><span class="rd">swyx · Latent Space</span><a href="https://www.latent.space" target="_blank" rel="noopener">site oficial ↗</a></div>
+        <div class="rentry"><span class="rn">Effective harnesses for long-running agents</span><span class="rd">Justin Young · Anthropic · nov/2025</span><a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents" target="_blank" rel="noopener">artigo ↗</a></div>
+        <div class="rentry"><span class="rn">Harness design for long-running application development</span><span class="rd">Prithvi Rajasekaran · Anthropic · mar/2026</span><a href="https://www.anthropic.com/engineering/harness-design-for-long-running-application-development" target="_blank" rel="noopener">artigo ↗</a></div>
+        <div class="rentry"><span class="rn">Effective context engineering for AI agents</span><span class="rd">Anthropic · set/2025</span><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">artigo ↗</a></div>
+        <div class="rentry"><span class="rn">Scaling Managed Agents: Decoupling the brain from the hands</span><span class="rd">Anthropic · abr/2026</span><a href="https://www.anthropic.com/engineering/managed-agents" target="_blank" rel="noopener">artigo ↗</a></div>
+        <div class="rentry"><span class="rn">Building agents with the Claude Agent SDK</span><span class="rd">Claude · set/2025</span><a href="https://claude.com/blog/building-agents-with-the-claude-agent-sdk" target="_blank" rel="noopener">artigo ↗</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="bkp-foot">
+    <span>urls profundas dos relatórios de mercado em revisão · bibliografia integral em docs/REFERENCIAS.md</span>
+    <span>esc fecha · s fontes · g glossário</span>
+  </div>
+</div>
+
+<!-- ─── PAINEL BACKUP · GLOSSÁRIO (tecla G) ─── -->
+<div class="bkp" id="glosspanel">
+  <div class="bkp-head">
+    <span class="bkh-l">// GLOSSÁRIO</span>
+    <span>termos exatamente como usados nos slides</span>
+  </div>
+  <div class="bkp-body">
+    <div class="gl-grid">
+      <div class="gl"><div class="gw">Agente</div><div class="gd">Modelo + harness em loop, perseguindo um objetivo.</div></div>
+      <div class="gl"><div class="gw">Workflow</div><div class="gd">Fluxo determinístico e orquestrado, sem autonomia.</div></div>
+      <div class="gl"><div class="gw">Harness</div><div class="gd">Guias + sensores + evals que vestem o modelo.</div></div>
+      <div class="gl"><div class="gw">Guias / Feedforward</div><div class="gd">Prompts, specs, contratos de API, schemas e contexto.</div></div>
+      <div class="gl"><div class="gw">Sensores / Feedback</div><div class="gd">Traces, guardrails determinísticos, LLM-as-judge, HITL.</div></div>
+      <div class="gl"><div class="gw">Evals</div><div class="gd">Validação contínua — falha vira novo contexto.</div></div>
+      <div class="gl"><div class="gw">LLM-as-Judge</div><div class="gd">Modelo avaliador do output do agente.</div></div>
+      <div class="gl"><div class="gw">Generator-Evaluator</div><div class="gd">Separar quem faz de quem julga (inspiração GAN).</div></div>
+      <div class="gl"><div class="gw">Loop</div><div class="gd">Ciclos de trabalho repetidos até a stop condition.</div></div>
+      <div class="gl"><div class="gw">Stop Condition</div><div class="gd">Critério verificável que encerra o loop.</div></div>
+      <div class="gl"><div class="gw">Interaction Loop</div><div class="gd">Par humano↔agente — o coração da talk.</div></div>
+      <div class="gl"><div class="gw">Triggers</div><div class="gd">Turn, goal, time ou proactive: o que desperta o loop.</div></div>
+      <div class="gl"><div class="gw">Infinite / Doom Loop</div><div class="gd">Repetição sem progresso, sem teto de iterações.</div></div>
+      <div class="gl"><div class="gw">Goal Drift</div><div class="gd">Vitória declarada cedo demais ou objetivo perdido no caminho.</div></div>
+      <div class="gl"><div class="gw">Context Rot</div><div class="gd">Recall e raciocínio degradam conforme o contexto cresce.</div></div>
+      <div class="gl"><div class="gw">Guardrails Determinísticos</div><div class="gd">Hooks e permissions para o que &quot;nunca&quot; deve ocorrer.</div></div>
+      <div class="gl"><div class="gw">HITL</div><div class="gd">Humano dentro do loop — gate de aprovação para ações sensíveis.</div></div>
+      <div class="gl"><div class="gw">HOTL</div><div class="gd">Humano em cima do loop — supervisiona e intervém.</div></div>
+    </div>
+  </div>
+  <div class="bkp-foot">
+    <span>definições resumidas · aprofundamento nos artigos da tela de fontes (S)</span>
+    <span>esc fecha · s fontes · g glossário</span>
+  </div>
+</div>
 <canvas id="dotgrid"></canvas>
 
 <div class="deck">
@@ -753,7 +875,7 @@ h1 .e{color:var(--text)}
       </div>
     </div>
   </div>
-  <div class="hud-bottom"><span class="sec">// AGENDA</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// AGENDA <span class="sp">· DAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 03 · MERCADO ─── -->
@@ -800,7 +922,7 @@ h1 .e{color:var(--text)}
       </div>
     </div>
   </div>
-  <div class="hud-bottom"><span class="sec">// MERCADO 2026</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// MERCADO 2026 <span class="sp">· DAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <section class="slide" id="slide-topologies">
@@ -863,7 +985,7 @@ h1 .e{color:var(--text)}
       </div>
     </div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 1.2 ÁGIL &amp; TEAM TOPOLOGIES</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 1.2 ÁGIL &amp; TEAM TOPOLOGIES <span class="sp hand">· JEAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <section class="slide" id="slide-sdlc">
@@ -954,7 +1076,7 @@ h1 .e{color:var(--text)}
     </div>
     <div class="callout" style="margin-top:20px;max-width:none;font-size:16px"><b>Para o seu time:</b> cada salto do SDLC encurtou a distância entre decidir e entregar — agentes são o próximo salto, e o redesign começa por onde o humano entra no ciclo.</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 1.3 SDLC &amp; PLATAFORMA</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 1.3 SDLC &amp; PLATAFORMA <span class="sp">· JEAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 06 · O QUE É UM AGENTE DE IA ─── -->
@@ -996,7 +1118,7 @@ h1 .e{color:var(--text)}
 
     <div class="sources" style="margin-top:20px">Anthropic, "Building Effective Agents", dez/2024 · Google, "Agents" whitepaper, 2024</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 2.1 O QUE É UM AGENTE</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 2.1 O QUE É UM AGENTE <span class="sp hand">· DAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 07 · O QUE É HARNESS ENGINEERING ─── -->
@@ -1040,7 +1162,7 @@ h1 .e{color:var(--text)}
 
     <div class="sources" style="margin-top:20px">Böckeler / Thoughtworks, "Harness Engineering"</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 2.2 HARNESS ENGINEERING</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 2.2 HARNESS ENGINEERING <span class="sp">· DAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 08 · AGENTE = MODELO + HARNESS ─── -->
@@ -1090,7 +1212,7 @@ h1 .e{color:var(--text)}
       <div class="hf-band bottom"><span>G · Governance</span><span class="r">HITL, políticas, guardrails</span></div>
     </div>
 </div>
-  <div class="hud-bottom"><span class="sec">// 2.3 ARQUITETURA HARNESS</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 2.3 ARQUITETURA HARNESS <span class="sp">· DAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 09 · O QUE É LOOP ENGINEERING ─── -->
@@ -1119,7 +1241,7 @@ h1 .e{color:var(--text)}
 
     <div class="sources" style="margin-top:26px">Claude/Anthropic, "Loop engineering: getting started with loops", jun/2026 · LangChain, "The Art of Loop Engineering", jun/2026 · swyx, "loopcraft"</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 3.1 O QUE É LOOP ENGINEERING</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 3.1 O QUE É LOOP ENGINEERING <span class="sp hand">· JEAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 09b · INTERACTION LOOPS: HUMAN ↔ AGENT (ponto de virada) ─── -->
@@ -1153,7 +1275,7 @@ h1 .e{color:var(--text)}
     <div class="callout reveal-fade" style="margin-top:24px;max-width:none;font-size:18px;padding:16px 26px">Este é o coração da talk: <b>o loop não é do agente nem do humano — é do par.</b> Logo em seguida, provamos isso ao vivo com um squad agêntico.</div>
     <div class="sources" style="margin-top:12px">Team Topologies (Skelton/Pais) · Swarm/coordination literature · HITL — LangChain · Anthropic</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 3.2 INTERACTION LOOPS</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 3.2 INTERACTION LOOPS <span class="sp">· JEAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 12 · TIPOS DE LOOP — TURN-BASED ─── -->
@@ -1202,7 +1324,7 @@ h1 .e{color:var(--text)}
     <div class="callout" style="margin-top:44px;max-width:min(1400px,92vw);margin-left:auto;margin-right:auto;font-size:17px;padding:15px 24px"><b>Uso:</b> tarefas curtas, fora de agenda regular. A condição de parada é <b>subjetiva</b> — o próprio agente decide, sem critério externo verificável.</div>
     <div class="sources" style="margin-top:14px">Claude/Anthropic, "Loop engineering: getting started with loops", jun/2026</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 3.4 TIPOS DE LOOP — TRIGGER</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 3.4 TIPOS DE LOOP — TRIGGER <span class="sp hand">· DAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 13 · TIPOS DE LOOP — GOAL-BASED ─── -->
@@ -1252,7 +1374,7 @@ h1 .e{color:var(--text)}
     <div class="callout" style="margin-top:44px;max-width:min(1400px,92vw);margin-left:auto;margin-right:auto;font-size:17px;padding:15px 24px"><b>Uso:</b> tarefas com critérios de saída verificáveis. Critérios <b>determinísticos</b> (nº de testes passados, limiar de score) são os mais eficazes. Ex.: <span style="font-family:'Roboto Mono',monospace;font-size:14px">/goal get the homepage Lighthouse score to 90+, stop after 5 tries</span></div>
     <div class="sources" style="margin-top:14px">Claude/Anthropic, "Loop engineering: getting started with loops", jun/2026</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 3.4 TIPOS DE LOOP — TRIGGER</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 3.4 TIPOS DE LOOP — TRIGGER <span class="sp">· DAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 14 · TIPOS DE LOOP — TIME-BASED ─── -->
@@ -1302,7 +1424,7 @@ h1 .e{color:var(--text)}
     <div class="callout" style="margin-top:44px;max-width:min(1400px,92vw);margin-left:auto;margin-right:auto;font-size:17px;padding:15px 24px"><b>Uso:</b> trabalho recorrente e sistemas externos — relatórios periódicos, sincronizações, monitoramento. O loop é <b>acionado pelo tempo</b>, não por você.</div>
     <div class="sources" style="margin-top:14px">Claude/Anthropic, "Loop engineering: getting started with loops", jun/2026</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 3.5 TIPOS DE LOOP — TRIGGER</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 3.5 TIPOS DE LOOP — TRIGGER <span class="sp">· DAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 15 · TIPOS DE LOOP — PROACTIVE ─── -->
@@ -1351,7 +1473,7 @@ h1 .e{color:var(--text)}
     <div class="callout" style="margin-top:16px;max-width:min(1500px,94vw);margin-left:auto;margin-right:auto;font-size:17px;padding:11px 24px"><b>Uso:</b> streams recorrentes — bugs, triage, migrações. Compõe <span style="font-family:'Roboto Mono',monospace;font-size:14px">/schedule</span> (routine) + <span style="font-family:'Roboto Mono',monospace;font-size:14px">/goal</span> (o que é "done") + <b>dynamic workflows</b> + <b>auto mode</b>.</div>
     <div class="sources" style="margin-top:4px">Claude/Anthropic, "Loop engineering: getting started with loops", jun/2026</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 3.5 TIPOS DE LOOP — TRIGGER</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 3.5 TIPOS DE LOOP — TRIGGER <span class="sp">· DAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <section class="slide" id="slide-loop-breaks">
@@ -1414,7 +1536,7 @@ h1 .e{color:var(--text)}
     <div class="callout reveal-fade" style="margin-top:16px;max-width:none;font-size:17px;padding:13px 24px;text-align:center">Cada fraqueza tem um padrão espelho. Mas padrões no papel não bastam — <b>vamos ver isso rodando de verdade, com uma squad agêntica, agora mesmo.</b></div>
     <div class="sources" style="margin-top:10px;margin-bottom:auto">Anthropic Engineering (2025–2026) · Claude/Anthropic (2026) · LangChain (2026)</div>
   </div>
-  <div class="hud-bottom"><span class="sec">// 3.6 QUEBRAS &amp; MITIGAÇÃO</span><span class="hb-idx">-- / --</span></div>
+  <div class="hud-bottom"><span class="sec">// 3.6 QUEBRAS &amp; MITIGAÇÃO <span class="sp hand">· JEAN</span></span><span class="hb-idx">-- / --</span></div>
 </section>
 
 <!-- ─── 16 · LIVE CODING — card de transição para a demo ─── -->
@@ -1904,6 +2026,23 @@ function toggleBlackout(){
 }
 
 // ═══════════════════════════════════════════
+// PAINÉIS BACKUP — FONTES (S) / GLOSSÁRIO (G)
+// overlays fixos FORA da navegação de slides (mesma lógica do break);
+// clique dentro deles não avança slide (stopPropagation) e links seguem livres
+// ═══════════════════════════════════════════
+const BK_PANELS = ['refpanel','glosspanel'];
+function togglePanel(id){
+  const opening = !document.getElementById(id).classList.contains('active');
+  BK_PANELS.forEach(p => document.getElementById(p).classList.toggle('active', p===id && opening));
+  if(opening){
+    const body = document.getElementById(id).querySelector('.bkp-body');
+    if(body) body.scrollTop = 0;
+  }
+}
+function closeBackupPanels(){ BK_PANELS.forEach(p => document.getElementById(p).classList.remove('active')); }
+BK_PANELS.forEach(id => document.getElementById(id).addEventListener('click', e => e.stopPropagation()));
+
+// ═══════════════════════════════════════════
 // KEYBOARD
 // ═══════════════════════════════════════════
 document.addEventListener('keydown', e=>{
@@ -1914,6 +2053,9 @@ document.addEventListener('keydown', e=>{
   else if(e.key==='t'||e.key==='T'){ e.preventDefault(); toggleTimer(); }
   else if(e.key==='r'||e.key==='R'){ e.preventDefault(); resetTimer(); }
   else if(e.key==='b'||e.key==='B'){ e.preventDefault(); toggleBlackout(); }
+  else if(e.key==='s'||e.key==='S'){ e.preventDefault(); togglePanel('refpanel'); }
+  else if(e.key==='g'||e.key==='G'){ e.preventDefault(); togglePanel('glosspanel'); }
+  else if(e.key==='Escape'){ closeBackupPanels(); }
   else if(e.key==='d'||e.key==='D'){ e.preventDefault(); toggleTheme(); }
   else if(e.key==='f'||e.key==='F'){
     e.preventDefault();

@@ -9,24 +9,26 @@
 
 | # | Slide / Momento | Alvo | Acum. | Quem |
 | :-: | :-- | :-: | :-: | :-- |
-| 00 | Capa — título, 2 frases de abertura | 1′ | 1′ | ________ |
-| 01 | Palestrantes — bio rápida de ambos | 2′ | 3′ | ________ |
-| 02 | Agenda — "cinco blocos, uma tese" | 1′ | 4′ | ________ |
-| 03 | Mercado — 6 números + ponte "capital chega antes da capacidade" | 3′ | 7′ | ________ |
-| 04 | Team Topologies — timeline 2001→2026 + Lei de Conway | 3′ | 10′ | ________ |
-| 05 | SDLC — do waterfall ao runtime agêntico | 2′ | 12′ | ________ |
-| 06 | O que é um Agente — workflow vs. agente + ciclo | 3′ | 15′ | ________ |
-| 07 | Harness Engineering — definição + cadeia da disciplina | 2′ | 17′ | ________ |
-| 08 | Arquitetura Harness — Guias/Sensores/Evals | 3′ | 20′ | ________ |
-| 09 | O que é Loop Engineering — stop condition | 2′ | 22′ | ________ |
-| 10 | Interaction Loops — ⭐ coração da talk | 3′ | 25′ | ________ |
-| 11–14 | Triggers: Turn / Goal / Time / Proactive (ritmo, ~30″ cada) | 2′30″ | 27′30″ | ________ |
-| 15 | Quebras & Mitigação — espelho esquerda→direita + ponte pro demo | 2′30″ | 30′ | ________ |
-| 16 | Card LIVE — "Padrões no papel não bastam. Demo ao vivo." (voz livre) | 0′30″ | 30′30″ | ________ |
-| — | **LIVE CODING — Bloco 04** (trocar de janela **com o card 16 na tela**) | 11′30″ | 42′ | ________ |
-| 17 | Encerramento — **mensagem única**: "Desenhe os loops. Governe com harness. Mantenha o humano no loop." + obrigado | 2′ | 44′ | ________ |
+| 00 | Capa — título, 2 frases de abertura | 1′ | 1′ | Ambos |
+| 01 | Palestrantes — bio rápida de ambos | 2′ | 3′ | Ambos |
+| 02 | Agenda — "cinco blocos, uma tese" | 1′ | 4′ | **Dan** |
+| 03 | Mercado — 6 números + ponte "capital chega antes da capacidade" | 3′ | 7′ | Dan |
+| 04 | Team Topologies — timeline 2001→2026 + Lei de Conway | 3′ | 10′ | **Jean** |
+| 05 | SDLC — do waterfall ao runtime agêntico | 2′ | 12′ | Jean |
+| 06 | O que é um Agente — workflow vs. agente + ciclo | 3′ | 15′ | **Dan** |
+| 07 | Harness Engineering — definição + cadeia da disciplina | 2′ | 17′ | Dan |
+| 08 | Arquitetura Harness — Guias/Sensores/Evals | 3′ | 20′ | Dan |
+| 09 | O que é Loop Engineering — stop condition | 2′ | 22′ | **Jean** |
+| 10 | Interaction Loops — ⭐ coração da talk | 3′ | 25′ | Jean |
+| 11–14 | Triggers: Turn / Goal / Time / Proactive (ritmo, ~30″ cada) | 2′30″ | 27′30″ | **Dan** |
+| 15 | Quebras & Mitigação — espelho esquerda→direita + ponte pro demo | 2′30″ | 30′ | **Jean** |
+| 16 | Card LIVE — "Padrões no papel não bastam. Demo ao vivo." (voz livre) | 0′30″ | 30′30″ | Ambos |
+| — | **LIVE CODING — Bloco 04** (trocar de janela **com o card 16 na tela**) | 11′30″ | 42′ | Dan (demo) · Jean (narração) |
+| 17 | Encerramento — **mensagem única**: "Desenhe os loops. Governe com harness. Mantenha o humano no loop." + obrigado | 2′ | 44′ | Ambos |
 
 > ⚠️ Budget de segurança: ~30″ holgados no acumulado (44′30″/45′). Timer da HUD conta 45:00 regressivo — conferir em 25′ (estando no 14/Proactive ou antes, vai bem; além disso, encurtar o demo, não a teoria).
+
+> 🔄 **Negrito** na coluna Quem = início de bloco de voz / handoff entre palestrantes. Trocas: 03→04 (Dan→Jean), 05→06 (Jean→Dan), 08→09 (Dan→Jean), 10→11 (Jean→Dan), 14→15 (Dan→Jean).
 
 ---
 
@@ -68,11 +70,15 @@
 | Clique (qualquer área) | Avança (exceto seleção de texto) |
 | `T` / `R` | Timer play-pause / reset (45:00) |
 | `B` | Tela de break |
+| `S` / `G` | Painéis Q&A: Fontes (links) / Glossário — fora da navegação |
+| `Esc` | Fecha painéis Q&A (volta exatamente ao slide atual) |
 | `D` | Tema claro/escuro (default: preferência do SO) |
 | `F` | Fullscreen |
 | `Home` / `End` | Primeiro / último slide |
 
 **Kit de palco:** laptop com `presentation.html` aberto no Chromium/Chrome, **wi-fi desligado** para testar ao menos uma vez antes, fullscreen `F`, timer iniciado com `T` logo antes do primeiro slide.
+
+**Q&A pós-slides:** plateia pediu fonte ou o significado de um termo? `S` abre a lista completa de referências citadas (com links; espelha o `docs/REFERENCIAS.md`) e `G` abre o glossário de 18 termos. Os painéis ficam fora da navegação — `Esc` devolve ao slide exato onde a talk estava, sem mover nada.
 
 ---
 
