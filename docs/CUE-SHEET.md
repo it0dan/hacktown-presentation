@@ -22,7 +22,7 @@
 | 10 | Interaction Loops — ⭐ coração da talk | 3′ | 25′ | Jean |
 | 11–14 | Triggers: Turn / Goal / Time / Proactive (ritmo, ~35″ cada) | 2′30″ | 27′30″ | **Dan** |
 | 15 | Quebras & Mitigação — espelho esquerda→direita + ponte pro demo | 2′30″ | 30′ | **Jean** |
-| 16 | Card LIVE — "Padrões no papel não bastam. Demo ao vivo." (voz livre) | 0′30″ | 30′30″ | Ambos |
+| 16 | Card LIVE — "Só teoria não adianta. Vamos ver na prática." (voz livre) | 0′30″ | 30′30″ | Ambos |
 | — | **LIVE CODING — Bloco 04** (trocar de janela **com o card 16 na tela**) | 11′30″ | 42′ | Dan (demo) · Jean (narração) |
 | 17 | Encerramento — **mensagem única**: "Desenhe os loops. Governe com harness. Mantenha o humano no loop." + obrigado | 2′ | 44′ | Ambos |
 
@@ -44,7 +44,7 @@
 
 **14 → 15 (proactive → quebras):** "Rotinas sempre-on soam bonitas. Agora, o que acontece quando elas dão errado — e o que as segura."
 
-**15 → 16 (card LIVE):** avançar e deixar a frase cair sobre o card: *"Padrões no papel não bastam…"* → trocar de janela/app **com o card 16 na tela** para não mostrar o desktop.
+**15 → 16 (card LIVE):** avançar e deixar a frase cair sobre o card: *"Só teoria não adianta…"* → trocar de janela/app **com o card 16 na tela** para não mostrar o desktop.
 
 **LIVE → 17 (retorno):** volta o navegador no card (16), avança pro 17. "Se tudo isso parece promissor, deixem-me ser honesto(a) sobre o preço — e sobre o que não se delega."
 

@@ -50,7 +50,7 @@ Esta apresentação aborda a transição das **Squads Ágeis** e **Team Topologi
 - **Quebras & Mitigação (slide unificado):** à esquerda, onde o loop quebra — *Infinite/Doom loop*, *Goal drift*, *Context rot*; à direita, o que segura — separar quem faz de quem julga, guardrails determinísticos e HITL/HOTL. Ponte direta para o live coding.
 
 ### 4. Live Coding — o Squad como prova viva da tese `[CONCLUÍDO — card de transição (HUD 16) + demo]`
-- **Card de transição (HUD 16):** mensagem hero única — "Padrões no papel não bastam. Demo ao vivo." — com as garantias de palco em microtexto (reset 1-clique, fallback determinístico, observabilidade). Do card sai-se direto para o editor.
+- **Card de transição (HUD 16):** mensagem hero única — "Só teoria não adianta. Vamos ver na prática." — com as garantias de palco em microtexto (reset 1-clique, fallback determinístico, observabilidade). Do card sai-se direto para o editor.
 - **Ao vivo:** Squad Agêntica de 6 especialistas (SDD Refinement, Architect, Backend, Frontend, QA e SRE) operando sobre a **Astronomy Shop (otel-demo)** — pilha de 4 loops (agent, verification, event-driven, hill-climbing) coordenados por um grafo de estados.
 - **Falado durante a demo (sem slide):** momento HITL (aprovar/rejeitar com feedback) e garantias de palco (reset 1-clique, fallback determinístico, observabilidade ao vivo).
 
