@@ -6,12 +6,12 @@ Este documento compila a bibliografia, pesquisas de mercado, frameworks e artigo
 
 ## 📊 1. Dados & Pesquisas de Mercado
 
-> ⚠️ **Revisão humana pendente antes de 04/09:** confirmar URL/edição de cada relatório abaixo (marcados com `_URL: a confirmar_`).
+> ⚠️ **Revisão humana pendente antes de 04/09:** confirmar URL/edição de cada relatório abaixo (marcados com `_URL: a confirmar_`). Claims do slide 03 foram formuladas no nível do que cada fonte declarou publicamente — não citar percentuais/extrapolações que as próprias fontes não afirmaram (ex.: "US$ 2,59 tri / +47%" de terceiros foi substituído pelas duas âncoras oficiais da Gartner).
 
-- **Gartner (2026):** *Global IT & AI Spending Forecast* — projeção de US$ 2,59 tri de investimento global em IA em 2026 (alta de 47% em relação a 2025). `_URL: a confirmar_`
-- **Brasscom / Valor Econômico (2026):** *Relatório de Talentos em Tecnologia no Brasil* — déficit acumulado de 530 mil profissionais de TI até 2026. `_URL: a confirmar_`
-- **IDC (2026):** *Latin America Artificial Intelligence Ecosystem Report* — mercado de IA no Brasil atingindo US$ 4,2 bilhões (41,7% da América Latina). `_URL: a confirmar_`
-- **S&P Global (2026):** *Enterprise AI Adoption Survey* — 42% das empresas abandonaram a maioria das iniciativas de IA em 2025 por falta de governança e ROI. `_URL: a confirmar_`
+- **Gartner (2025–2026):** *Worldwide AI Spending Forecast* — duas âncoras públicas: gasto mundial com IA de **quase US$ 1,5 tri em 2025** (press release, set/2025) e projeção **acima de US$ 2 tri em 2026** (cobertura subsequente). O slide usa estas duas âncoras, não o 2,59 tri de agregadores. `_URL: a confirmar_`
+- **Brasscom / Valor Econômico (2024–2026):** *Talentos em Tecnologia no Brasil* — demanda de **~530 mil profissionais de TI por ano até 2026**, com formação nacional bem abaixo desse volume (formulação de **demanda anual**, não "déficit acumulado"). `_URL: a confirmar_`
+- **IDC (2026):** *Worldwide AI Spending Guide* — projeção de mercado de IA no Brasil de US$ 4,2 bilhões (**41,7%** da América Latina). `_URL: a confirmar_`
+- **S&P Global (2025):** *Enterprise AI Adoption Survey* — 42% das empresas abandonaram a maioria das iniciativas de IA em 2025, **contra 17% em 2024** (motivos citados: governança, ROI, dificuldades de escalonamento).
 - **MIT NANDA (2025):** *GenAI ROI & Pilot Failure Rate Study* — 95% dos pilotos de GenAI corporativos não entregam ROI mensurável sem um Harness adequado. `_URL: a confirmar_`
 - **Korn Ferry:** *Global Talent Crunch Study* — projeção de 85 milhões de vagas de tecnologia sem profissionais qualificados no mundo até 2030. `_URL: a confirmar_`
 

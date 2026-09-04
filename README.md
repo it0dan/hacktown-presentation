@@ -109,4 +109,4 @@ Ao abrir [`presentation.html`](./presentation.html) no navegador:
 
 ## 📄 Licença
 
-Este projeto é disponibilizado sob os termos da licença constante no arquivo [`LICENSE`](file:///home/daniloamaral/Desktop/hacktown-2026/hacktown-presentation/LICENSE).
+Este projeto é disponibilizado sob os termos da licença constante no arquivo [`LICENSE`](./LICENSE).

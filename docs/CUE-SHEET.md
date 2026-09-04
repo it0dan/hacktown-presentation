@@ -20,13 +20,13 @@
 | 08 | Arquitetura Harness — Guias/Sensores/Evals | 3′ | 20′ | Dan |
 | 09 | O que é Loop Engineering — stop condition | 2′ | 22′ | **Jean** |
 | 10 | Interaction Loops — ⭐ coração da talk | 3′ | 25′ | Jean |
-| 11–14 | Triggers: Turn / Goal / Time / Proactive (ritmo, ~30″ cada) | 2′30″ | 27′30″ | **Dan** |
+| 11–14 | Triggers: Turn / Goal / Time / Proactive (ritmo, ~35″ cada) | 2′30″ | 27′30″ | **Dan** |
 | 15 | Quebras & Mitigação — espelho esquerda→direita + ponte pro demo | 2′30″ | 30′ | **Jean** |
 | 16 | Card LIVE — "Padrões no papel não bastam. Demo ao vivo." (voz livre) | 0′30″ | 30′30″ | Ambos |
 | — | **LIVE CODING — Bloco 04** (trocar de janela **com o card 16 na tela**) | 11′30″ | 42′ | Dan (demo) · Jean (narração) |
 | 17 | Encerramento — **mensagem única**: "Desenhe os loops. Governe com harness. Mantenha o humano no loop." + obrigado | 2′ | 44′ | Ambos |
 
-> ⚠️ Budget de segurança: ~30″ holgados no acumulado (44′30″/45′). Timer da HUD conta 45:00 regressivo — conferir em 25′ (estando no 14/Proactive ou antes, vai bem; além disso, encurtar o demo, não a teoria).
+> ⚠️ Budget de segurança: ≈1′ holgada no acumulado (soma das linhas: 44′00″/45′). Timer da HUD conta 45:00 regressivo — conferir em 25′ (estando no 14/Proactive ou antes, vai bem; além disso, encurtar o demo, não a teoria). Usar a folga no demo ou nos triggers difíceis (Goal-based).
 
 > 🔄 **Negrito** na coluna Quem = início de bloco de voz / handoff entre palestrantes. Trocas: 03→04 (Dan→Jean), 05→06 (Jean→Dan), 08→09 (Dan→Jean), 10→11 (Jean→Dan), 14→15 (Dan→Jean).
 
